@@ -3,6 +3,7 @@
 
     <div class="container">
         <h2>{{$house->name}}</h2>
+        <h2>Thông tin về căn nhà</h2>
         <p>{{$house->description}}</p>
         <h2>Một số hình ảnh căn nhà</h2>
     </div>
@@ -47,24 +48,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="room__details__content">
-                        <div class="room__details__desc">
-                            <h2>Thông tin về căn nhà</h2>
-                            <p>We’re halfway through the summer, but while plenty of people are kicking back and
-                                enjoying their vacations, the social media development teams likely aren’t doing the
-                                same. In the past two weeks alone, we’ve seen four big new updates that can directly
-                                impact the social marketing campaigns of hotels, resorts, and other businesses in the
-                                hospitality industry. Let’s take a close look at each one.</p>
-                            <p>The new desktop version of the site is significantly improved, which will make it easier
-                                for hotels and resorts to navigate the platform.</p>
-                            <p>There is one big change though that we want to note, and that’s the more live video and
-                                local moments (the latter of which are based on your location). These will be
-                                prioritized in users’ feeds, so take advantage of this and create this content to
-                                improve your reach and connect with more members of your target audience.</p>
-                            <p>We’ve gotten yet another new feature for Instagram Stories, and this time it’s the Chat
-                                sticker, which allows you to invite Story followers to join in on a new group chat.
-                                Instagram is currently advertising this as a way to jumpstart big group conversations or
-                                make plans.</p>
-                        </div>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="room__details__facilities">
