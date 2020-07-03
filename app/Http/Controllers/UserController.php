@@ -27,10 +27,11 @@ class UserController extends Controller
         return view('users.login');
     }
 
-    function loginHandling(UserRequest $userRequest) {
-        if ($this->userService->loginHandling($userRequest)) {
+    function loginHandling(Request $request) {
+        if ($this->userService->loginHandling($request)) {
             return redirect()->route('home');
+        } else {
+            return back();
         }
-        return back();
     }
 }
