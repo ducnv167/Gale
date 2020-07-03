@@ -8360,7 +8360,7 @@ h1, h2, h3, h4, h5,
     bottom: 0;
     content: '';
     opacity: .5;
-    background: #21243d;
+    /*background: darkslategrey;*/
     height: 850px; }
   .hero-wrap.hero-wrap-2 {
     height: 500px !important;

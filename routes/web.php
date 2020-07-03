@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
 Route::get('/{id}/details','HouseController@findById')->name('houses.details');
+
