@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="index.html">Ecoverde</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
 
@@ -14,7 +14,15 @@
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="properties.html" class="nav-link">Properties</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        @if(\Illuminate\Support\Facades\Auth::user())
+                            <img style="width:40px; border-radius: 50%" src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->image)}}" alt="My Avatar">
+                        @else
+                            Login
+                        @endif
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
