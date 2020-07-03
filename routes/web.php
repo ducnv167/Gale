@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/list-house','HouseController@getAll')->name('list.house');
 
 
+Route::prefix('users')->group(function () {
+    Route::get('register','UserController@create')->name('users.register');
+    Route::post('store','UserController@store')->name('users.store');
+});
