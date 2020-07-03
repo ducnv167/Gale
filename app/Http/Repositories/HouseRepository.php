@@ -20,6 +20,6 @@ class HouseRepository
     }
 
     public function getAll(){
-        return $this->houseModel->all();
+        return $this->houseModel::paginate(9);
     }
 }

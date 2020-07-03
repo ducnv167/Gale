@@ -22,6 +22,6 @@ class HouseController extends Controller
 
     public function getAll(){
         $houses= $this->houseService->getAll();
-
+        return view('house.list',compact('houses'));
     }
 }
