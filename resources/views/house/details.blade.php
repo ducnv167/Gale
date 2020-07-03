@@ -95,13 +95,13 @@
                                         <div class="col-lg-6">
                                             <div class="room__details__more__facilities__item">
                                                 <div class="icon"><img
-                                                            src="{{asset('images/rooms/facilities/fac-1.png')}}"
+                                                            src="{{asset('images/house/facilities/fac-1.png')}}"
                                                             alt=""></div>
                                                 <h6>Điều hòa</h6>
                                             </div>
                                             <div class="room__details__more__facilities__item">
                                                 <div class="icon"><img
-                                                            src="{{asset('images/rooms/facilities/fac-2.png')}}"
+                                                            src="{{asset('images/house/facilities/fac-2.png')}}"
                                                             alt=""></div>
                                                 <h6>TV</h6>
                                             </div>
@@ -110,13 +110,13 @@
                                         <div class="col-lg-6">
                                             <div class="room__details__more__facilities__item">
                                                 <div class="icon"><img
-                                                            src="{{asset('images/rooms/facilities/fac-6.png')}}"
+                                                            src="{{asset('images/house/facilities/fac-6.png')}}"
                                                             alt=""></div>
                                                 <h6>An ninh 24/24</h6>
                                             </div>
                                             <div class="room__details__more__facilities__item">
                                                 <div class="icon"><img
-                                                            src="{{asset('images/rooms/facilities/fac-4.png')}}"
+                                                            src="{{asset('images/house/facilities/fac-4.png')}}"
                                                             alt=""></div>
                                                 <h6>Wifi-Internet</h6>
                                             </div>
