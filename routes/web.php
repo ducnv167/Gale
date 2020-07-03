@@ -25,4 +25,3 @@ Route::prefix('users')->group(function () {
     Route::get('login','UserController@login')->name('users.login');
     Route::post('login','UserController@loginHandling')->name('users.loginHandling');
 });
-
