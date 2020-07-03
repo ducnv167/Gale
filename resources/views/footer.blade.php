@@ -3,7 +3,7 @@
         <div class="row mb-5">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Luxury-Gale</h2>
+                    <h2 class="ftco-heading-2">Ecoverde</h2>
                     <p>Far far away, behind the word mountains, far from the countries.</p>
                     <ul class="ftco-footer-social list-unstyled mt-5">
                         <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
@@ -54,24 +54,24 @@
                             <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
                                         210</span></a></li>
                             <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span
-                                        class="text">info@yourdomain.com</span></a></li>
+                                            class="text">info@yourdomain.com</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-{{--        <div class="row">--}}
-{{--            <div class="col-md-12 text-center">--}}
+        <div class="row">
+            <div class="col-md-12 text-center">
 
-{{--                <p>--}}
-{{--                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--}}
-{{--                    Copyright &copy;--}}
-{{--                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template--}}
-{{--                    is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"--}}
-{{--                        target="_blank">Colorlib</a>--}}
-{{--                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--}}
-{{--                </p>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                    is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                                                                      target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
     </div>
 </footer>
