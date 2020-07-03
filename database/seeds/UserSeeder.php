@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('123456') ;
         $user->phone = '123456789';
         $user->image = 'image.jpg';
-        $user->role = 'admin';
+        $user->role = 'Admin';
         $user->save();
 
         $user = new \App\User();
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('123456') ;
         $user->phone = '123456789';
         $user->image = 'image.jpg';
-        $user->role = 'leaser';
+        $user->role = 'Leaser';
         $user->save();
 
         $user = new \App\User();
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
         $user->password = Hash::make('123456') ;
         $user->phone = '123456789';
         $user->image = 'image.jpg';
-        $user->role = 'renter';
+        $user->role = 'Renter';
         $user->save();
     }
 }

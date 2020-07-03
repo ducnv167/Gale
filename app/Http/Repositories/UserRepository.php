@@ -14,7 +14,7 @@ class UserRepository
         $this->user = $user;
     }
 
-    function create() {
-
+    function store($data) {
+        $data->save();
     }
 }
