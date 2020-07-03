@@ -14,14 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+    return view('welcome');
+
+})->name('home');
+
+
     return view('master');
+
 });
+
 Route::get('/{id}/details','HouseController@findById')->name('houses.details');
 
 
-//route users
+Route::get('/list-house','HouseController@getAll')->name('list.house');
+
+
 
 Route::prefix('users')->group(function () {
     Route::get('register','UserController@create')->name('users.register');
     Route::post('store','UserController@store')->name('users.store');
+    Route::get('login','UserController@login')->name('users.login');
+    Route::post('login','UserController@loginHandling')->name('users.loginHandling');
 });

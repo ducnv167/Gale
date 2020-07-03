@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
     @include('header')
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -61,6 +62,5 @@
     </script>
     <script src="{{asset('js/google-map.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
-
 </body>
 </html>

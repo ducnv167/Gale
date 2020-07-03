@@ -19,4 +19,9 @@ class HouseService
     {
         return $this->houseRepository->findById($id);
     }
+
+    public function getAll()
+    {
+        return $this->houseRepository->getAll();
+    }
 }
