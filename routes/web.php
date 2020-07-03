@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+
 })->name('home');
 
-//route users
+});
+Route::get('/list-house','HouseController@getAll')->name('list.house');
+
+
 
 Route::prefix('users')->group(function () {
     Route::get('register','UserController@create')->name('users.register');
