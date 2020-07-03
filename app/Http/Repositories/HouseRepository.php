@@ -7,15 +7,15 @@ use App\House;
 
 class HouseRepository
 {
-    protected $houseModel;
+    protected $house;
 
     public function __construct(House $house)
     {
-        $this->houseModel = $house;
+        $this->house = $house;
     }
 
     public function findById($id)
     {
-        return $this->houseModel->findOrFail($id);
+        return $this->house->findOrFail($id);
     }
 }

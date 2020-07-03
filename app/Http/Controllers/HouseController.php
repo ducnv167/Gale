@@ -17,6 +17,6 @@ class HouseController extends Controller
     public function findById($id)
     {
         $house = $this->houseService->findById($id);
-        return view('house.details',compact('house'));
+        return view('house.details', compact('house'));
     }
 }
