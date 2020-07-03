@@ -14,6 +14,16 @@ class HouseController extends Controller
         $this->houseService = $houseService;
     }
 
+    public function rentalStep1()
+    {
+        return view('user.house-rental-basic');
+    }
+
+    public function rentalStep2()
+    {
+        return view('user.house-rental-location');
+    }
+
     public function findById($id)
     {
         $house = $this->houseService->findById($id);

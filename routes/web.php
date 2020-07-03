@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::prefix('rental')->group(function () {
+    Route::get('/basic', "HouseController@rentalStep1")->name('rental.step1');
+});
