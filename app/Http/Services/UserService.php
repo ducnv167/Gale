@@ -6,6 +6,7 @@ namespace App\Http\Services;
 
 use App\Http\Repositories\UserRepository;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
@@ -19,12 +20,20 @@ class UserService
         $data = new User();
         $data->name = $userRequest->name;
         $data->email = $userRequest->email;
-        $data->password = $userRequest->password;
+        $data->password = Hash::make($userRequest->password);
         $data->phone = $userRequest->phone;
         $data->role = $userRequest->role;
         $image = $userRequest->image->store('image','public');
         $data->image = $image;
         $this->userRepository->store($data);
+    }
+
+    function loginHandling($equest) {
+        $user = [
+            'email' => $equest->email,
+            'password' => $equest->password
+        ];
+        return $this->userRepository->loginHandling($user);
     }
 
 

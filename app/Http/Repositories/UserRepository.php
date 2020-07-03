@@ -5,6 +5,7 @@ namespace App\Http\Repositories;
 
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserRepository
 {
@@ -16,5 +17,9 @@ class UserRepository
 
     function store($data) {
         $data->save();
+    }
+
+    function loginHandling($user) {
+        return Auth::attempt($user);
     }
 }
