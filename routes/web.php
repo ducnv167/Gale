@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('master');
+    return view('welcome');
+});
+
+//route users
+
+Route::prefix('users')->group(function () {
+    Route::get('register','UserController@create')->name('users.register');
+    Route::post('store','UserController@store')->name('users.store');
 });
