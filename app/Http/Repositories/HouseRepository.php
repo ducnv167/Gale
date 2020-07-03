@@ -18,4 +18,8 @@ class HouseRepository
     {
         return $this->houseModel->findOrFail($id);
     }
+
+    public function getAll(){
+        return $this->houseModel::paginate(9);
+    }
 }
