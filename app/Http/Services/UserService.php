@@ -27,5 +27,13 @@ class UserService
         $this->userRepository->store($data);
     }
 
+    function loginHandling($userRequest) {
+        $user = [
+            'username' => $userRequest->email,
+            'password' => $userRequest->password
+        ];
+        return $this->userRepository->loginHandling($user);
+    }
+
 
 }

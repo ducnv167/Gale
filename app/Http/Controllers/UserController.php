@@ -22,4 +22,15 @@ class UserController extends Controller
         $this->userService->store($userRequest);
         return redirect()->route('home');
     }
+
+    function login() {
+        return view('users.login');
+    }
+
+    function loginHandling(UserRequest $userRequest) {
+        if ($this->userService->loginHandling($userRequest)) {
+            return redirect()->route('home');
+        }
+        return back();
+    }
 }
