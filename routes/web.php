@@ -18,3 +18,10 @@ Route::get('/', function () {
 });
 Route::get('/{id}/details','HouseController@findById')->name('houses.details');
 
+
+//route users
+
+Route::prefix('users')->group(function () {
+    Route::get('register','UserController@create')->name('users.register');
+    Route::post('store','UserController@store')->name('users.store');
+});
