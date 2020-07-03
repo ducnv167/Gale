@@ -17,3 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/list-house','HouseController@getAll')->name('list.house');
+
+
+
+
+Route::get('index',function (){
+    return view('master');
+});
