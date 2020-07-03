@@ -19,11 +19,6 @@ Route::get('/', function () {
 
 })->name('home');
 
-
-    return view('master');
-
-});
-
 Route::get('/{id}/details','HouseController@findById')->name('houses.details');
 
 
