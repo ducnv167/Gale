@@ -16,4 +16,8 @@ class UserController extends Controller
     function create() {
         return view('users.register');
     }
+
+    function store() {
+
+    }
 }
