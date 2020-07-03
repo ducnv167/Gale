@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\Http\Services\UserService;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+
+
+
 
 class UserController extends Controller
 {
@@ -29,8 +33,10 @@ class UserController extends Controller
 
     function loginHandling(Request $request) {
         if ($this->userService->loginHandling($request)) {
+            Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
             return redirect()->route('home');
         } else {
+            Toastr::error('Login fail!!!', 'Fail', ["positionClass" => "toast-top-right"]);
             return back();
         }
     }
