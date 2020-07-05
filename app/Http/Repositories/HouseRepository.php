@@ -14,11 +14,6 @@ class HouseRepository
         $this->house = $house;
     }
 
-    public function getAll()
-    {
-        return $this->house->all();
-    }
-
     public function findById($id)
     {
         return $this->house->findOrFail($id);
@@ -27,5 +22,10 @@ class HouseRepository
     public function store($data)
     {
         $this->house->create($data);
+    }
+
+    public function getAll()
+    {
+        return $this->house::paginate(9);
     }
 }

@@ -41,4 +41,10 @@ class HouseController extends Controller
         ]);
         $this->houseService->store($request);
     }
+
+    public function getAll()
+    {
+        $houses = $this->houseService->getAll();
+        return view('house.list', compact('houses'));
+    }
 }

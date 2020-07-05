@@ -20,8 +20,15 @@ class HouseService
         return $this->houseRepository->findById($id);
     }
 
+
     public function store($request)
     {
         $this->houseRepository->store($request->all());
     }
+
+    public function getAll()
+    {
+        return $this->houseRepository->getAll();
+    }
 }
+
