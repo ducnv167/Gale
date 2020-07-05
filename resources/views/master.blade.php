@@ -8,34 +8,15 @@
 
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-=======
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}
-            ">
-
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}
-            ">
-    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}
-            ">
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}
-           ">
-    <link rel="stylesheet" href="{{asset('css/flaticon.css')}}
-            ">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
->>>>>>> 76dd37a8c5edcd4f3cad32ad36acf45bc5ce0313
 </head>
-
 <body>
-
     @include('header')
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -58,7 +39,7 @@
             <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
             <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
                 stroke="#F96D00" /></svg></div>
-<<<<<<< HEAD
+
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/jquery-migrate-3.0.1.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
@@ -74,22 +55,5 @@
     </script>
     <script src="{{ asset('js/google-map.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
-=======
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/jquery-migrate-3.0.1.min.js')}}"></script>
-    <script src="{{asset('js/popper.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-    <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('js/jquery.stellar.min.js')}}"></script>
-    <script src="{{asset('js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('js/jquery.animateNumber.min.js')}}"></script>
-    <script src="{{asset('js/scrollax.min.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-    </script>
-    <script src="{{asset('js/google-map.js')}}"></script>
-    <script src="{{asset('js/main.js')}}"></script>
->>>>>>> 76dd37a8c5edcd4f3cad32ad36acf45bc5ce0313
 </body>
 </html>

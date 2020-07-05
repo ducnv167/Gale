@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                <<<<<<< HEAD            </div>
                             <div class="col-lg align-items-end">
                                 <div class="form-group">
                                     <label for="#">Location</label>
