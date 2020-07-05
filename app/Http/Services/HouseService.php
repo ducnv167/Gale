@@ -3,7 +3,7 @@
 
 namespace App\Http\Services;
 
-
+use App\House;
 use App\Http\Repositories\HouseRepository;
 
 class HouseService
@@ -18,5 +18,10 @@ class HouseService
     public function findById($id)
     {
         return $this->houseRepository->findById($id);
+    }
+
+    public function store($request)
+    {
+        $this->houseRepository->store($request->all());
     }
 }

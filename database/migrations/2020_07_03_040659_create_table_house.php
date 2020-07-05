@@ -23,7 +23,6 @@ class CreateTableHouse extends Migration
             $table->string('bathroom_amount');
             $table->longText('description');
             $table->string('price');
-
         });
     }
 
