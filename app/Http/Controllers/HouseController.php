@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RentalStep1;
 use App\Http\Services\HouseService;
 use Illuminate\Http\Request;
 
@@ -17,11 +18,33 @@ class HouseController extends Controller
     public function findById($id)
     {
         $house = $this->houseService->findById($id);
-        return view('house.details',compact('house'));
+        return view('house.details', compact('house'));
     }
 
-    public function getAll(){
-        $houses= $this->houseService->getAll();
-        return view('house.list',compact('houses'));
+    public function create(Request $request)
+    {
+        return view('user.house-rental-basic');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'house_category' => 'required',
+            'room_category' => 'required',
+            'bedroom_amount' => 'required',
+            'bathroom_amount' => 'required',
+            'description' => 'required',
+            'address' => 'required',
+            'price' => 'required | numeric'
+
+        ]);
+        $this->houseService->store($request);
+    }
+
+    public function getAll()
+    {
+        $houses = $this->houseService->getAll();
+        return view('house.list', compact('houses'));
     }
 }
