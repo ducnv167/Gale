@@ -18,25 +18,29 @@ class UserController extends Controller
         $this->userService = $userService;
     }
 
-    function create() {
+    function create()
+    {
         return view('users.register');
     }
 
-    function store(UserRequest $userRequest) {
+    function store(UserRequest $userRequest)
+    {
         $this->userService->store($userRequest);
         return redirect()->route('home');
     }
 
-    function login() {
+    function login()
+    {
         return view('users.login');
     }
 
-    function loginHandling(Request $request) {
+    function loginHandling(Request $request)
+    {
         if ($this->userService->loginHandling($request)) {
-            Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
+            // Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
             return redirect()->route('home');
         } else {
-            Toastr::error('Login fail!!!', 'Fail', ["positionClass" => "toast-top-right"]);
+            // Toastr::error('Login fail!!!', 'Fail', ["positionClass" => "toast-top-right"]);
             return back();
         }
     }
