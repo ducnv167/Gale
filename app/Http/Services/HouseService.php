@@ -30,5 +30,10 @@ class HouseService
     {
         return $this->houseRepository->getAll();
     }
+
+    public function search($bedRoom, $bathRoom, $priceLimit, $location)
+    {
+        return $this->houseRepository->search($bedRoom,$bathRoom,$priceLimit,$location);
+    }
 }
 

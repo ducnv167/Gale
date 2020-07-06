@@ -22,10 +22,12 @@ Route::prefix('rental')->group(function () {
     Route::post('/basic', "HouseController@store")->name('house.store');
 });
 
-Route::get('/{id}/details', 'HouseController@findById')->name('houses.details');
 
-
-Route::get('/list-house', 'HouseController@getAll')->name('list.house');
+Route::prefix('house')->group(function () {
+    Route::get('/{id}/details', 'HouseController@findById')->name('house.details');
+    Route::get('/list', 'HouseController@getAll')->name('house.list');
+    Route::get('/search','HouseController@search')->name('list.search');
+});
 
 
 
