@@ -48,6 +48,7 @@ class HouseController extends Controller
         return view('house.list', compact('houses'));
     }
 
+
     public function search(Request $request){
         $bedRoom=$request->input('bed_room');
         $bathRoom=$request->input('bath_room');
@@ -57,3 +58,6 @@ class HouseController extends Controller
         return view('house.list',compact('houses'));
     }
 }
+
+
+

@@ -29,6 +29,7 @@ class HouseRepository
         return $this->house::paginate(9);
     }
 
+
     public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
         return $house = House::where([
