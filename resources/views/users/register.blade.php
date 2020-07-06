@@ -1,16 +1,17 @@
-<div class="container">
+<div class="container6">
     <div class="modal fade" id="myModalRegister" role="dialog">
         <div class="modal-dialog modal-dialog modal-lg">
             <div class="modal-content">
                 <section class="signup">
-                    <div class="container">
+                    <div class="container6">
                         <div class="signup-content">
                             <div class="signup-form">
                                 <h2 class="form-title">Register</h2>
                                 <form method="post" action="{{route('users.store')}}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group1">
-                                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                        <label class="label-custom" for="name"><i
+                                                    class="zmdi zmdi-account material-icons-name"></i></label>
                                         <input type="text"
                                                class="<?php echo $errors->first('name') ? 'form-control is-invalid' : ''?>"
                                                name="name" id="name" value="{{old('name')}}" placeholder="Your Name"
@@ -20,7 +21,7 @@
                                         <p class="text-danger">{{$errors->first('name')}}</p>
                                     @endif
                                     <div class="form-group1">
-                                        <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                        <label class="label-custom" for="email"><i class="zmdi zmdi-email"></i></label>
                                         <input type="email"
                                                class="<?php echo $errors->first('email') ? 'form-control is-invalid' : ''?>"
                                                name="email" id="email" value="{{old('email')}}"
@@ -30,7 +31,7 @@
                                         <p class="text-danger">{{$errors->first('email')}}</p>
                                     @endif
                                     <div class="form-group1">
-                                        <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                        <label class="label-custom" for="pass"><i class="zmdi zmdi-lock"></i></label>
                                         <input type="password" value="{{old('password')}}"
                                                class="<?php echo $errors->first('password') ? 'form-control is-invalid' : ''?>"
                                                name="password"
@@ -40,7 +41,7 @@
                                         <p class="text-danger">{{$errors->first('password')}}</p>
                                     @endif
                                     <div class="form-group1">
-                                        <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                        <label class="label-custom" for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                         <input type="password"
                                                class="<?php echo $errors->first('repeatPassword') ? 'form-control is-invalid' : ''?>"
                                                name="repeatPassword" id="re_pass" placeholder="Repeat your password"
@@ -50,7 +51,7 @@
                                         <p class="text-danger">{{$errors->first('repeatPassword')}}</p>
                                     @endif
                                     <div class="form-group1">
-                                        <label for="pass"><i class="fas fa-phone"></i></label>
+                                        <label class="label-custom" for="pass"><i class="fas fa-phone"></i></label>
                                         <input type="number" value="{{old('phone')}}"
                                                class="<?php echo $errors->first('phone') ? 'form-control is-invalid' : ''?>"
                                                name="phone"

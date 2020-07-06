@@ -30,7 +30,6 @@ class HouseRepository
     }
 
 
-
     public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
         return $house = House::where([
