@@ -18,9 +18,14 @@ class HouseController extends Controller
     public function findById($id)
     {
         $house = $this->houseService->findById($id);
-        return view('house.details', compact('house'));
+        $houseList = $this->houseService->getAll();
+        $array = [];
+        foreach ($houseList as $item) {
+            array_push($array, $item);
+        }
+        $bonusHouse = array_slice($array, 0, 4);
+        return view('house.details', compact('house', 'bonusHouse'));
     }
-
     public function create(Request $request)
     {
         return view('user.house-rental-basic');

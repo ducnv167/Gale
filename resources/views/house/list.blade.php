@@ -1,9 +1,5 @@
 @extends('master')
 @section('content')
-<<<<<<< HEAD
-=======
-
->>>>>>> 8c4ed97c6e87fe2810a461b891eeda055e52899d
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -16,7 +12,7 @@
                     <div class="row">
                         @foreach($houses as $house)
                             <div class="col-md-4" style="margin-top: 30px">
-                                <a href="{{route('houses.details', ["$house->id"])}}" class="search-place img"
+                                <a href="{{route('house.details', ["$house->id"])}}" class="search-place img"
                                    style="background-image: url({{$house->image}});">
                                     <div class="desc">
                                         <h3><span>{{$house->room_category}}</span></h3>

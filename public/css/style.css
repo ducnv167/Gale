@@ -10237,4 +10237,10 @@ textarea.form-control {
 .room__details__title h2 {
   margin-bottom: 20px;
 }
+.maxtext{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
 
