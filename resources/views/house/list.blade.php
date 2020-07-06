@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
     <section class="hero-wrap hero-wrap-2" style="background-image: url({{asset('images/bg_1.jpg')}});" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -10,7 +11,6 @@
             </div>
         </div>
     </section>
-
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -57,6 +57,10 @@
                         @foreach($houses as $house)
                         <div class="col-md-4" style="margin-top: 30px">
                             <a href="#" class="search-place img" style="background-image: url({{$house->image}});">
+                    <div class="row">
+                        @foreach($houses as $house)
+                        <div class="col-md-4" style="margin-top: 30px">
+                            <a href="{{route('houses.details', ["$house->id"])}}" class="search-place img" style="background-image: url({{$house->image}});">
                                 <div class="desc">
                                     <h3><span>{{$house->room_category}}</span></h3>
                                     <span>{{$house->price}}</span>
@@ -64,7 +68,6 @@
                             </a>
                         </div>
                         @endforeach
-
                     </div>
                     <div style="margin-top: 30px">{{$houses->links()}}</div>
             </div>
