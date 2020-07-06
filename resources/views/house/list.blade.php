@@ -31,6 +31,7 @@
                                 <span>{{$house->price}}</span>
                             </div>
                         </a>
+
                     </div>
                     @endforeach
                 </div>
