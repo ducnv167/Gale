@@ -23,9 +23,8 @@
                 <div class="row">
                     @foreach($houses as $house)
                     <div class="col-md-4" style="margin-top: 30px">
-                        <a href="{{route('houses.details', ["$house->id"])}}" class="search-place img" @for ($i=0; $i <
-                            $count; $i++) style="background-image: url({{ asset('storage/' . $item->fillname) }});">
-                            @endfor
+                        <a href="{{route('house.details', ["$house->id"])}}" class="search-place img"
+                            style="background-image: url();">
                             <div class="desc">
                                 <h3><span>{{$house->room_category}}</span></h3>
                                 <span>{{$house->price}}</span>
