@@ -23,7 +23,7 @@ class HouseService
 
     public function store($request)
     {
-        $this->houseRepository->store($request->all());
+        return $this->houseRepository->store($request->all());
     }
 
     public function getAll()
@@ -31,4 +31,3 @@ class HouseService
         return $this->houseRepository->getAll();
     }
 }
-

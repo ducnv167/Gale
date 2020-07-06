@@ -27,8 +27,6 @@ Route::get('/{id}/details', 'HouseController@findById')->name('houses.details');
 
 Route::get('/list-house', 'HouseController@getAll')->name('list.house');
 
-
-
 Route::prefix('users')->group(function () {
     Route::get('register', 'UserController@create')->name('users.register');
     Route::post('store', 'UserController@store')->name('users.store');

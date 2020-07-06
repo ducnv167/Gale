@@ -39,7 +39,8 @@ class HouseController extends Controller
             'price' => 'required | numeric'
 
         ]);
-        $this->houseService->store($request);
+        $house = $this->houseService->store($request);
+        return response()->json($house);
     }
 
     public function getAll()

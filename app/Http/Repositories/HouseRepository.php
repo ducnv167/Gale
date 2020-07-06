@@ -21,7 +21,7 @@ class HouseRepository
 
     public function store($data)
     {
-        $this->house->create($data);
+        return $this->house->create($data);
     }
 
     public function getAll()
