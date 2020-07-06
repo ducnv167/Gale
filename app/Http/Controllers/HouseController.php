@@ -29,6 +29,7 @@ class HouseController extends Controller
         $bonusHouse = array_slice($array, 0, 4);
         return view('house.details', compact('house', 'bonusHouse'));
     }
+
     public function create(Request $request)
     {
         return view('user.house-rental-basic');
@@ -55,5 +56,18 @@ class HouseController extends Controller
         $houses = $this->houseService->getAll();
         return view('house.list', compact('houses'));
     }
+
+
+    public function search(Request $request)
+    {
+        $bedRoom = $request->input('bed_room');
+        $bathRoom = $request->input('bath_room');
+        $priceLimit = $request->input('price_limit');
+        $location = $request->input('location');
+        $houses = $this->houseService->search($bedRoom, $bathRoom, $priceLimit, $location);
+        return view('house.list', compact('houses'));
+    }
 }
+
+
 

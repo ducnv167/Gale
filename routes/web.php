@@ -26,13 +26,15 @@ Route::prefix('rental')->group(function () {
     Route::post('/basic', "HouseController@store")->name('house.store');
 });
 
+
 Route::prefix('house')->group(function () {
     Route::get('/{id}/details', 'HouseController@findById')->name('house.details');
     Route::get('/list', 'HouseController@getAll')->name('house.list');
+    Route::get('/search','HouseController@search')->name('list.search');
 });
 
-
 Route::prefix('users')->group(function () {
+
     Route::get('register','UserController@create')->name('users.register');
     Route::post('store','UserController@store')->name('users.store');
     Route::get('login','UserController@login')->name('users.login');
@@ -43,3 +45,4 @@ Route::prefix('users')->group(function () {
 //login google
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
+
