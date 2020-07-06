@@ -25,7 +25,7 @@
                         <p>Provide personal details and how we can reach you.</p>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('house.store') }}" method="post">
+                        <form action="{{ route('house.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label for="">FIRST, CHOOSE YOUR PROPERTY TYPE</label>
@@ -95,8 +95,13 @@
                             @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-
-                            <button class="btn-lg btn-success" style="float: right">Next</button>
+                            <div class="form-group">
+                                <label for="">Image</label>
+                                <div class="file-loading">
+                                    <input id="image" name="image[]" type="file" multiple>
+                                </div>
+                            </div>
+                            <button class="btn-lg btn-success" style="float: right">Confirm</button>
                         </form>
                     </div>
                 </div>
@@ -104,4 +109,10 @@
         </div>
     </div>
 </section>
+<script>
+    $("#image").fileinput({
+    theme: "fas",
+    uploadUrl: "/file-upload-batch/2"
+});
+</script>
 @endsection

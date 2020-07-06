@@ -1,5 +1,11 @@
 @extends('master')
 @section('content')
+<div class="container">
+    <h2>{{$house->name}}</h2>
+    <h2>Thông tin về căn nhà</h2>
+    <p>{!!$house->description!!}</p>
+    <h2>Một số hình ảnh căn nhà</h2>
+</div>
 
     <div class="container">
         <h2>{{$house->name}}</h2>
@@ -31,14 +37,7 @@
                 <img src="https://picsum.photos/id/114/1000/400" class="d-block w-100" alt="...">
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        @endforeach
     </div>
     <section class="room-details spad">
         <div class="container">
@@ -87,7 +86,15 @@
                                                 <h6>Televison</h6>
                                             </div>
 
+
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="room__details__more__facilities__item">
+                                            <div class="icon"><img src="{{asset('images/house/facilities/fac-6.png')}}"
+                                                    alt=""></div>
+                                            <h6>An ninh 24/24</h6>
                                         </div>
+
                                         <div class="col-lg-6">
                                             <div class="room__details__more__facilities__item">
                                                 <div class="icon"><img
@@ -101,6 +108,7 @@
                                                             alt=""></div>
                                                 <h6>Wifi-Internet</h6>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -110,6 +118,7 @@
                 </div>
             </div>
         </div>
+
     </section>
     <br>
     <br>
@@ -155,3 +164,4 @@
         </div>
     </section>
 @endsection
+
