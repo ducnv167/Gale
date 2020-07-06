@@ -1,5 +1,9 @@
 @extends('master')
 @section('content')
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8c4ed97c6e87fe2810a461b891eeda055e52899d
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
