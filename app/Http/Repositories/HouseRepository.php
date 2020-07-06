@@ -21,15 +21,14 @@ class HouseRepository
 
     public function store($data)
     {
-        $this->house->create($data);
+        return $this->house->create($data);
     }
 
     public function getAll()
     {
         return $this->house::paginate(9);
     }
-
-
+  
     public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
         return $house = House::where([
