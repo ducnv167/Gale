@@ -3,7 +3,7 @@
         <div class="row mb-5">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Ecoverde</h2>
+                    <h2 class="ftco-heading-2">Luxury Gale</h2>
                     <p>Far far away, behind the word mountains, far from the countries.</p>
                     <ul class="ftco-footer-social list-unstyled mt-5">
                         <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
@@ -35,12 +35,12 @@
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Company</h2>
+                    <h2 class="ftco-heading-2">Create by</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Press</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Trương Duy Hùng</a></li>
+                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Nguyễn Trọng Nam</a></li>
+                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Lê Văn Đức</a></li>
+                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Trần Văn Tâm</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,12 +49,12 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon fa fa-map"></span><span class="text">203 Fake St. Mountain View,
-                                    San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
-                                        210</span></a></li>
+                            <li><span class="icon fa fa-map"></span><span class="text">Viroto Team : Codegym - 15 - TT04 - MonCity - Hà Nội - Việt Nam
+                                  </span></li>
+                            <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">https://codegym.vn/
+                                        </span></a></li>
                             <li><a href="#"><span class="icon fa fa-envelope pr-4"></span><span
-                                            class="text">info@yourdomain.com</span></a></li>
+                                            class="text">info@codegym.vn</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -75,3 +75,5 @@
         </div>
     </div>
 </footer>
+
+

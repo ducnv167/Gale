@@ -13,11 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('welcome');
+
+Route::get('/', function () {
+    return view('master');
 })->name('home');
 
-Route::get('/list-house', 'HouseController@getAll')->name('list.house');
+
+Route::get('/list-house','HouseController@getAll')->name('list.house');
+
 
 Route::prefix('rental')->group(function () {
     Route::get('/basic', "HouseController@create")->name('house.create');
@@ -29,7 +32,6 @@ Route::prefix('house')->group(function () {
     Route::get('/list', 'HouseController@getAll')->name('house.list');
     Route::get('/search','HouseController@search')->name('list.search');
 });
-
 
 Route::prefix('users')->group(function () {
 
