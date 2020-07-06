@@ -13,6 +13,86 @@
     </section>
     <section class="ftco-section">
         <div class="container">
+            <div class="search-wrap-1 ftco-animate p-4">
+                <form action="{{route('list.search')}}" class="search-property-1" method="get">
+                    <div class="row">
+                        <div class="col-lg align-items-end">
+                            <div class="form-group">
+                                <label for="#">Keyword</label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="fa fa-search"></span></div>
+                                    <input type="text" class="form-control" placeholder="Enter Keyword">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg align-items-end">
+                            <div class="form-group">
+                                <label for="#">Bed room</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                        <select name="bed_room" id="" class="form-control">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg align-items-end">
+                            <div class="form-group">
+                                <label for="#">Bath room</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                        <select name="bath_room" id="" class="form-control">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg align-items-end">
+                            <div class="form-group">
+                                <label for="#">Location</label>
+                                <div class="form-field">
+                                    <div class="icon"><span class="fa fa-search"></span></div>
+                                    <input type="text" class="form-control" name="location" placeholder="Location">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg align-items-end">
+                            <div class="form-group">
+                                <label for="#">Price Limit</label>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                        <select name="price_limit" id="" class="form-control">
+                                            <option value="500000">500,000</option>
+                                            <option value="1000000">1,000,000</option>
+                                            <option value="1500000">1,500,000</option>
+                                            <option value="2000000">2,000,000</option>
+                                            <option value="5000000">5,000,000</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg align-self-end">
+                            <div class="form-group">
+                                <div class="form-field">
+                                    <input type="submit" value="Search" class="form-control btn btn-primary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
                     <span class="subheading">What we offer</span>
@@ -20,47 +100,18 @@
             </div>
             <div class="row ftco-animate">
                 <div class="col-md-12">
-{{--                    <div class="carousel-properties owl-carousel">--}}
-{{--                        <div class="item">--}}
-{{--                            <div class="property-wrap ftco-animate">--}}
-{{--                                <a href="#" class="img" style="background-image: url({{asset('images/bg_1.jpg')}});">--}}
-{{--                                    <div class="rent-sale">--}}
-{{--                                        <span class="sale">Sale</span>--}}
-{{--                                    </div>--}}
-{{--                                    <p class="price"><span class="orig-price">$300,000</span></p>--}}
-{{--                                </a>--}}
-{{--                                <div class="text">--}}
-{{--                                    <ul class="property_list">--}}
-{{--                                        <li><span class="flaticon-bed"></span>3</li>--}}
-{{--                                        <li><span class="flaticon-bathtub"></span>2</li>--}}
-{{--                                        <li><span class="flaticon-floor-plan"></span>1,878 sqft</li>--}}
-{{--                                    </ul>--}}
-{{--                                    <h3><a href="#">The Blue Sky Home</a></h3>--}}
-{{--                                    <span class="location">Oakland</span>--}}
-{{--                                    <a href="#" class="d-flex align-items-center justify-content-center btn-custom">--}}
-{{--                                        <span class="fa fa-link"></span>--}}
-{{--                                    </a>--}}
-{{--                                    <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">--}}
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div class="img" style="background-image: url({{asset('images/bg_1.jpg')}});"></div>--}}
-{{--                                            <h3 class="ml-2">John Dorf</h3>--}}
-{{--                                        </div>--}}
-{{--                                        <span class="text-right">2 weeks ago</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
 
                     <div class="row">
                         @foreach($houses as $house)
                         <div class="col-md-4" style="margin-top: 30px">
                             <a href="#" class="search-place img" style="background-image: url({{$house->image}});">
                     <div class="row">
+                        @if(count($houses)== 0){
+                            Non-data
+                    }@else
                         @foreach($houses as $house)
                         <div class="col-md-4" style="margin-top: 30px">
-                            <a href="{{route('houses.details', ["$house->id"])}}" class="search-place img" style="background-image: url({{$house->image}});">
+                            <a href="{{route('house.details', ["$house->id"])}}" class="search-place img" style="background-image: url({{$house->image}});">
                                 <div class="desc">
                                     <h3><span>{{$house->room_category}}</span></h3>
                                     <span>{{$house->price}}</span>
@@ -68,6 +119,9 @@
                             </a>
                         </div>
                         @endforeach
+
+                        @endif
+
                     </div>
                     <div style="margin-top: 30px">{{$houses->links()}}</div>
             </div>

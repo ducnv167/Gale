@@ -47,5 +47,17 @@ class HouseController extends Controller
         $houses = $this->houseService->getAll();
         return view('house.list', compact('houses'));
     }
+
+
+    public function search(Request $request){
+        $bedRoom=$request->input('bed_room');
+        $bathRoom=$request->input('bath_room');
+        $priceLimit=$request->input('price_limit');
+        $location=$request->input('location');
+        $houses= $this->houseService->search($bedRoom,$bathRoom,$priceLimit,$location);
+        return view('house.list',compact('houses'));
+    }
 }
+
+
 
