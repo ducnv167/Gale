@@ -29,4 +29,6 @@ Route::prefix('users')->group(function () {
     Route::get('login','UserController@login')->name('users.login');
     Route::post('login','UserController@loginHandling')->name('users.loginHandling');
     Route::get('logout','UserController@logout')->name('users.logout');
+    Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+    Route::get('/callback/{provider}', 'SocialController@callback');
 });
