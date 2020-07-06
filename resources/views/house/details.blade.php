@@ -56,12 +56,14 @@
                                                 <li> {{$house->room_category}}</li>
                                                 <li> Số lượng phòng ngủ {{$house->bedroom_amount}}</li>
                                                 <li> Số lượng phòng tắm {{$house->bathroom_amount}}</li>
+
                                             </ul>
                                         </div>
                                         <div class="col-lg-6">
                                             <ul>
                                                 <li> Price: {{$house->price}}</li>
-                                                <li><a style="width: 200px;" href="" class="btn btn-primary">Rent Now!</a></li>
+                                                <li>Address: {{$house->address}}</li>
+                                                <li><a style="width: 200px;" href="" class="btn btnbuy">Rent Now!</a></li>
                                             </ul>
                                         </div>
                                     </div>

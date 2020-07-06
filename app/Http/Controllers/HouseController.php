@@ -23,6 +23,9 @@ class HouseController extends Controller
         foreach ($houseList as $item) {
             array_push($array, $item);
         }
+        // result shuffle;
+        shuffle($array);
+        // get 4 bonus result
         $bonusHouse = array_slice($array, 0, 4);
         return view('house.details', compact('house', 'bonusHouse'));
     }
