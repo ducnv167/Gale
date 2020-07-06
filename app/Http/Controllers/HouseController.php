@@ -36,11 +36,10 @@ class HouseController extends Controller
             'bathroom_amount' => 'required',
             'description' => 'required',
             'address' => 'required',
-            'price' => 'required | numeric'
-
+            'price' => 'required | numeric',
+            'image' => 'required',
         ]);
         $house = $this->houseService->store($request);
-        return response()->json($house);
     }
 
     public function getAll()

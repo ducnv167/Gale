@@ -15,6 +15,10 @@ class House extends Model
         'description',
         'address',
         'price',
-        'image',
     ];
+
+    public function houseDetails()
+    {
+        return $this->hasMany('App\HouseDetails');
+    }
 }
