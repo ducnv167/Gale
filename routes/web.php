@@ -18,7 +18,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::prefix('rental')->group(function () {
-    Route::get('/basic', "HouseController@rentalStep1")->name('house.create');
+    Route::get('/basic', "HouseController@create")->name('house.create');
     Route::post('/basic', "HouseController@store")->name('house.store');
 });
 

@@ -19,6 +19,7 @@
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "bootstrap-fileinput": "^5.1.1",
         "toastr": "^2.1.4"
     }
 }

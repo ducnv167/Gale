@@ -23,7 +23,7 @@ class HouseController extends Controller
 
     public function create(Request $request)
     {
-        return view('user.house-rental-basic');
+        return view('rental.house-rental-basic');
     }
 
     public function store(Request $request)

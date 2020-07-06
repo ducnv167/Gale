@@ -14,6 +14,7 @@ class House extends Model
         'bathroom_amount',
         'description',
         'address',
-        'price'
+        'price',
+        'image',
     ];
 }
