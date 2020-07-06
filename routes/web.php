@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('welcome');
 })->name('home');
+
+
+
+Route::get('/list-house', 'HouseController@getAll')->name('list.house');
 
 Route::prefix('rental')->group(function () {
     Route::get('/basic', "HouseController@create")->name('house.create');
@@ -30,4 +34,8 @@ Route::prefix('users')->group(function () {
     Route::post('store', 'UserController@store')->name('users.store');
     Route::get('login', 'UserController@login')->name('users.login');
     Route::post('login', 'UserController@loginHandling')->name('users.loginHandling');
+    Route::get('logout', 'UserController@logout')->name('users.logout');
 });
+//login google
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');

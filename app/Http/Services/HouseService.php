@@ -23,7 +23,6 @@ class HouseService
         return $this->houseRepository->findById($id);
     }
 
-
     public function store($request)
     {
         if ($request->hasFile('image')) {

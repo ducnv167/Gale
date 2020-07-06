@@ -48,3 +48,4 @@ class HouseController extends Controller
         return view('house.list', compact('houses'));
     }
 }
+

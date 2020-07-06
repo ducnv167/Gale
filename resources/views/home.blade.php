@@ -46,15 +46,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <<<<<<< HEAD            </div>
-                            <div class="col-lg align-items-end">
-                                <div class="form-group">
-                                    <label for="#">Location</label>
-                                    <div class="form-field">
-                                        <div class="icon"><span class="fa fa-search"></span></div>
-                                        <input type="text" class="form-control" placeholder="Location">
+                                <<<<<<< HEAD </div> <div class="col-lg align-items-end">
+                                    <div class="form-group">
+                                        <label for="#">Location</label>
+                                        <div class="form-field">
+                                            <div class="icon"><span class="fa fa-search"></span></div>
+                                            <input type="text" class="form-control" placeholder="Location">
+                                        </div>
                                     </div>
-                                </div>
                             </div>
                             <div class="col-lg align-items-end">
                                 <div class="form-group">
@@ -68,6 +67,7 @@
                                                 <option value="">$50,000</option>
                                                 <option value="">$100,000</option>
                                                 <option value="">$200,000</option>
+
                                                 <option value="">$300,000</option>
                                                 <option value="">$400,000</option>
                                                 <option value="">$500,000</option>
