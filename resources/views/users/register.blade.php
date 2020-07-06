@@ -4,7 +4,7 @@
             <section class="signup">
                 <div class="container">
                     <div class="signup-content">
-                        <div class="signup-form">
+                        <div class="signup-form" style="margin-left: -5px; margin-right: -15px">
                             <h2 class="form-title">Register</h2>
                             <form method="post" action="{{route('users.store')}}" enctype="multipart/form-data">
                                 @csrf
