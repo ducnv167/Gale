@@ -32,7 +32,7 @@ class HouseController extends Controller
 
     public function create(Request $request)
     {
-        return view('user.house-rental-basic');
+        return view('rental.house-rental-basic');
     }
 
     public function store(Request $request)
@@ -45,10 +45,10 @@ class HouseController extends Controller
             'bathroom_amount' => 'required',
             'description' => 'required',
             'address' => 'required',
-            'price' => 'required | numeric'
-
+            'price' => 'required | numeric',
+            'image' => 'required',
         ]);
-        $this->houseService->store($request);
+        $house = $this->houseService->store($request);
     }
 
     public function getAll()

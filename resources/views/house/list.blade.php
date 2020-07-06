@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-
     <section class="ftco-section">
         <div class="container">
             <div class="search-wrap-1 ftco-animate p-4">
@@ -15,69 +14,69 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg align-items-end">
-                            <div class="form-group">
-                                <label for="#">Bed room</label>
-                                <div class="form-field">
-                                    <div class="select-wrap">
-                                        <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                        <select name="bed_room" id="" class="form-control">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </div>
+                    </div>
+                    <div class="col-lg align-items-end">
+                        <div class="form-group">
+                            <label for="#">Bed room</label>
+                            <div class="form-field">
+                                <div class="select-wrap">
+                                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                    <select name="bed_room" id="" class="form-control">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg align-items-end">
-                            <div class="form-group">
-                                <label for="#">Bath room</label>
-                                <div class="form-field">
-                                    <div class="select-wrap">
-                                        <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                        <select name="bath_room" id="" class="form-control">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
-                                    </div>
+                    </div>
+                    <div class="col-lg align-items-end">
+                        <div class="form-group">
+                            <label for="#">Bath room</label>
+                            <div class="form-field">
+                                <div class="select-wrap">
+                                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                    <select name="bath_room" id="" class="form-control">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg align-items-end">
-                            <div class="form-group">
-                                <label for="#">Location</label>
-                                <div class="form-field">
-                                    <div class="icon"><span class="fa fa-search"></span></div>
-                                    <input type="text" class="form-control" name="location" placeholder="Location">
+                    </div>
+                    <div class="col-lg align-items-end">
+                        <div class="form-group">
+                            <label for="#">Location</label>
+                            <div class="form-field">
+                                <div class="icon"><span class="fa fa-search"></span></div>
+                                <input type="text" class="form-control" name="location" placeholder="Location">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg align-items-end">
+                        <div class="form-group">
+                            <label for="#">Price Limit</label>
+                            <div class="form-field">
+                                <div class="select-wrap">
+                                    <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                    <select name="price_limit" id="" class="form-control">
+                                        <option value="500000">500,000</option>
+                                        <option value="1000000">1,000,000</option>
+                                        <option value="1500000">1,500,000</option>
+                                        <option value="2000000">2,000,000</option>
+                                        <option value="5000000">5,000,000</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg align-items-end">
-                            <div class="form-group">
-                                <label for="#">Price Limit</label>
-                                <div class="form-field">
-                                    <div class="select-wrap">
-                                        <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                        <select name="price_limit" id="" class="form-control">
-                                            <option value="500000">500,000</option>
-                                            <option value="1000000">1,000,000</option>
-                                            <option value="1500000">1,500,000</option>
-                                            <option value="2000000">2,000,000</option>
-                                            <option value="5000000">5,000,000</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg align-self-end">
-                            <div class="form-group">
-                                <div class="form-field">
-                                    <input type="submit" value="Search" class="form-control btn btn-primary">
-                                </div>
+                    </div>
+                    <div class="col-lg align-self-end">
+                        <div class="form-group">
+                            <div class="form-field">
+                                <input type="submit" value="Search" class="form-control btn btn-primary">
                             </div>
                         </div>
                     </div>
@@ -98,9 +97,8 @@
                         }@else
                             @foreach($houses as $house)
                                 <div class="col-md-4" style="margin-top: 30px">
-                                    <a href="{{route('house.details', ["$house->id"])}}"
-                                       class="search-place img"
-                                       style="background-image: url({{$house->image}});">
+                                    <a href="{{route('house.details', ["$house->id"])}}" class="search-place img"
+                                       style="background-image: url({{ asset('images/house/room-1.jpg') }});">
                                         <div class="desc">
                                             <h3><span>{{$house->room_category}}</span></h3>
                                             <span>{{$house->price}}</span>
@@ -116,7 +114,4 @@
         </div>
     </section>
 @endsection
-
-
-
 
