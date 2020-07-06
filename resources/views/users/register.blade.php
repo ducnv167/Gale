@@ -1,9 +1,9 @@
-<div class="container6">
+<div class="container">
     <div class="modal fade" id="myModalRegister" role="dialog">
         <div class="modal-dialog modal-dialog modal-lg">
             <div class="modal-content">
                 <section class="signup">
-                    <div class="container6">
+                    <div class="container">
                         <div class="signup-content">
                             <div class="signup-form">
                                 <h2 class="form-title">Register</h2>
