@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
+<<<<<<< HEAD
         <a class="navbar-brand" href="index.html">Luxury Gale</a>
+=======
+        <a class="navbar-brand" href="index.html" style="margin-top: -45px">Ecoverde</a>
+>>>>>>> b47fff323aa0c5e44b122eb042512596272e11fa
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
@@ -15,6 +19,10 @@
                 <li class="nav-item"><p data-toggle="modal" data-target="#myModalRegister" class="nav-link">Register</p>
                 </li>
                 <li class="nav-item"><p class="nav-link" data-toggle="modal" data-target="#myModal">Login</p></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item btn">
+                   @include('users.sidebar')
+                </li>
             </ul>
         </div>
     </div>

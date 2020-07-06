@@ -28,4 +28,8 @@ class HouseRepository
     {
         return $this->house::paginate(9);
     }
+
+    public function getAll(){
+        return $this->houseModel::paginate(9);
+    }
 }
