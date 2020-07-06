@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Ecoverde</a>
+        <a class="navbar-brand" href="index.html">Luxury Gale</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
@@ -13,8 +13,8 @@
                 <li class="nav-item"><a href="agent.html" class="nav-link">Agent</a></li>
                 <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="properties.html" class="nav-link">Properties</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('users.register')}}" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="{{route('users.login')}}" class="nav-link">Login</a></li>
             </ul>
         </div>
     </div>

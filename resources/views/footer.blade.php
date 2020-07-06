@@ -3,7 +3,7 @@
         <div class="row mb-5">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Ecoverde</h2>
+                    <h2 class="ftco-heading-2">Luxury Gale</h2>
                     <p>Far far away, behind the word mountains, far from the countries.</p>
                     <ul class="ftco-footer-social list-unstyled mt-5">
                         <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
