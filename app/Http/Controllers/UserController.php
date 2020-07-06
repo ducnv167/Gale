@@ -36,10 +36,10 @@ class UserController extends Controller
     function loginHandling(Request $request)
     {
         if ($this->userService->loginHandling($request)) {
-            // Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
+            Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
             return redirect()->route('home');
         } else {
-            // Toastr::error('Login fail!!!', 'Fail', ["positionClass" => "toast-top-right"]);
+            Toastr::error('Login fail!!!', 'Fail', ["positionClass" => "toast-top-right"]);
             return back();
         }
     }
