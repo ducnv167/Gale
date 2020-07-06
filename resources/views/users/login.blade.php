@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-dialog modal-lg">
@@ -11,7 +12,6 @@
                                 <p data-toggle="modal" data-target="#myModalRegister" class="signup-image-link">Create
                                     an account</p>
                             </div>
-
                             <div class="signin-form">
                                 <h2 class="form-title">Sign up</h2>
                                 <form method="post" class="register-form" id="login-form"
@@ -19,7 +19,7 @@
                                     @csrf
                                     <div class="form-group1">
                                         <label for="your_name"><i
-                                                    class="zmdi zmdi-account material-icons-name"></i></label>
+                                                class="zmdi zmdi-account material-icons-name"></i></label>
                                         <input type="email" name="email" id="your_name" placeholder="Your Name"
                                                required/>
                                     </div>
@@ -41,19 +41,12 @@
                                 <div class="social-login">
                                     <span class="social-label">Or login with</span>
                                     <ul class="socials">
-                                        <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                        <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                        <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                                        <li><a href="{{route('login-google','google')}}"><i
+                                                    class="display-flex-center zmdi zmdi-google"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <div class="social-login">
-                        <span class="social-label">Or login with</span>
-                        <ul class="socials">
-                            <li><a href="{{route('login-google','google')}}"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                        </ul>
                     </div>
                 </section>
                 <div class="modal-footer">
@@ -63,3 +56,4 @@
         </div>
     </div>
 </div>
+
