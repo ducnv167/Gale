@@ -19,6 +19,6 @@ class House extends Model
 
     public function houseDetails()
     {
-        return $this->hasMany('App\HouseDetails');
+        return $this->hasMany('App\HouseDetail');
     }
 }

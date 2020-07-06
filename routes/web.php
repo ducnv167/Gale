@@ -23,8 +23,6 @@ Route::prefix('rental')->group(function () {
 });
 
 Route::get('/{id}/details', 'HouseController@findById')->name('houses.details');
-
-
 Route::get('/list-house', 'HouseController@getAll')->name('list.house');
 
 Route::prefix('users')->group(function () {
