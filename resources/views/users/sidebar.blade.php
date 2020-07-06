@@ -8,9 +8,9 @@
         </div>
     </div>
 @else
-    <a style="margin-top: -5px" class="nav-link" href="{{route('users.login')}}">
+    <p style="margin-top: -5px" class="nav-link" data-toggle="modal" data-target="#myModal">
         Login
-    </a>
+    </p>
 @endif
 <div class="sidebar"
      style="display: none; position: absolute; background: #072685; margin-top: -20px; padding: 30px; border-radius: 5px">

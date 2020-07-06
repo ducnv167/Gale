@@ -29,10 +29,7 @@
     <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-
-<<<<<<< HEAD
     <link rel="stylesheet" href="{{asset('users/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
-
     <!-- Main css -->
     <link rel="stylesheet" href="{{asset('users/css/style.css')}}">
 {{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"--}}
