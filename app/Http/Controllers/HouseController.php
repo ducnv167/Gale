@@ -18,7 +18,16 @@ class HouseController extends Controller
     public function findById($id)
     {
         $house = $this->houseService->findById($id);
-        return view('house.details', compact('house'));
+        $houseList = $this->houseService->getAll();
+        $array = [];
+        foreach ($houseList as $item) {
+            array_push($array, $item);
+        }
+        // result shuffle;
+        shuffle($array);
+        // get 4 bonus result
+        $bonusHouse = array_slice($array, 0, 4);
+        return view('house.details', compact('house', 'bonusHouse'));
     }
 
     public function create(Request $request)
@@ -49,13 +58,14 @@ class HouseController extends Controller
     }
 
 
-    public function search(Request $request){
-        $bedRoom=$request->input('bed_room');
-        $bathRoom=$request->input('bath_room');
-        $priceLimit=$request->input('price_limit');
-        $location=$request->input('location');
-        $houses= $this->houseService->search($bedRoom,$bathRoom,$priceLimit,$location);
-        return view('house.list',compact('houses'));
+    public function search(Request $request)
+    {
+        $bedRoom = $request->input('bed_room');
+        $bathRoom = $request->input('bath_room');
+        $priceLimit = $request->input('price_limit');
+        $location = $request->input('location');
+        $houses = $this->houseService->search($bedRoom, $bathRoom, $priceLimit, $location);
+        return view('house.list', compact('houses'));
     }
 }
 
