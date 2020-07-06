@@ -6,8 +6,7 @@ use App\Http\Requests\UserRequest;
 use App\Http\Services\UserService;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -39,5 +38,11 @@ class UserController extends Controller
             Toastr::error('Login fail!!!', 'Fail', ["positionClass" => "toast-top-right"]);
             return back();
         }
+    }
+
+    function logout() {
+        Auth::logout();
+        Toastr::success('See you again:))', 'Logout successful!!!', ["positionClass" => "toast-top-right"]);
+        return redirect()->route('home');
     }
 }
