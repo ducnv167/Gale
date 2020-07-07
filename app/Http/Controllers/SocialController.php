@@ -25,7 +25,6 @@ class SocialController extends Controller
         auth()->login($user);
 
         return back();
-
     }
 
     function createUser($getInfo, $provider)

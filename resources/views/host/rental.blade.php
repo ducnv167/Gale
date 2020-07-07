@@ -1,13 +1,12 @@
 @extends('master')
 @section('content')
-
 <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('images/bg_1.jpg') }});"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate pb-0 text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Host <i
                                 class="fa fa-chevron-right"></i></a></span> <span>Rental <i
                             class="fa fa-chevron-right"></i></span></p>
                 <h1 class="mb-3 bread">Rental</h1>
@@ -89,18 +88,21 @@
                                 <label for="">Description</label>
                                 <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
                                 <script>
-                                    CKEDITOR.replace( 'description' );
+                                    CKEDITOR.replace('description');
                                 </script>
                             </div>
                             @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <div class="form-group">
+                            <div class="form-group @error('image') is-invalid @enderror">
                                 <label for="">Image</label>
                                 <div class="file-loading">
                                     <input id="image" name="image[]" type="file" multiple>
                                 </div>
                             </div>
+                            @error('image')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                             <button class="btn-lg btn-success" style="float: right">Confirm</button>
                         </form>
                     </div>

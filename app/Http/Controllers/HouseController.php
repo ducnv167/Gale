@@ -32,7 +32,7 @@ class HouseController extends Controller
 
     public function create(Request $request)
     {
-        return view('rental.house-rental-basic');
+        return view('host.rental');
     }
 
     public function store(Request $request)
@@ -68,6 +68,3 @@ class HouseController extends Controller
         return view('house.list', compact('houses'));
     }
 }
-
-
-
