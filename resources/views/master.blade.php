@@ -26,6 +26,8 @@
     </script>
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <link rel="stylesheet" href="{{asset('users/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
+    {{--    Font awesome--}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <!-- Main css -->
     <link rel="stylesheet" href="{{asset('users/css/style.css')}}">
     {{--    <link rel="stylesheet" href="{{asset('css/main.css')}}">--}}

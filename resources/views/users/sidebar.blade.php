@@ -8,12 +8,14 @@
             </div>
         </div>
         <div class="sidebar"
-             style="display: none; position: absolute; background: #072685; padding: 30px; border-radius: 5px">
-            <a class="nav-link">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+             style="display: none; position: absolute; background: #f7f7f7; padding: 30px; border-radius: 5px">
+            <a style="color: #34ce57" class="nav-link"> <img style="width:30px; border-radius: 100%; margin: auto; display: block"
+                                                             src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->image)}}"
+                                                             ><div>{{\Illuminate\Support\Facades\Auth::user()->name}}</div></a>
             <hr>
-            <a class="nav-link">Detail</a>
+            <a style="color: #34ce57" class="nav-link"><i style="margin-right: 15px" class="fas fa-user-alt"></i>Detail</a>
             <hr>
-            <a class="nav-link" href="{{route('users.logout')}}">Logout</a>
+            <a style="color: #34ce57" class="nav-link" href="{{route('users.logout')}}"><i style="margin-right: 15px" class="fas fa-sign-out-alt"></i>Logout</a>
         </div>
     </li>
 @else
@@ -29,7 +31,7 @@
 <script>
     $(document).ready(function () {
         $(".sidebar1").hover(function () {
-            $(".sidebar").fadeIn(1000);
+            $(".sidebar").fadeIn();
             $('*').on('click', function () {
                 $(".sidebar").fadeOut();
             });
