@@ -25,7 +25,7 @@ class UserController extends Controller
     function store(UserRequest $userRequest)
     {
         $this->userService->store($userRequest);
-        return redirect()->route('home');
+        return back();
     }
 
     function login()
@@ -37,7 +37,7 @@ class UserController extends Controller
     {
         if ($this->userService->loginHandling($request)) {
             Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
-            return redirect()->route('home');
+            return back();
         } else {
             Toastr::error('Login fail!!!', 'Fail', ["positionClass" => "toast-top-right"]);
             return back();
@@ -47,7 +47,7 @@ class UserController extends Controller
     function logout() {
         Auth::logout();
         Toastr::success('See you again:))', 'Logout successful!!!', ["positionClass" => "toast-top-right"]);
-        return redirect()->route('home');
+        return back();
     }
 }
 
