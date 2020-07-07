@@ -26,16 +26,19 @@
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <link rel="stylesheet" href="{{asset('users/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
     <!-- Main css -->
+
     <link rel="stylesheet" href="{{asset('users/css/style.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/main.css')}}">--}}
 {{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"--}}
 {{--          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">--}}
 {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">--}}
-{{--    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">--}}
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 {{--    <style>--}}
 {{--        p {--}}
 {{--            margin-top: -15px;--}}
 {{--        }--}}
 {{--    </style>--}}
+
 
 </head>
 
@@ -44,13 +47,16 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://picsum.photos/id/1/900/300" class="d-block w-100" alt="...">
+                <img src="https://wallpapercave.com/wp/wp1872596.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://picsum.photos/id/15/900/300" class="d-block w-100" alt="...">
+                <img src="https://wallpapercave.com/wp/wp2406672.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="https://picsum.photos/id/10/900/300" class="d-block w-100" alt="...">
+                <img src="https://wallpapercave.com/wp/wp3784209.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://wallpapercave.com/wp/wp3784241.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
     </div>
@@ -78,28 +84,27 @@
     </script>
     <script src="{{ asset('js/google-map.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+<<<<<<< HEAD
+=======
 
 
 
-{{--    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>--}}
-{{--    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>--}}
-{{--    {!! Toastr::message() !!}--}}
-{{--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"--}}
-{{--            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"--}}
-{{--            crossorigin="anonymous"></script>--}}
-{{--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"--}}
-{{--            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"--}}
-{{--            crossorigin="anonymous"></script>--}}
-{{--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"--}}
-{{--            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"--}}
-{{--            crossorigin="anonymous"></script>--}}
+    {{--    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>--}}
+    {{--    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>--}}
+    {{--    {!! Toastr::message() !!}--}}
+    {{--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"--}}
+    {{--            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"--}}
+    {{--            crossorigin="anonymous"></script>--}}
+    {{--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"--}}
+    {{--            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"--}}
+    {{--            crossorigin="anonymous"></script>--}}
+    {{--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"--}}
+    {{--            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"--}}
+    {{--            crossorigin="anonymous"></script>--}}
+>>>>>>> b0358a5a22161897bd126c9fb3fd4e5fa9c50e72
     <script src="{{asset('users/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('users/js/main.js')}}"></script>
-
-
     {!! Toastr::message() !!}
-
-
 </body>
 
 </html>
