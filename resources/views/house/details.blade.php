@@ -231,7 +231,6 @@
             </div>
         </div>
     </section>
-
 {{--    <div class="container">--}}
 {{--    <h2>{{$house->name}}</h2>--}}
 {{--    <h2>Thông tin về căn nhà</h2>--}}
