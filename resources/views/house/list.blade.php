@@ -6,8 +6,8 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate pb-0 text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                class="fa fa-chevron-right"></i></a></span> <span>Properties <i
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i
+                                class="fa fa-chevron-right"></i></a></span><span>Properties <i
                             class="fa fa-chevron-right"></i></span></p>
                 <h1 class="mb-3 bread">Properties</h1>
             </div>
@@ -25,7 +25,7 @@
                                 <div class="form-group">
                                     <label for="#">Keyword</label>
                                     <div class="form-field">
-                                        <div class="icon"><span class="fa fa-search"></span></div>
+                                        {{--                                            <div class="icon"><span class="fa fa-search"></span></div>--}}
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
                                     </div>
                                 </div>
@@ -37,10 +37,10 @@
                                         <div class="select-wrap">
                                             <div class="icon"><span class="fa fa-chevron-down"></span></div>
                                             <select name="bed_room" id="" class="form-control">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
+                                                <option style="color: #495057" value="1">1</option>
+                                                <option style="color: #495057" value="2">2</option>
+                                                <option style="color: #495057" value="3">3</option>
+                                                <option style="color: #495057" value="4">4</option>
                                             </select>
                                         </div>
                                     </div>
@@ -51,12 +51,12 @@
                                     <label for="#">Bath room</label>
                                     <div class="form-field">
                                         <div class="select-wrap">
-                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                            {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                             <select name="bath_room" id="" class="form-control">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
+                                                <option style="color: #495057" value="1">1</option>
+                                                <option style="color: #495057" value="2">2</option>
+                                                <option style="color: #495057" value="3">3</option>
+                                                <option style="color: #495057" value="4">4</option>
                                             </select>
                                         </div>
                                     </div>
@@ -76,13 +76,13 @@
                                     <label for="#">Price Limit</label>
                                     <div class="form-field">
                                         <div class="select-wrap">
-                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                            {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                             <select name="price_limit" id="" class="form-control">
-                                                <option value="500000">500,000</option>
-                                                <option value="1000000">1,000,000</option>
-                                                <option value="1500000">1,500,000</option>
-                                                <option value="2000000">2,000,000</option>
-                                                <option value="5000000">5,000,000</option>
+                                                <option style="color: #495057" value="500000">500,000</option>
+                                                <option style="color: #495057" value="1000000">1,000,000</option>
+                                                <option style="color: #495057" value="1500000">1,500,000</option>
+                                                <option style="color: #495057" value="2000000">2,000,000</option>
+                                                <option style="color: #495057" value="5000000">5,000,000</option>
                                             </select>
                                         </div>
                                     </div>
@@ -107,6 +107,9 @@
         <div class="row justify-content-center">
             <div class="col-md-12 heading-section text-center ftco-animate mb-5">
                 <span class="subheading">What we offer</span>
+                <br>
+                <br>
+
                 <h2 class="mb-2">Properties</h2>
             </div>
         </div>
@@ -125,7 +128,6 @@
                         <ul class="property_list">
                             <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}</li>
                             <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}</li>
-                            {{-- <li><span class="flaticon-floor-plan"></span>1,878 sqft</li> --}}
                         </ul>
                         <h3><a href="#">{{$house->name}}</a></h3>
                         <span class="location">{{$house->address}}</span>
@@ -134,10 +136,10 @@
                         </a>
                         <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
                             <div class="d-flex align-items-center">
-                                <div class="img" style="background-image: url(images/person_1.jpg);"></div>
-                                <h3 class="ml-2">John Dorf</h3>
+                                <div class="img" style="background-image: url({{asset('images/bg_2.jpg')}});"></div>
+                                {{--                                <h3 class="ml-2">John Dorf</h3>--}}
                             </div>
-                            <span class="text-right">2 weeks ago</span>
+                            <span class="text-right">{{$house->created_at}}</span>
                         </div>
                     </div>
                 </div>

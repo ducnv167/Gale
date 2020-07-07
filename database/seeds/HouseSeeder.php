@@ -199,58 +199,58 @@ class HouseSeeder extends Seeder
         $house->save();
 
         $house = new \App\House();
-        $house->name = 'FREE AIRPORT PICKUP';
+        $house->name = 'Sunshine';
         $house->house_category = 'Chung cu cao cap';
         $house->room_category = 'Phong don';
         $house->bedroom_amount = '2';
-        $house->bathroom_amount = '2';
-        $house->description = 'Vinhomes Central Park là khu đô thị mới của thành phố, nơi bạn có thể thấy sự kết hợp hài hoà giữa phong cách sống truyền thống và hiện đại. Đây là nơi hoàn hảo để khám phá cuộc sống của những người dân địa phương và dành cho những người thích cây xanh ngoài trời.';
-        $house->price = '200000';
-        $house->address='Vinh Phuc';
+        $house->bathroom_amount = '3';
+        $house->description = 'Ban công rộng rãi, sạch sẽ tại phòng khách là nơi lý tưởng để bạn có thể nhâm nhi vài tách trà, đọc sách hay ngắm nhìn toàn cảnh thành phố từ trên cao sau một ngày khám phá thành phố. Cùng với cửa sổ ở phòng ngủ giúp căn phòng tràn ngập ánh nắng và gió trời.';
+        $house->price = '300000';
+        $house->address='Ha Nam';
         $house->save();
 
         $house = new \App\House();
-        $house->name = 'FREE AIRPORT PICKUP';
+        $house->name = 'TAN SON NHAT AIRPORT';
         $house->house_category = 'Chung cu cao cap';
         $house->room_category = 'Phong don';
-        $house->bedroom_amount = '2';
+        $house->bedroom_amount = '3';
         $house->bathroom_amount = '2';
-        $house->description = 'Vinhomes Central Park là khu đô thị mới của thành phố, nơi bạn có thể thấy sự kết hợp hài hoà giữa phong cách sống truyền thống và hiện đại. Đây là nơi hoàn hảo để khám phá cuộc sống của những người dân địa phương và dành cho những người thích cây xanh ngoài trời.';
+        $house->description = 'Nằm trong bán kính 1,5 km từ Trung tâm Hội nghị Triển lãm Quốc tế HIECC Hồ Chí Minh, Căn hộ Sky Center ở thành phố Thành phố Hồ Chí Minh này có khu vườn cũng như Wi-Fi miễn phí. Có vị trí thuận tiện tại quận Tân Bình, chỗ nghỉ cách chợ Tân Định 5 km. Trong khu vực có các điểm tham quan như Chùa Giác Lâm và trung tâm mua sắm Sài Gòn Square 3 - đường Hai Bà Trưng, đều cách đó 6 km.';
         $house->price = '200000';
-        $house->address='Vinh Phuc';
+        $house->address='Ninh Binh';
         $house->save();
 
         $house = new \App\House();
-        $house->name = 'FREE AIRPORT PICKUP';
+        $house->name = 'Enchanting home';
         $house->house_category = 'Chung cu cao cap';
         $house->room_category = 'Phong don';
         $house->bedroom_amount = '2';
         $house->bathroom_amount = '2';
         $house->description = 'Vinhomes Central Park là khu đô thị mới của thành phố, nơi bạn có thể thấy sự kết hợp hài hoà giữa phong cách sống truyền thống và hiện đại. Đây là nơi hoàn hảo để khám phá cuộc sống của những người dân địa phương và dành cho những người thích cây xanh ngoài trời.';
         $house->price = '200000';
-        $house->address='Vinh Phuc';
+        $house->address='Thai Nguyen';
         $house->save();
 
         $house = new \App\House();
-        $house->name = 'FREE AIRPORT PICKUP';
+        $house->name = 'THE MANOR - LUXURY 1BR';
         $house->house_category = 'Chung cu cao cap';
         $house->room_category = 'Phong don';
         $house->bedroom_amount = '2';
         $house->bathroom_amount = '2';
-        $house->description = 'Vinhomes Central Park là khu đô thị mới của thành phố, nơi bạn có thể thấy sự kết hợp hài hoà giữa phong cách sống truyền thống và hiện đại. Đây là nơi hoàn hảo để khám phá cuộc sống của những người dân địa phương và dành cho những người thích cây xanh ngoài trời.';
+        $house->description = 'Đến The Manor sẽ giúp bạn có một kỳ nghỉ sang trọng ở thành phố Hồ Chí Minh. Bạn sẽ có chỗ ở của riêng bạn với vị trí tuyệt vời cộng với hồ bơi và phòng tập thể dục miễn phí trên tầng thượng để thư giãn với tầm nhìn tuyệt vời.';
         $house->price = '200000';
-        $house->address='Vinh Phuc';
+        $house->address='Nga';
         $house->save();
 
         $house = new \App\House();
-        $house->name = 'FREE AIRPORT PICKUP';
+        $house->name = 'Luxury 1BR ';
         $house->house_category = 'Chung cu cao cap';
         $house->room_category = 'Phong don';
         $house->bedroom_amount = '2';
-        $house->bathroom_amount = '2';
-        $house->description = 'Vinhomes Central Park là khu đô thị mới của thành phố, nơi bạn có thể thấy sự kết hợp hài hoà giữa phong cách sống truyền thống và hiện đại. Đây là nơi hoàn hảo để khám phá cuộc sống của những người dân địa phương và dành cho những người thích cây xanh ngoài trời.';
-        $house->price = '200000';
-        $house->address='Vinh Phuc';
+        $house->bathroom_amount = '4';
+        $house->description = 'Botanica là khu vực cư trú mới ở HCM, nơi bạn có thể thấy sự pha trộn giữa phong cách sống truyền thống và hiện đại, được biết đến là khu vực thân thiện với gia đình của thành phố. Đây là nơi hoàn hảo. Bảo mật cao mọi lúc. Thẻ thường trú để truy cập vào tòa nhà và thang máy. Khóa thông minh với mật khẩu để truy cập Căn hộ.';
+        $house->price = '2100000';
+        $house->address='Long Xuyen';
         $house->save();
     }
 }

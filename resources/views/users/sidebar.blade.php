@@ -9,7 +9,7 @@
         </div>
         <div class="sidebar"
              style="display: none; position: absolute; background: #f7f7f7; padding: 30px; border-radius: 5px">
-            <a style="color: #34ce57" class="nav-link"> <img style="width:30px; border-radius: 100%; margin: auto; display: block"
+            <a style="color: #34ce57; text-align: center" class="nav-link"> <img style="width:30px; border-radius: 100%; margin: auto; display: block"
                                                              src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->image)}}"
                                                              ><div>{{\Illuminate\Support\Facades\Auth::user()->name}}</div></a>
             <hr>
