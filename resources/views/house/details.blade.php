@@ -120,7 +120,7 @@
                                         <div class="rating-wrap">
                                             <h3 class="head">Give a Review</h3>
                                             <div class="wrap">
-                                                <p class="star">
+                                                <p class="star" style="margin: 10px">
 									   				<span>
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
@@ -131,7 +131,7 @@
 								   					</span>
                                                     <span>20 Reviews</span>
                                                 </p>
-                                                <p class="star">
+                                                <p class="star" style="margin: 10px">
 									   				<span>
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
@@ -142,7 +142,7 @@
 								   					</span>
                                                     <span>10 Reviews</span>
                                                 </p>
-                                                <p class="star">
+                                                <p class="star" style="margin: 10px">
 									   				<span>
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
@@ -153,7 +153,7 @@
 								   					</span>
                                                     <span>5 Reviews</span>
                                                 </p>
-                                                <p class="star">
+                                                <p class="star" style="margin: 10px">
 									   				<span>
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
@@ -164,7 +164,7 @@
 								   					</span>
                                                     <span>0 Reviews</span>
                                                 </p>
-                                                <p class="star">
+                                                <p class="star" style="margin: 10px">
 									   				<span>
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
