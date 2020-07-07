@@ -83,7 +83,6 @@
                                                 Rooms: {{$house->bathroom_amount}}</li>
                                             <li class="check"><span
                                                         class="fa fa-check-circle"></span>{{$house->room_category}}</li>
-                                            <li class="check"><span class="fa fa-check-circle"></span>Garage: 2</li>
                                         </ul>
                                     </div>
                                     <div class="col-md-4">
@@ -94,6 +93,7 @@
                                                         class="fa fa-check-circle"></span>Price: {{$house->price}}</li>
                                             <li class="check"><span class="fa fa-check-circle"></span>Security: 24/24
                                             </li>
+                                            <li class="check"><span class="fa fa-check-circle"></span>Garage: 2</li>
                                         </ul>
                                     </div>
                                     <div class="col-md-4">
@@ -103,10 +103,8 @@
                             </div>
 
                             <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
-                                 aria-labelledby="pills-manufacturer-tab">
-                                {!!$house->description!!}
+                                 aria-labelledby="pills-manufacturer-tab">{!!$house->description!!}
                             </div>
-
                             <div class="tab-pane fade" id="pills-review" role="tabpanel"
                                  aria-labelledby="pills-review-tab">
                                 <div class="row">
