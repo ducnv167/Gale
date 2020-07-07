@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-
 <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('images/bg_1.jpg') }});"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -89,7 +88,7 @@
                                 <label for="">Description</label>
                                 <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
                                 <script>
-                                    CKEDITOR.replace( 'description' );
+                                CKEDITOR.replace('description');
                                 </script>
                             </div>
                             @error('description')
@@ -110,7 +109,8 @@
     </div>
 </section>
 <script>
-    $("#image").fileinput({
+
+$("#image").fileinput({
     theme: "fas",
     uploadUrl: "/file-upload-batch/2"
 });
