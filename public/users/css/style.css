@@ -414,7 +414,17 @@ input[type=checkbox]:not(old):checked + label > span:before {
   display: inline-block;
   width: auto; }
 
-label {
+/*label {*/
+/*  position: absolute;*/
+/*  left: 0;*/
+/*  top: 50%;*/
+/*  transform: translateY(-50%);*/
+/*  -moz-transform: translateY(-50%);*/
+/*  -webkit-transform: translateY(-50%);*/
+/*  -o-transform: translateY(-50%);*/
+/*  -ms-transform: translateY(-50%);*/
+/*  color: #222; }*/
+.label-custom {
   position: absolute;
   left: 0;
   top: 50%;
@@ -422,8 +432,7 @@ label {
   -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  color: #222; }
+  -ms-transform: translateY(-50%); }
 
 .label-has-error {
   top: 22%; }

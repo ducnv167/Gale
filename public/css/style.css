@@ -6494,7 +6494,9 @@ button.bg-dark:focus {
   width: 75% !important; }
 
 .w-100 {
-  width: 100% !important; }
+  width: 100% !important;
+  height: 650px;
+}
 
 .w-auto {
   width: auto !important; }
@@ -10244,7 +10246,7 @@ textarea.form-control {
   max-width: 200px;
 }
 .btnbuy {
-  background-color: limegreen;
+  background-color: greenyellow;
   border: none;
   color: black;
   padding: 16px 32px;

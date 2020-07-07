@@ -27,12 +27,17 @@
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <link rel="stylesheet" href="{{asset('users/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
     <!-- Main css -->
-    <link class="login-register" rel="stylesheet" href="">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('users/css/style.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/main.css')}}">--}}
+{{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"--}}
+{{--          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">--}}
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">--}}
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
-    <script src="{{asset('users/js/jquery.js')}}"></script>
+{{--    <style>--}}
+{{--        p {--}}
+{{--            margin-top: -15px;--}}
+{{--        }--}}
+{{--    </style>--}}
 
 </head>
 
@@ -79,7 +84,6 @@
 <script src="{{ asset('js/google-map.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 
-
 <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 {!! Toastr::message() !!}
@@ -94,6 +98,11 @@
         crossorigin="anonymous"></script>
 <script src="{{asset('users/vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('users/js/main.js')}}"></script>
+
+    <script src="{{asset('users/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('users/js/main.js')}}"></script>
+    {!! Toastr::message() !!}
+
 </body>
 
 </html>
