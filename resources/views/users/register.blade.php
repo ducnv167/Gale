@@ -5,7 +5,7 @@
                 <section class="signup">
                     <div class="container">
                         <div class="signup-content">
-                            <div class="signup-form">
+                            <div class="signup-form" style=" margin-left: -10px; margin-right: -20px">
                                 <h2 class="form-title">Register</h2>
                                 <form id="registerForm" method="POST" enctype="multipart/form-data">
                                     @csrf
@@ -88,7 +88,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="signup-image">
+                            <div class="signup-image" style="margin-right: -20px">
                                 <figure><img src="{{asset('users/images/signup-image.jpg')}}" alt="sing up image">
                                 </figure>
                             </div>
