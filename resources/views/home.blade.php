@@ -5,15 +5,17 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-center">
             <div class="col-lg-7 col-md-6 ftco-animate d-flex align-items-end">
-                <div class="text">
-                    <h1 class="mb-4">Find Perfect <br>House From Your Area.</h1>
-                    <p style="font-size: 18px;">From as low as $20 A small river named Duden flows by their place
-                        and supplies it with the necessary regelialia.</p>
-                    <p><a href="#" class="btn btn-primary py-3 px-4">View all properties</a></p>
-                </div>
+{{--                <div class="text">--}}
+{{--                    <h1 class="mb-4">Find Perfect <br>House From Your Area.</h1>--}}
+{{--                    <p style="font-size: 18px;">From as low as $20 A small river named Duden flows by their place--}}
+{{--                        and supplies it with the necessary regelialia.</p>--}}
+{{--                    <p><a href="#" class="btn btn-primary py-3 px-4">View all properties</a></p>--}}
+{{--                </div>--}}
             </div>
         </div>
     </div>
+</section>
+<section class="ftco-section ftco-no-pb ftco-no-pt">
 </section>
 
 <section class="ftco-section ftco-no-pb ftco-no-pt search-bg">
@@ -21,62 +23,70 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="search-wrap-1 ftco-animate p-4">
-                    <form action="#" class="search-property-1">
+                    <form action="{{route('list.search')}}" class="search-property-1" method="get">
                         <div class="row">
                             <div class="col-lg align-items-end">
                                 <div class="form-group">
                                     <label for="#">Keyword</label>
                                     <div class="form-field">
-                                        <div class="icon"><span class="fa fa-search"></span></div>
+{{--                                        <div class="icon"><span class="fa fa-search"></span></div>--}}
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg align-items-end">
                                 <div class="form-group">
-                                    <label for="#">Property Type</label>
+                                    <label for="#">Bed room</label>
                                     <div class="form-field">
                                         <div class="select-wrap">
-                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">Residence</option>
-                                                <option value="">Offices</option>
-                                                <option value="">Commercial</option>
+{{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
+                                            <select name="bed_room" id="" class="form-control">
+                                                <option style="color: #495057" value="1">1</option>
+                                                <option style="color: #495057" value="2">2</option>
+                                                <option style="color: #495057" value="3">3</option>
+                                                <option style="color: #495057" value="4">4</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-                                <<<<<<< HEAD </div> <div class="col-lg align-items-end">
-                                    <div class="form-group">
-                                        <label for="#">Location</label>
-                                        <div class="form-field">
-                                            <div class="icon"><span class="fa fa-search"></span></div>
-                                            <input type="text" class="form-control" placeholder="Location">
-                                        </div>
-                                    </div>
                             </div>
                             <div class="col-lg align-items-end">
+                                <div class="form-group">
+                                    <label for="#">Bath room</label>
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+{{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
+                                            <select name="bath_room" id="" class="form-control">
+                                                <option style="color: #495057" value="1">1</option>
+                                                <option style="color: #495057" value="2">2</option>
+                                                <option style="color: #495057" value="3">3</option>
+                                                <option style="color: #495057" value="4">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg align-items-end">
+                                <div class="form-group">
+                                    <label for="#">Location</label>
+                                    <div class="form-field">
+                                        <div class="icon"><span class="fa fa-search"></span></div>
+                                        <input type="text" class="form-control" name="location" placeholder="Location">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg align-self-end">
                                 <div class="form-group">
                                     <label for="#">Price Limit</label>
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                            <select name="" id="" class="form-control">
-                                                <option value="">$5,000</option>
-                                                <option value="">$10,000</option>
-                                                <option value="">$50,000</option>
-                                                <option value="">$100,000</option>
-                                                <option value="">$200,000</option>
-
-                                                <option value="">$300,000</option>
-                                                <option value="">$400,000</option>
-                                                <option value="">$500,000</option>
-                                                <option value="">$600,000</option>
-                                                <option value="">$700,000</option>
-                                                <option value="">$800,000</option>
-                                                <option value="">$900,000</option>
-                                                <option value="">$1,000,000</option>
-                                                <option value="">$2,000,000</option>
+                                            <select name="price_limit" id="" class="form-control">
+                                                <option style="color: #495057" value="500000">500,000</option>
+                                                <option style="color: #495057" value="1000000">1,000,000</option>
+                                                <option style="color: #495057" value="1500000">1,500,000</option>
+                                                <option style="color: #495057" value="2000000">2,000,000</option>
+                                                <option style="color: #495057" value="5000000">5,000,000</option>
                                             </select>
                                         </div>
                                     </div>
@@ -95,6 +105,86 @@
             </div>
         </div>
     </div>
+
+
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12">--}}
+{{--                <div class="search-wrap-1 ftco-animate p-4">--}}
+{{--                    <form action="#" class="search-property-1">--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-lg align-items-end">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="#">Keyword</label>--}}
+{{--                                    <div class="form-field">--}}
+{{--                                        <div class="icon"><span class="fa fa-search"></span></div>--}}
+{{--                                        <input type="text" class="form-control" placeholder="Enter Keyword">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-lg align-items-end">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="#">Property Type</label>--}}
+{{--                                    <div class="form-field">--}}
+{{--                                        <div class="select-wrap">--}}
+{{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
+{{--                                            <select name="" id="" class="form-control">--}}
+{{--                                                <option value="">Residence</option>--}}
+{{--                                                <option value="">Offices</option>--}}
+{{--                                                <option value="">Commercial</option>--}}
+{{--                                            </select>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                               </div> <div class="col-lg align-items-end">--}}
+{{--                                    <div class="form-group">--}}
+{{--                                        <label for="#">Location</label>--}}
+{{--                                        <div class="form-field">--}}
+{{--                                            <div class="icon"><span class="fa fa-search"></span></div>--}}
+{{--                                            <input type="text" class="form-control" placeholder="Location">--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-lg align-items-end">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="#">Price Limit</label>--}}
+{{--                                    <div class="form-field">--}}
+{{--                                        <div class="select-wrap">--}}
+{{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
+{{--                                            <select name="" id="" class="form-control">--}}
+{{--                                                <option value="">$5,000</option>--}}
+{{--                                                <option value="">$10,000</option>--}}
+{{--                                                <option value="">$50,000</option>--}}
+{{--                                                <option value="">$100,000</option>--}}
+{{--                                                <option value="">$200,000</option>--}}
+
+{{--                                                <option value="">$300,000</option>--}}
+{{--                                                <option value="">$400,000</option>--}}
+{{--                                                <option value="">$500,000</option>--}}
+{{--                                                <option value="">$600,000</option>--}}
+{{--                                                <option value="">$700,000</option>--}}
+{{--                                                <option value="">$800,000</option>--}}
+{{--                                                <option value="">$900,000</option>--}}
+{{--                                                <option value="">$1,000,000</option>--}}
+{{--                                                <option value="">$2,000,000</option>--}}
+{{--                                            </select>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            <div class="col-lg align-self-end">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <div class="form-field">--}}
+{{--                                        <input type="submit" value="Search" class="form-control btn btn-primary">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 </section>
 
 <section class="ftco-section ftco-no-pb ftco-no-pt bg-primary">
@@ -106,7 +196,7 @@
                             class="flaticon-business"></span></div>
                     <div class="media-body py-md-4">
                         <h3>Trusted by Thousands</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                        <p style="color:black;">A small river named Duden flows by their place and supplies it with the necessary
                             regelialia.</p>
                     </div>
                 </div>
@@ -117,7 +207,7 @@
                             class="flaticon-home"></span></div>
                     <div class="media-body py-md-4">
                         <h3>Wide Range of Properties</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                        <p style="color:black;">A small river named Duden flows by their place and supplies it with the necessary
                             regelialia.</p>
                     </div>
                 </div>
@@ -128,7 +218,7 @@
                             class="flaticon-stats"></span></div>
                     <div class="media-body py-md-4">
                         <h3>Financing Made Easy</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                        <p style="color:black;">A small river named Duden flows by their place and supplies it with the necessary
                             regelialia.</p>
                     </div>
                 </div>
@@ -139,7 +229,7 @@
                             class="flaticon-quarantine"></span></div>
                     <div class="media-body py-md-4">
                         <h3>Locked in Pricing</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                        <p style="color:black;">A small river named Duden flows by their place and supplies it with the necessary
                             regelialia.</p>
                     </div>
                 </div>
@@ -406,30 +496,30 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pb ftco-no-pt">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7 order-md-last d-flex align-items-stretch">
-                <div class="img w-100 img-2 mr-md-2" style="background-image: url(images/about.jpg);"></div>
-                <div class="img w-100 img-2 ml-md-2" style="background-image: url(images/about-2.jpg);"></div>
-            </div>
-            <div class="col-md-5 wrap-about py-md-5 ftco-animate">
-                <div class="heading-section pr-md-5">
-                    <h2 class="mb-4">Ecoverde Real Estate</h2>
+{{--<section class="ftco-section ftco-no-pb ftco-no-pt">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-7 order-md-last d-flex align-items-stretch">--}}
+{{--                <div class="img w-100 img-2 mr-md-2" style="background-image: url(images/about.jpg);"></div>--}}
+{{--                <div class="img w-100 img-2 ml-md-2" style="background-image: url(images/about-2.jpg);"></div>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-5 wrap-about py-md-5 ftco-animate">--}}
+{{--                <div class="heading-section pr-md-5">--}}
+{{--                    <h2 class="mb-4">Ecoverde Real Estate</h2>--}}
 
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
-                        It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
-                        would have been rewritten a thousand times and everything that was left from its origin
-                        would be the word "and" and the Little Blind Text should turn around and return to its own,
-                        safe country. But nothing the copy said could convince her and so it didn’t take long until
-                        a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged
-                        her into their agency, where they abused her for their.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{--                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.--}}
+{{--                        It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>--}}
+{{--                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it--}}
+{{--                        would have been rewritten a thousand times and everything that was left from its origin--}}
+{{--                        would be the word "and" and the Little Blind Text should turn around and return to its own,--}}
+{{--                        safe country. But nothing the copy said could convince her and so it didn’t take long until--}}
+{{--                        a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged--}}
+{{--                        her into their agency, where they abused her for their.</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 
 <section class="ftco-counter img" id="section-counter">
     <div class="container">
