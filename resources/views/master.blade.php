@@ -26,15 +26,6 @@
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <link rel="stylesheet" href="{{asset('users/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
     <!-- Main css -->
-<<<<<<< HEAD
-    <link class="login-register" rel="stylesheet" href="">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <script src="{{asset('users/js/jquery.js')}}"></script>
-=======
     {{-- <link rel="stylesheet" href="{{asset('users/css/style.css')}}"> --}}
     {{--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"--}}
     {{--          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">--}}
@@ -45,8 +36,6 @@
     {{--            margin-top: -15px;--}}
     {{--        }--}}
     {{--    </style>--}}
->>>>>>> parent of 8b27243... them jquery chinh sua modal
-
 </head>
 
 <body>
