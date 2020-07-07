@@ -47,7 +47,7 @@ class UserController extends Controller
     function logout() {
         Auth::logout();
         Toastr::success('See you again:))', 'Logout successful!!!', ["positionClass" => "toast-top-right"]);
-        return redirect()->route('home');
+        return back();
     }
 }
 
