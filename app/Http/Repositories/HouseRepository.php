@@ -26,7 +26,7 @@ class HouseRepository
 
     public function getAll()
     {
-        return $this->house::paginate(9);
+        return $this->house::paginate(6);
     }
 
     public function search($bedRoom, $bathRoom, $priceLimit, $location)

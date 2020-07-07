@@ -35,5 +35,4 @@ return [
         'client_secret' => '55Bb90E7A4uNwJkHpMMN0mIi',
         'redirect' => 'http://127.0.0.1:8000/callback/google',
     ],
-
 ];
