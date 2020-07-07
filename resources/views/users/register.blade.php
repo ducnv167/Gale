@@ -51,22 +51,22 @@
                                     <div role="alert" id="phoneError">
                                         <strong></strong>
                                     </div>
-                                    <div class="form-group">
-                                        <select class="form-control form-control-sm" name="role" id="roleInput"
-                                            required>
-                                            <option selected disabled>Role</option>
-                                            <option <?php echo old('role') == 'Admin' ? 'selected' : ''?>>Admin
-                                            </option>
-                                            <option <?php echo old('role') == 'Leaser' ? 'selected' : ''?>>Leaser
-                                            </option>
-                                            <option <?php echo old('role') == 'Render' ? 'selected' : ''?>>Renter
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div role="alert" id="roleError">
-                                        <strong></strong>
-                                    </div>
-                                    <hr>
+{{--                                    <div class="form-group">--}}
+{{--                                        <select class="form-control form-control-sm" name="role" id="roleInput"--}}
+{{--                                            required>--}}
+{{--                                            <option selected disabled>Role</option>--}}
+{{--                                            <option <?php echo old('role') == 'Admin' ? 'selected' : ''?>>Admin--}}
+{{--                                            </option>--}}
+{{--                                            <option <?php echo old('role') == 'Leaser' ? 'selected' : ''?>>Leaser--}}
+{{--                                            </option>--}}
+{{--                                            <option <?php echo old('role') == 'Render' ? 'selected' : ''?>>Renter--}}
+{{--                                            </option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                    <div role="alert" id="roleError">--}}
+{{--                                        <strong></strong>--}}
+{{--                                    </div>--}}
+{{--                                    <hr>--}}
                                     <div class="form-group">
                                         <input type="file" class="form-control-file" name="image" id="imageInput">
                                     </div>
