@@ -82,7 +82,6 @@
                                             Rooms: {{$house->bathroom_amount}}</li>
                                         <li class="check"><span
                                                 class="fa fa-check-circle"></span>{{$house->room_category}}</li>
-                                        <li class="check"><span class="fa fa-check-circle"></span>Garage: 2</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-4">
@@ -93,6 +92,7 @@
                                             {{$house->price}}</li>
                                         <li class="check"><span class="fa fa-check-circle"></span>Security: 24/24
                                         </li>
+                                        <li class="check"><span class="fa fa-check-circle"></span>Garage: 2</li>
                                     </ul>
                                 </div>
                                 <div class="col-md-4">
@@ -100,81 +100,79 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
-                            aria-labelledby="pills-manufacturer-tab">
-                            {!!$house->description!!}
-                        </div>
-
-                        <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <h3 class="head">Reviews</h3>
-                                    <div>
-                                        @comments(['model' => $house])
-                                    </div>
+                    <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
+                        aria-labelledby="pills-manufacturer-tab">{!!$house->description!!}
+                    </div>
+                    <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h3 class="head">Reviews</h3>
+                                <div>
+                                    @comments(['model' => $house])
                                 </div>
-                                <div class="col-md-5">
-                                    <div class="rating-wrap">
-                                        <h3 class="head">Give a Review</h3>
-                                        <div class="wrap">
-                                            <p class="star">
-                                                <span>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    (98%)
-                                                </span>
-                                                <span>20 Reviews</span>
-                                            </p>
-                                            <p class="star">
-                                                <span>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    (85%)
-                                                </span>
-                                                <span>10 Reviews</span>
-                                            </p>
-                                            <p class="star">
-                                                <span>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    (70%)
-                                                </span>
-                                                <span>5 Reviews</span>
-                                            </p>
-                                            <p class="star">
-                                                <span>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    (10%)
-                                                </span>
-                                                <span>0 Reviews</span>
-                                            </p>
-                                            <p class="star">
-                                                <span>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    (0%)
-                                                </span>
-                                                <span>0 Reviews</span>
-                                            </p>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="rating-wrap">
+                                <h3 class="head">Give a Review</h3>
+                                <div class="wrap">
+                                    <p class="star">
+                                        <span>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            (98%)
+                                        </span>
+                                        <span>20 Reviews</span>
+                                    </p>
+                                    <p class="star">
+                                        <span>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            (85%)
+                                        </span>
+                                        <span>10 Reviews</span>
+                                    </p>
+                                    <p class="star">
+                                        <span>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            (70%)
+                                        </span>
+                                        <span>5 Reviews</span>
+                                    </p>
+                                    <p class="star">
+                                        <span>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            (10%)
+                                        </span>
+                                        <span>0 Reviews</span>
+                                    </p>
+                                    <p class="star">
+                                        <span>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            (0%)
+                                        </span>
+                                        <span>0 Reviews</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -182,6 +180,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </section>
 @endsection

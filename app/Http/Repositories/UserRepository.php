@@ -17,6 +17,7 @@ class UserRepository
 
     function store($data) {
         $data->save();
+        \auth()->login($data);
     }
 
     function loginHandling($user) {

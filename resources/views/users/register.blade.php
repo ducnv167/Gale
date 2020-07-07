@@ -5,65 +5,62 @@
                 <section class="signup">
                     <div class="container">
                         <div class="signup-content">
-                            <div class="signup-form">
+                            <div class="signup-form" style=" margin-left: -10px; margin-right: -20px">
                                 <h2 class="form-title">Register</h2>
-                                <form method="post" action="{{route('users.store')}}" enctype="multipart/form-data">
+                                <form id="registerForm" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group1">
                                         <label class="label-custom" for="name"><i
-                                                    class="zmdi zmdi-account material-icons-name"></i></label>
+                                                class="zmdi zmdi-account material-icons-name"></i></label>
                                         <input type="text"
-                                               class="<?php echo $errors->first('name') ? 'form-control is-invalid' : ''?>"
-                                               name="name" id="name" value="{{old('name')}}" placeholder="Your Name"
-                                               minlength="3" required/>
+                                               name="name" id="nameInput" value="{{old('name')}}"
+                                               placeholder="Your Name"
+                                        />
                                     </div>
-                                    @if($errors->first('name'))
-                                        <p class="text-danger">{{$errors->first('name')}}</p>
-                                    @endif
+                                    <div role="alert" id="nameError">
+                                        <strong></strong>
+                                    </div>
                                     <div class="form-group1">
                                         <label class="label-custom" for="email"><i class="zmdi zmdi-email"></i></label>
                                         <input type="email"
-                                               class="<?php echo $errors->first('email') ? 'form-control is-invalid' : ''?>"
-                                               name="email" id="email" value="{{old('email')}}"
+                                               name="email" id="emailInput" value="{{old('email')}}"
                                                placeholder="Your Email"/>
                                     </div>
-                                    @if($errors->first('email'))
-                                        <p class="text-danger">{{$errors->first('email')}}</p>
-                                    @endif
+                                    <div role="alert" id="emailError">
+                                        <strong></strong>
+                                    </div>
                                     <div class="form-group1">
                                         <label class="label-custom" for="pass"><i class="zmdi zmdi-lock"></i></label>
                                         <input type="password" value="{{old('password')}}"
-                                               class="<?php echo $errors->first('password') ? 'form-control is-invalid' : ''?>"
                                                name="password"
-                                               id="pass" placeholder="Password" min="6" required/>
+                                               id="passwordInput" placeholder="Password"/>
                                     </div>
-                                    @if($errors->first('password'))
-                                        <p class="text-danger">{{$errors->first('password')}}</p>
-                                    @endif
+                                    <div role="alert" id="passwordError">
+                                        <strong></strong>
+                                    </div>
                                     <div class="form-group1">
                                         <label class="label-custom" for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                         <input type="password"
-                                               class="<?php echo $errors->first('repeatPassword') ? 'form-control is-invalid' : ''?>"
-                                               name="repeatPassword" id="re_pass" placeholder="Repeat your password"
-                                               min="6" required/>
+                                               name="repeatPassword" id="repeatPasswordInput"
+                                               placeholder="Repeat your password"
+                                        />
                                     </div>
-                                    @if($errors->first('repeatPassword'))
-                                        <p class="text-danger">{{$errors->first('repeatPassword')}}</p>
-                                    @endif
+                                    <div role="alert" id="repeatPasswordError">
+                                        <strong></strong>
+                                    </div>
                                     <div class="form-group1">
                                         <label class="label-custom" for="pass"><i class="fas fa-phone"></i></label>
                                         <input type="number" value="{{old('phone')}}"
-                                               class="<?php echo $errors->first('phone') ? 'form-control is-invalid' : ''?>"
                                                name="phone"
-                                               id="pass" placeholder="Phone" min="10" required/>
+                                               id="phoneInput" placeholder="Phone"/>
                                     </div>
-                                    @if($errors->first('phone'))
-                                        <p class="text-danger">{{$errors->first('phone')}}</p>
-                                    @endif
+                                    <div role="alert" id="phoneError">
+                                        <strong></strong>
+                                    </div>
                                     <div class="form-group">
                                         <select
-                                                class="form-control form-control-sm <?php echo $errors->first('role') ? 'is-invalid' : ''?>"
-                                                name="role" required>
+                                            class="form-control form-control-sm"
+                                            name="role" id="roleInput" required>
                                             <option selected disabled>Role</option>
                                             <option <?php echo old('role') == 'Admin' ? 'selected' : ''?> >Admin
                                             </option>
@@ -73,25 +70,25 @@
                                             </option>
                                         </select>
                                     </div>
-                                    @if($errors->first('role'))
-                                        <p class="text-danger">{{$errors->first('role')}}</p>
-                                    @endif
+                                    <div role="alert" id="roleError">
+                                        <strong></strong>
+                                    </div>
                                     <hr>
                                     <div class="form-group">
                                         <input type="file"
-                                               class="form-control-file <?php echo $errors->first('image') ? 'is-invalid' : ''?>"
-                                               name="image">
+                                               class="form-control-file"
+                                               name="image" id="imageInput">
                                     </div>
-                                    @if($errors->first('image'))
-                                        <p class="text-danger">{{$errors->first('image')}}</p>
-                                    @endif
+                                    <div role="alert" id="imageError">
+                                        <strong></strong>
+                                    </div>
                                     <div class="form-group1 form-button">
                                         <input type="submit" name="signup" id="signup" class="form-submit"
                                                value="Register"/>
                                     </div>
                                 </form>
                             </div>
-                            <div class="signup-image">
+                            <div class="signup-image" style="margin-right: -20px">
                                 <figure><img src="{{asset('users/images/signup-image.jpg')}}" alt="sing up image">
                                 </figure>
                             </div>
@@ -105,3 +102,35 @@
         </div>
     </div>
 </div>
+<script>
+    $(function () {
+        $('#registerForm').submit(function (e) {
+            e.preventDefault();
+            let formData = new FormData(this);
+            $.ajax({
+                method: "POST",
+                headers: {
+                    Accept: "application/json"
+                },
+                url: "{{route('users.store')}}",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: () => window.location.assign("#"),
+                error: (response) => {
+                    if (response.status === 422) {
+                        let errors = response.responseJSON.errors;
+
+                        Object.keys(errors).forEach(function (key) {
+                            console.log("#" + key + "Error");
+                            $("#" + key + "Input").addClass('form-control is-invalid');
+                            $("#" + key + "Error").css({'margin-top':'-20px','margin-bottom':'30px'}).children('strong').css('color','red').text(errors[key][0]);
+                        });
+                    } else {
+                        window.location.reload();
+                    }
+                }
+            })
+        });
+    })
+</script>
