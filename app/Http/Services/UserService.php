@@ -37,4 +37,13 @@ class UserService
         ];
         return $this->userRepository->loginHandling($user);
     }
+
+    public function findById($id){
+        return $this->userRepository->finById($id);
+    }
+
+    public function changePassword($user,$request){
+        $user->password= Hash::make($request->password);
+        $this->userRepository->store($user);
+    }
 }

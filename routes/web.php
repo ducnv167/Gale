@@ -40,6 +40,7 @@ Route::prefix('users')->group(function () {
     Route::get('login', 'UserController@login')->name('users.login');
     Route::post('login', 'UserController@loginHandling')->name('users.loginHandling');
     Route::get('logout', 'UserController@logout')->name('users.logout');
+    Route::post('/{id}/change-password','UserController@changePassword')->name('user.changePassword');
 });
 //login google
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect')->name('login-google');

@@ -28,3 +28,6 @@
 </nav>
 @include('users.login')
 @include('users.register')
+@if(\Illuminate\Support\Facades\Auth::user())
+@include('users.change-password')
+    @endif
