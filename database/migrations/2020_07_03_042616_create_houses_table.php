@@ -22,7 +22,7 @@ class CreateHousesTable extends Migration
             $table->string('bedroom_amount');
             $table->string('bathroom_amount');
             $table->longText('description');
-            $table->string('price');
+            $table->bigInteger('price');
         });
     }
 

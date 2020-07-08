@@ -41,6 +41,7 @@
                                         <div class="select-wrap">
 {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                             <select name="bed_room" id="" class="form-control">
+                                                <option style="color: #495057" value="" selected>Choose</option>
                                                 <option style="color: #495057" value="1">1</option>
                                                 <option style="color: #495057" value="2">2</option>
                                                 <option style="color: #495057" value="3">3</option>
@@ -57,6 +58,7 @@
                                         <div class="select-wrap">
 {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                             <select name="bath_room" id="" class="form-control">
+                                                <option style="color: #495057" value="" selected>Choose</option>
                                                 <option style="color: #495057" value="1">1</option>
                                                 <option style="color: #495057" value="2">2</option>
                                                 <option style="color: #495057" value="3">3</option>
@@ -82,6 +84,7 @@
                                         <div class="select-wrap">
                                             <div class="icon"><span class="fa fa-chevron-down"></span></div>
                                             <select name="price_limit" id="" class="form-control">
+                                                <option style="color: #495057" value="" selected>Choose</option>
                                                 <option style="color: #495057" value="500000">500,000</option>
                                                 <option style="color: #495057" value="1000000">1,000,000</option>
                                                 <option style="color: #495057" value="1500000">1,500,000</option>
