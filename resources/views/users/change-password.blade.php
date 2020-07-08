@@ -26,7 +26,7 @@
                                     <div class="form-group1">
                                         <label class="label-custom" for="your_pass"><i
                                                 class="zmdi zmdi-lock"></i></label>
-                                        <input type="password" name="password" id="your_pass" placeholder="Confirm Password"
+                                        <input type="password" name="repeatPassword" id="your_pass" placeholder="Confirm Password"
                                                minlength="6" required/>
                                     </div>
 

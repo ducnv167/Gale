@@ -54,9 +54,11 @@ class UserController extends Controller
 
     public function changePassword(Request $request,$id){
         $user = $this->userService->findById($id);
-        $this->userService->changePassword($user,$request);
-        Toastr::success('Reset password successful!!!', 'Success', ["positionClass" => "toast-top-left"]);
-       // return redirect()->route('home');
+        if ($this->userService->changePassword($user,$request)){
+            Toastr::success('Reset password successful!!!', 'Success', ["positionClass" => "toast-top-left"]);
+        }else{
+            Toastr::error('Password not same!!!', 'Fail', ["positionClass" => "toast-top-left"]);
+        }
         return back();
     }
 }

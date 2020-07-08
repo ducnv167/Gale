@@ -6,11 +6,13 @@ namespace App\Http\Services;
 
 use App\Http\Repositories\UserRepository;
 use App\User;
+use Brian2694\Toastr\Toastr;
 use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
     protected $userRepository;
+
     public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
@@ -38,12 +40,20 @@ class UserService
         return $this->userRepository->loginHandling($user);
     }
 
-    public function findById($id){
+    public function findById($id)
+    {
         return $this->userRepository->finById($id);
     }
 
-    public function changePassword($user,$request){
-        $user->password= Hash::make($request->password);
-        $this->userRepository->store($user);
+    public function changePassword($user, $request)
+    {
+        $user->password = Hash::make($request->password);
+        if ($request->password == $request->repeatPassword) {
+            $this->userRepository->store($user);
+            return true;
+        }else{
+            return false;
+        }
+
     }
 }
