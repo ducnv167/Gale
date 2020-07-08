@@ -51,5 +51,10 @@ class UserController extends Controller
         Toastr::success('See you again:))', 'Logout successful!!!', ["positionClass" => "toast-top-right"]);
         return back();
     }
+
+    public function rentHouse()
+    {
+        return view('rent-house.view');
+    }
 }
 
