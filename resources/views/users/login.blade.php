@@ -11,6 +11,8 @@
                                 </figure>
                                 <p data-toggle="modal" data-target="#myModalRegister" class="signup-image-link btn">Create
                                     an account</p>
+                                <hr>
+                                <p data-toggle="modal" data-target="#myModalForgotPassword" class="signup-image-link btn">Forgot password</p>
                             </div>
                             <div class="signin-form">
                                 <h2 class="form-title">Sign up</h2>

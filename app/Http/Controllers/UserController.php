@@ -61,5 +61,16 @@ class UserController extends Controller
         }
         return back();
     }
+
+    function sendEmailResetPassword(Request $request) {
+        $result = $this->userService->sendEmailResetPassword($request);
+
+        if ($result) {
+            Toastr::success('Send mail reset password successfully, check mail please!!!', 'Success', ["positionClass" => "toast-top-right"]);
+        } else {
+            Toastr::error('Email is not true, import again please!!!', 'Fail', ["positionClass" => "toast-top-right"]);
+        }
+        return back();
+    }
 }
 

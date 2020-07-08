@@ -5,9 +5,11 @@ namespace App\Http\Services;
 
 
 use App\Http\Repositories\UserRepository;
+use App\Mail\ResetPasswordMail;
 use App\User;
 use Brian2694\Toastr\Toastr;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserService
 {
@@ -55,5 +57,19 @@ class UserService
             return false;
         }
 
+    }
+
+    function sendEmailResetPassword($request) {
+        $email = $request->email;
+        $user = $this->userRepository->findUserByEmail($email);
+        if ($user == null) {
+            return false;
+        }
+        $data = [
+            'title' => 'Reset password',
+            'body' => 'Click link path to reset password.'
+        ];
+        Mail::to($email)->send(new ResetPasswordMail($data));
+        return true;
     }
 }
