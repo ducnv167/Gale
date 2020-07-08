@@ -18,7 +18,7 @@
                                                              src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->image)}}"
                                                              ><div>{{\Illuminate\Support\Facades\Auth::user()->name}}</div></a>
             <hr>
-            <a href="" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-user-alt"></i>Detail</a>
+            <p style="color: #34ce57" class="nav-link btn" data-toggle="modal" data-target="#myModalResetPassword"><i style="margin-right: 25px" class="fas fa-user-alt"></i>Change password</p>
             <hr>
             <a href="{{route('house.create')}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-store"></i>Store</a>
             <hr>
@@ -36,6 +36,7 @@
     <li class="nav-item">
         <div data-toggle="modal" data-target="#myModalRegister" class="nav-link btn">Register</div>
     </li>
+
 @endif
 <script>
     $(document).ready(function () {
