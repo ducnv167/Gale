@@ -6,10 +6,11 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate pb-0 text-center">
+
                 <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i
                                 class="fa fa-chevron-right"></i></a></span><span>Properties <i
                             class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">Properties</h1>
+                <h1 class="mb-3 bread">Gallery</h1>
             </div>
         </div>
     </div>
@@ -25,7 +26,7 @@
                                 <div class="form-group">
                                     <label for="#">Keyword</label>
                                     <div class="form-field">
-                                        {{--                                            <div class="icon"><span class="fa fa-search"></span></div>--}}
+                                                                                    <div class="icon"><span class="fa fa-search"></span></div>
                                         <input type="text" class="form-control" placeholder="Enter Keyword">
                                     </div>
                                 </div>
@@ -35,7 +36,7 @@
                                     <label for="#">Bed room</label>
                                     <div class="form-field">
                                         <div class="select-wrap">
-                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
+{{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                             <select name="bed_room" id="" class="form-control">
                                                 <option style="color: #495057" value="1">1</option>
                                                 <option style="color: #495057" value="2">2</option>
@@ -110,7 +111,7 @@
                 <br>
                 <br>
 
-                <h2 class="mb-2">Properties</h2>
+                <h2 class="mb-2">Gallery</h2>
             </div>
         </div>
         <div class="row">
@@ -125,10 +126,10 @@
                         <p class="price"><span class="orig-price">${{$house->price}}</span></p>
                     </a>
                     <div class="text">
-                        <ul class="property_list">
-                            <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}</li>
-                            <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}</li>
-                        </ul>
+{{--                        <ul class="property_list">--}}
+{{--                            <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}</li>--}}
+{{--                            <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}</li>--}}
+{{--                        </ul>--}}
                         <h3><a href="#">{{$house->name}}</a></h3>
                         <span class="location">{{$house->address}}</span>
                         <a href="#" class="d-flex align-items-center justify-content-center btn-custom">
