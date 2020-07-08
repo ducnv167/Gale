@@ -49,6 +49,7 @@ class HouseController extends Controller
             'image' => 'required',
         ]);
         $house = $this->houseService->store($request);
+        return redirect()->route('home');
     }
 
     public function getAll()
