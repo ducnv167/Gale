@@ -6,10 +6,10 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate pb-0 text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                        class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a
-                                    href="properties.html">House List<i class="fa fa-chevron-right"></i></a></span>
-                        <span>Single<i class="fa fa-chevron-right"></i></span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i
+                                    class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a
+                                href="{{route('house.list')}}">Properties <i class="fa fa-chevron-right"></i></a></span>
+                        <span>Properties Single <i class="fa fa-chevron-right"></i></span></p>
                     <h1 class="mb-3 bread">Property Details</h1>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                                             <li class="check"><span class="fa fa-check-circle"></span>Bath
                                                 Rooms: {{$house->bathroom_amount}}</li>
                                             <li class="check"><span
-                                                        class="fa fa-check-circle"></span>{{$house->room_category}}</li>
+                                                    class="fa fa-check-circle"></span>{{$house->room_category}}</li>
                                         </ul>
                                     </div>
                                     <div class="col-md-4">
@@ -112,20 +112,20 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
                                  aria-labelledby="pills-manufacturer-tab">
                                 {!! $house->description !!}
                             </div>
 
-                            <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                            <div class="tab-pane fade" id="pills-review" role="tabpanel"
+                                 aria-labelledby="pills-review-tab">
                                 <div class="row">
                                     <div class="col-md-9">
                                         <h3 class="head">23 Reviews</h3>
-{{--                                        <div class="review d-flex">--}}
-                                            <div>@comments(['model' => $house])
-                                            </div>
-{{--                                        </div>--}}
+                                        {{--                                        <div class="review d-flex">--}}
+                                        <div>@comments(['model' => $house])
+                                        </div>
+                                        {{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -162,11 +162,10 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             @endforeach
         </div>
-
-        {{--    </div>--}}
-        {{--    </div>--}}
     </section>
+
 @endsection

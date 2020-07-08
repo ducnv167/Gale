@@ -9,7 +9,7 @@
                             <div class="signin-image">
                                 <figure><img src="{{asset('users/images/signin-image.jpg')}}" alt="sing up image">
                                 </figure>
-                                <p data-toggle="modal" data-target="#myModalRegister" class="signup-image-link">Create
+                                <p data-toggle="modal" data-target="#myModalRegister" class="signup-image-link btn">Create
                                     an account</p>
                             </div>
                             <div class="signin-form">

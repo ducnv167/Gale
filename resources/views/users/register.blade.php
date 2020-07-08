@@ -13,7 +13,7 @@
                                         <label class="label-custom" for="name"><i
                                                 class="zmdi zmdi-account material-icons-name"></i></label>
                                         <input type="text" name="name" id="nameInput" value="{{old('name')}}"
-                                            placeholder="Your Name" />
+                                            placeholder="Your Name" minlength="3" required/>
                                     </div>
                                     <div role="alert" id="nameError">
                                         <strong></strong>
@@ -21,7 +21,7 @@
                                     <div class="form-group1">
                                         <label class="label-custom" for="email"><i class="zmdi zmdi-email"></i></label>
                                         <input type="email" name="email" id="emailInput" value="{{old('email')}}"
-                                            placeholder="Your Email" />
+                                            placeholder="Your Email" required/>
                                     </div>
                                     <div role="alert" id="emailError">
                                         <strong></strong>
@@ -29,7 +29,7 @@
                                     <div class="form-group1">
                                         <label class="label-custom" for="pass"><i class="zmdi zmdi-lock"></i></label>
                                         <input type="password" value="{{old('password')}}" name="password"
-                                            id="passwordInput" placeholder="Password" />
+                                            id="passwordInput" placeholder="Password" minlength="6" required/>
                                     </div>
                                     <div role="alert" id="passwordError">
                                         <strong></strong>
@@ -38,7 +38,7 @@
                                         <label class="label-custom" for="re-pass"><i
                                                 class="zmdi zmdi-lock-outline"></i></label>
                                         <input type="password" name="repeatPassword" id="repeatPasswordInput"
-                                            placeholder="Repeat your password" />
+                                            placeholder="Repeat your password" minlength="6" required/>
                                     </div>
                                     <div role="alert" id="repeatPasswordError">
                                         <strong></strong>
@@ -46,27 +46,27 @@
                                     <div class="form-group1">
                                         <label class="label-custom" for="pass"><i class="fas fa-phone"></i></label>
                                         <input type="number" value="{{old('phone')}}" name="phone" id="phoneInput"
-                                            placeholder="Phone" />
+                                            placeholder="Phone" required/>
                                     </div>
                                     <div role="alert" id="phoneError">
                                         <strong></strong>
                                     </div>
-                                    <div class="form-group">
-                                        <select class="form-control form-control-sm" name="role" id="roleInput"
-                                            required>
-                                            <option selected disabled>Role</option>
-                                            <option <?php echo old('role') == 'Admin' ? 'selected' : ''?>>Admin
-                                            </option>
-                                            <option <?php echo old('role') == 'Leaser' ? 'selected' : ''?>>Leaser
-                                            </option>
-                                            <option <?php echo old('role') == 'Render' ? 'selected' : ''?>>Renter
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div role="alert" id="roleError">
-                                        <strong></strong>
-                                    </div>
-                                    <hr>
+{{--                                    <div class="form-group">--}}
+{{--                                        <select class="form-control form-control-sm" name="role" id="roleInput"--}}
+{{--                                            required>--}}
+{{--                                            <option selected disabled>Role</option>--}}
+{{--                                            <option <?php echo old('role') == 'Admin' ? 'selected' : ''?>>Admin--}}
+{{--                                            </option>--}}
+{{--                                            <option <?php echo old('role') == 'Leaser' ? 'selected' : ''?>>Leaser--}}
+{{--                                            </option>--}}
+{{--                                            <option <?php echo old('role') == 'Render' ? 'selected' : ''?>>Renter--}}
+{{--                                            </option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                    <div role="alert" id="roleError">--}}
+{{--                                        <strong></strong>--}}
+{{--                                    </div>--}}
+{{--                                    <hr>--}}
                                     <div class="form-group">
                                         <input type="file" class="form-control-file" name="image" id="imageInput">
                                     </div>
@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="form-group1 form-button">
                                         <input type="submit" name="signup" id="signup" class="form-submit"
-                                            value="Register" />
+                                            value="Register" required/>
                                     </div>
                                 </form>
                             </div>

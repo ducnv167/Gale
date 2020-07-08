@@ -25,6 +25,7 @@ class UserController extends Controller
     function store(UserRequest $userRequest)
     {
         $this->userService->store($userRequest);
+        Toastr::success('Register successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
         return back();
     }
 
@@ -39,7 +40,8 @@ class UserController extends Controller
             Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
             return back();
         } else {
-            Toastr::error('Login fail!!!', 'Fail', ["positionClass" => "toast-top-right"]);
+
+            Toastr::error('Username or password is invalid!!!', 'Fail', ["positionClass" => "toast-top-right"]);
             return back();
         }
     }
