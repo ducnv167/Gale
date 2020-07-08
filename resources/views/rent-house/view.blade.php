@@ -29,70 +29,137 @@
     <div>
         <div class="row">
             <div class="col-md-6">
+                @if(!\Illuminate\Support\Facades\Auth::user())
                 <div class="w3-card-4" style="margin-top: 50px">
-                    dddfsdf
+
+                    <div style="background-image: url({{ asset('images/anh1.jpg') }});">
+                        <h3 style="margin-left: 40px;padding-top: 50px">Sign in and enjoy member-only benefits!</h3>
+                        <p style="margin: 40px">Sign up to experience a great booking site and receive more promotions.
+                        </p>
+                        <a style="margin-left: 40px;margin-bottom: 50px" href="" class="btn btn-success">Sign in</a>
+                    </div>
                 </div>
+                @endif
                 <div style="margin-top: 50px">
                     <h2>Booking information</h2>
                 </div>
                 <div style="margin-top: 50px">
                     <h2>Your information</h2>
                     <br>
-                    <form id="registerForm" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group1">
-                            <label class="label-custom" for="name"><i
-                                        class="zmdi zmdi-account material-icons-name"></i></label>
-                            <input type="text" name="name" id="nameInput" value="{{old('name')}}"
-                                   placeholder="Your Name" minlength="3" required/>
-                        </div>
-                        <div role="alert" id="nameError">
-                            <strong></strong>
-                        </div>
-                        <div class="form-group1">
-                            <label class="label-custom" for="email"><i class="zmdi zmdi-email"></i></label>
-                            <input type="email" name="email" id="emailInput" value="{{old('email')}}"
-                                   placeholder="Your Email" required/>
-                        </div>
-                        <div role="alert" id="emailError">
-                            <strong></strong>
-                        </div>
-                        <div class="form-group1">
-                            <label class="label-custom" for="pass"><i class="zmdi zmdi-lock"></i></label>
-                            <input type="password" value="{{old('password')}}" name="password"
-                                   id="passwordInput" placeholder="Password" minlength="6" required/>
-                        </div>
-                        <div role="alert" id="passwordError">
-                            <strong></strong>
-                        </div>
-                        <div class="form-group1">
-                            <label class="label-custom" for="re-pass"><i
-                                        class="zmdi zmdi-lock-outline"></i></label>
-                            <input type="password" name="repeatPassword" id="repeatPasswordInput"
-                                   placeholder="Repeat your password" minlength="6" required/>
-                        </div>
-                        <div role="alert" id="repeatPasswordError">
-                            <strong></strong>
-                        </div>
-                        <div class="form-group1">
-                            <label class="label-custom" for="pass"><i class="fas fa-phone"></i></label>
-                            <input type="number" value="{{old('phone')}}" name="phone" id="phoneInput"
-                                   placeholder="Phone" required/>
-                        </div>
-                        <div role="alert" id="phoneError">
-                            <strong></strong>
-                        </div>
-                        <div class="form-group">
-                            <input type="file" class="form-control-file" name="image" id="imageInput">
-                        </div>
-                        <div role="alert" id="imageError">
-                            <strong></strong>
-                        </div>
-                        <div class="form-group1 form-button">
-                            <input type="submit" name="signup" id="signup" class="form-submit"
-                                   value="Accept" required/>
-                        </div>
-                    </form>
+                    @if(\Illuminate\Support\Facades\Auth::user())
+                        <form id="registerForm" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group1">
+                                <label class="label-custom" for="name"><i
+                                            class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="nameInput" value="{{\Illuminate\Support\Facades\Auth::user()->name}}"
+                                       placeholder="Your Name" minlength="3" required/>
+                            </div>
+                            <div role="alert" id="nameError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1">
+                                <label class="label-custom" for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="emailInput" value="{{old('email')}}"
+                                       placeholder="Your Email" required/>
+                            </div>
+                            <div role="alert" id="emailError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1">
+                                <label class="label-custom" for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" value="{{old('password')}}" name="password"
+                                       id="passwordInput" placeholder="Password" minlength="6" required/>
+                            </div>
+                            <div role="alert" id="passwordError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1">
+                                <label class="label-custom" for="re-pass"><i
+                                            class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="repeatPassword" id="repeatPasswordInput"
+                                       placeholder="Repeat your password" minlength="6" required/>
+                            </div>
+                            <div role="alert" id="repeatPasswordError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1">
+                                <label class="label-custom" for="pass"><i class="fas fa-phone"></i></label>
+                                <input type="number" value="{{old('phone')}}" name="phone" id="phoneInput"
+                                       placeholder="Phone" required/>
+                            </div>
+                            <div role="alert" id="phoneError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control-file" name="image" id="imageInput">
+                            </div>
+                            <div role="alert" id="imageError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1 form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit"
+                                       value="Accept" required/>
+                            </div>
+                        </form>
+
+                    @else
+                        <form id="registerForm" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group1">
+                                <label class="label-custom" for="name"><i
+                                            class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="nameInput" value="{{old('name')}}"
+                                       placeholder="Your Name" minlength="3" required/>
+                            </div>
+                            <div role="alert" id="nameError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1">
+                                <label class="label-custom" for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="emailInput" value="{{old('email')}}"
+                                       placeholder="Your Email" required/>
+                            </div>
+                            <div role="alert" id="emailError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1">
+                                <label class="label-custom" for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" value="{{old('password')}}" name="password"
+                                       id="passwordInput" placeholder="Password" minlength="6" required/>
+                            </div>
+                            <div role="alert" id="passwordError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1">
+                                <label class="label-custom" for="re-pass"><i
+                                            class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="repeatPassword" id="repeatPasswordInput"
+                                       placeholder="Repeat your password" minlength="6" required/>
+                            </div>
+                            <div role="alert" id="repeatPasswordError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1">
+                                <label class="label-custom" for="pass"><i class="fas fa-phone"></i></label>
+                                <input type="number" value="{{old('phone')}}" name="phone" id="phoneInput"
+                                       placeholder="Phone" required/>
+                            </div>
+                            <div role="alert" id="phoneError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" class="form-control-file" name="image" id="imageInput">
+                            </div>
+                            <div role="alert" id="imageError">
+                                <strong></strong>
+                            </div>
+                            <div class="form-group1 form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit"
+                                       value="Accept" required/>
+                            </div>
+                        </form>
+                    @endif
                 </div>
             </div>
             <div class="col-md-2"></div>
