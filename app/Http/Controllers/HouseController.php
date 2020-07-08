@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RentalStep1;
 use App\Http\Services\HouseService;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class HouseController extends Controller
@@ -49,6 +50,8 @@ class HouseController extends Controller
             'image' => 'required',
         ]);
         $house = $this->houseService->store($request);
+        Toastr::success('Posting is successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
+        return redirect()->route('home');
     }
 
     public function getAll()
