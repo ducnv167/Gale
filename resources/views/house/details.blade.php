@@ -136,7 +136,17 @@
             <div class="col-md-4">
                 <div
                     style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
-                    <form action=""></form>
+                    <form action="">
+                        <div class="form-group">
+                            Check-in: <input id="startDate" width="276" />
+                            Checkout: <input id="endDate" width="276" />
+                        </div>
+                        <div class="form-group">
+                            <button class="form-control"
+                                style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">Button</button>
+                        </div>
+
+                    </form>
                 </div>
             </div>
         </div>
@@ -171,12 +181,29 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             @endforeach
         </div>
     </div>
-
 </section>
-
+<script>
+    $(document).ready(function() {
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            },
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            },
+        });
+    });
+</script>
 @endsection
