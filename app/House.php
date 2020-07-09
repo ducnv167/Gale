@@ -23,4 +23,8 @@ class House extends Model
     {
         return $this->hasMany('App\HouseDetail');
     }
+
+    public function ratings() {
+        return $this->hasMany('App\Rating');
+    }
 }
