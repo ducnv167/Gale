@@ -9,27 +9,29 @@ use App\Http\Services\UserService;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+
 class OrderController extends Controller
 {
     protected $orderService;
     protected $userService;
+
     public function __construct(OrderService $orderService, UserService $userService)
     {
-        $this->orderService=$orderService;
+        $this->orderService = $orderService;
         $this->userService = $userService;
     }
-    public function rentHouse()
-    {
 
-        $newformat= strtotime('20-10-2020');
-        $arrivalDate= date('Y-m-d',$newformat);
-        $newformat1= strtotime('25-10-2020');
-        $departureDate= date('Y-m-d',$newformat1);
-        $date1 = Carbon::create($arrivalDate);
-        $date2 = Carbon::create($departureDate);
-        $num= $date2->diffInDays($date1);
-        $house = House::findOrfail(8);
-        return view('rent-house.view',compact('house','arrivalDate','departureDate','num'));
+    public function rentHouse(Request $request,$id)
+    {
+        $checkIn = strtotime($request->check_in);
+        $arrivalDate = date('Y-m-d', $checkIn);
+        $checkout = strtotime($request->checkout);
+        $departureDate = date('Y-m-d', $checkout);
+        $arrivalDateCarbon = Carbon::create($arrivalDate);
+        $departureDateCarbon = Carbon::create($departureDate);
+        $rentingDays = $departureDateCarbon->diffInDays($arrivalDateCarbon);
+        $house = House::findOrFail($id);
+        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays','house'));
     }
 
     public function store(Request $request)
@@ -43,6 +45,6 @@ class OrderController extends Controller
     public function storeUser(UserRequest $userRequest)
     {
         $this->userService->store($userRequest);
-        return redirect()->route('rent');
+        return back();
     }
 }

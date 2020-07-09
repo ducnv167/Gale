@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,12 +14,13 @@
     <link rel="stylesheet" href="{{asset('users/css/style.css')}}">
 
 </head>
+
 <body>
 <nav class="navbar navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="{{route('home')}}">
-            <img src="{{asset('images/logo-via-logohub.png')}}" width="300" height="50" class="d-inline-block align-top"
-                 alt="" loading="lazy">
+            <img src="{{asset('images/logo-via-logohub.png')}}" width="300" height="50"
+                 class="d-inline-block align-top" alt="" loading="lazy">
         </a>
         <h2 style="text-shadow: 5px 5px 5px green;color: black">Booking</h2>
     </div>
@@ -31,9 +33,9 @@
             <div class="col-md-6">
                 @if(!\Illuminate\Support\Facades\Auth::user())
                     <div class="w3-card-4" style="margin-top: 50px">
-
                         <div style="background-image: url({{ asset('images/anh1.jpg') }});">
-                            <h3 style="margin-left: 40px;padding-top: 50px">Sign in or Register under</h3>
+                            <h3 style="margin-left: 40px;padding-top: 50px">Sign in and enjoy member-only
+                                benefits!</h3>
                             <p style="margin: 40px">Sign up to experience a great booking site and receive more
                                 promotions.
                             </p>
@@ -46,9 +48,9 @@
                     <h2>Booking information</h2>
                 </div>
                 <div style="margin-top: 50px">
-                    <h2>Your information</h2>
-                    <br>
                     @if(\Illuminate\Support\Facades\Auth::user())
+                        <h2>Your information</h2>
+                        <br>
                         <form id="registerForm" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group1">
@@ -65,16 +67,20 @@
                                 <label class="label-custom" for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="number" name="email" id="emailInput"
                                        value="{{\Illuminate\Support\Facades\Auth::user()->phone}}"
-                                       placeholder="Your Email" readonly/>
+                                       placeholder="Your Email"
+                                       readonly/>
                             </div>
                             <div class="form-group1">
                                 <label class="label-custom" for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="emailInput"
                                        value="{{\Illuminate\Support\Facades\Auth::user()->email}}"
-                                       placeholder="Your Email" readonly/>
+                                       placeholder="Your Email"
+                                       readonly/>
                             </div>
                         </form>
                     @else
+                        <h2>Sign up</h2>
+                        <br>
                         <form action="{{route('rent.storeUser')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group1">
@@ -96,15 +102,14 @@
                             </div>
                             <div class="form-group1">
                                 <label class="label-custom" for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" value="{{old('password')}}" name="password"
-                                       id="passwordInput" placeholder="Password" minlength="6" required/>
+                                <input type="password" value="{{old('password')}}" name="password" id="passwordInput"
+                                       placeholder="Password" minlength="6" required/>
                             </div>
                             <div role="alert" id="passwordError">
                                 <strong></strong>
                             </div>
                             <div class="form-group1">
-                                <label class="label-custom" for="re-pass"><i
-                                            class="zmdi zmdi-lock-outline"></i></label>
+                                <label class="label-custom" for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="repeatPassword" id="repeatPasswordInput"
                                        placeholder="Repeat your password" minlength="6" required/>
                             </div>
@@ -126,22 +131,21 @@
                                 <strong></strong>
                             </div>
                             <div class="form-group1 form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit"
-                                       value="Register" required/>
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Accept"
+                                       required/>
                             </div>
                         </form>
                     @endif
                 </div>
-                    @if(\Illuminate\Support\Facades\Auth::user())
-                        <form action="{{route('rent.store')}}" method="post">
+                @if (\Illuminate\Support\Facades\Auth::user())
+                    <form action="{{route('rent.store')}}" method="post">
                         @csrf
                         <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
                         <input type="hidden" name="house_id" value="{{$house->id}}">
-                        <input type="hidden" name="total_price" value="{{$num*$house->price}}">
+                        <input type="hidden" name="total_price" value="{{$rentingDays*$house->price}}">
                         <input type="hidden" name="arrival_date" value="{{$arrivalDate}}">
                         <input type="hidden" name="departure_date" value="{{$departureDate}}">
-                        <input type="submit" class=" btn btn-outline-success" style="width: 100px;background: linear-gradient(to bottom, #ff9933 0%, #ff5050 100%);
-" value="Rent now!">
+                        <input type="submit" class=" btn btn-outline-success" style="width: 100px" value="Rent now!">
                     </form>
                 @endif
             </div>
@@ -156,7 +160,8 @@
                                     <p>{{$house->address}}</p>
                                 </div>
                                 <div class="col-5">
-                                    <img src="{{asset('storage/' . $house->houseDetails()->first()->filename)}}" alt="">
+                                    <img src="{{asset('storage/' . $house->houseDetails()->first()->filename)}}"
+                                         alt="">
                                 </div>
                             </div>
                         </div>
@@ -195,11 +200,15 @@
                         <hr>
                         <div>
                             <h3 style="color: #fd7e14;font-weight: bold">Waring</h3>
-                            <h4>For example: Booking with a total amount of 100 USD, check-in at 2:00 pm on August 31st
-                                and check-out on September 1st. The guest will be refunded 100 USD if cancel within 48
-                                hours of booking succeeded; 100 USD minus a service fee (if) if cancel after 48 hours of
+                            <h4>For example: Booking with a total amount of 100 USD, check-in at 2:00 pm on August
+                                31st
+                                and check-out on September 1st. The guest will be refunded 100 USD if cancel within
+                                48
+                                hours of booking succeeded; 100 USD minus a service fee (if) if cancel after 48
+                                hours of
                                 booking succeeded and latest before 1:59 pm of August 30th; 50% of the total booking
-                                amount minus the first night and fees if cancel from 2:00 pm on August 30th to 1:59 pm
+                                amount minus the first night and fees if cancel from 2:00 pm on August 30th to 1:59
+                                pm
                                 on August 31st</h4>
                         </div>
                     </div>
@@ -208,16 +217,16 @@
         </div>
     </div>
 </div>
-<footer style="height: 100px">
-</footer>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+</script>
+
 </html>
