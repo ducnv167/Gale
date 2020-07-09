@@ -28,8 +28,8 @@ class OrderService
         $this->orderRepository->store($newOrder);
     }
 
-    public function getAllOfHouse()
+    public function getAllOfHouse($id)
     {
-        return $this->orderRepository->getAllOfHouse();
+        return $this->orderRepository->getAllOfHouse($id);
     }
 }

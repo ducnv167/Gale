@@ -44,7 +44,7 @@ Route::prefix('users')->group(function () {
     Route::get('login', 'UserController@login')->name('users.login');
     Route::post('login', 'UserController@loginHandling')->name('users.loginHandling');
     Route::get('logout', 'UserController@logout')->name('users.logout');
-    Route::get('rent-history','OrderController@show')->name('users.history-show');
+    Route::get('/{id}/rent-history','OrderController@show')->name('users.history-show');
 });
 //login google
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect')->name('login-google');

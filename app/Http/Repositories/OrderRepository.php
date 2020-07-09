@@ -4,6 +4,7 @@
 namespace App\Http\Repositories;
 
 
+use App\House;
 use App\Order;
 
 class OrderRepository
@@ -20,8 +21,9 @@ class OrderRepository
         $newOrder->save();
     }
 
-    public function getAllOfHouse()
+    public function getAllOfHouse($id)
     {
-        return $this->order->all();
+
+         return Order::where('house_id', '=', $id)->get();
     }
 }
