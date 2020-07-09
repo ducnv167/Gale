@@ -30,8 +30,9 @@ class OrderController extends Controller
         $arrivalDateCarbon = Carbon::create($arrivalDate);
         $departureDateCarbon = Carbon::create($departureDate);
         $rentingDays = $departureDateCarbon->diffInDays($arrivalDateCarbon);
+
         $house = House::findOrFail($id);
-        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays','house'));
+        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays','house','request'));
     }
 
     public function store(Request $request)

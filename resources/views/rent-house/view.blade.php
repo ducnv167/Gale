@@ -44,8 +44,41 @@
                         </div>
                     </div>
                 @endif
-                <div style="margin-top: 50px">
-                    <h2>Booking information</h2>
+                <br>
+                <h2>Booking information</h2>
+                <br>
+                <div>
+                    <div class="w3-card-4">
+                        <img class="card-img-top" style="height: 30px" src="{{asset('images/card.jpeg')}}" alt="">
+                        <table class="table">
+                            <tr>
+                                <td>Check in</td>
+                                <th>{{$request->check_in}}</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Checkout
+                                </td>
+                                <th>{{$request->checkout}}</th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Damage Policy
+                                </th>
+                                <td>
+                                    You will be responsible for any damage to the rental property caused by you or your party during your stay.
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    House's rules
+                                </th>
+                                <td>
+                                    ID/Passport or Deposit Required\nNo smoking in shared spaces and common areas\nNo shoes in house\nAvoid making noises after 10 pm\n
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <div style="margin-top: 50px">
                     @if(\Illuminate\Support\Facades\Auth::user())
@@ -151,7 +184,7 @@
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-4">
-                <div class="w3-card-4" style="position: sticky; top: 200px;height: auto">
+                <div class="w3-card-4" style="position: sticky; top: 160px;height: auto">
                     <div class="mx-3 py-2 ">
                         <div>
                             <div class="row">
@@ -167,33 +200,75 @@
                         </div>
                         <hr>
                         <div>
-                            <h4 style="font-weight: bold">{{$house->bathroom_amount}} bathroom</h4>
-                            <h4 style="font-weight: bold"> {{$house->bedroom_amount}} bedroom</h4>
+                            <table>
+                                <tr>
+                                    <td class="col-12">
+                                        <h4>{{$house->house_category}}
+                                        </h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-12">
+                                        <h4>{{$house->room_category}}</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-12">
+                                        Bathroom
+                                    </td>
+                                    <td>
+                                         {{$house->bathroom_amount}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-12">
+                                        Bedroon
+                                    </td>
+                                    <td>
+                                        {{$house->bedroom_amount}}
+                                    </td>
+                                </tr>
+{{--                                <tr>--}}
+{{--                                    <td class="col-12">--}}
+{{--                                        <h4>Total</h4>--}}
+{{--                                    </td>--}}
+{{--                                    <td>--}}
+{{--                                        <h4>{{$house->price*$rentingDays}}</h4>--}}
+{{--                                    </td>--}}
+{{--                                </tr>--}}
+                            </table>
+
                         </div>
                         <hr>
                         <div>
                             <table>
                                 <tr>
                                     <td class="col-12">
-                                        {{$arrivalDate}} {{$departureDate}}
+                                        {{$request->check_in}}
                                     </td>
-                                    <td></td>
+                                    <td>
+                                        {{$request->checkout}}
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-8">
+                                    <td class="col-12">
                                         <h4>Price</h4>
                                     </td>
-                                    <td class="col-4">
+                                    <td>
                                         <h4>{{$house->price}}</h4>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="col-8">
+                                    <td class="col-12">
                                         <h4>Total</h4>
                                     </td>
-                                    <td class="col-4">
-                                        <h4>9999999</h4>
+                                    <td>
+                                        <h4>{{$house->price*$rentingDays}}</h4>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-12"></td>
+                                    <th>(VND)</th>
                                 </tr>
                             </table>
                         </div>
@@ -217,7 +292,9 @@
         </div>
     </div>
 </div>
+<footer style="height: 100px;background-color: #7abaff">
 
+</footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
