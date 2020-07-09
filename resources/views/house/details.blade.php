@@ -120,12 +120,86 @@
                             <div class="tab-pane fade" id="pills-review" role="tabpanel"
                                  aria-labelledby="pills-review-tab">
                                 <div class="row">
-                                    <div class="col-md-9">
+                                    <div class="col-md-7">
                                         <h3 class="head">23 Reviews</h3>
                                         {{--                                        <div class="review d-flex">--}}
                                         <div>@comments(['model' => $house])
                                         </div>
                                         {{--                                        </div>--}}
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="rating-wrap">
+                                            <h3 class="head">Give a Review</h3>
+                                            <div class="wrap">
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					(98%)
+								   					</span>
+                                                    <span>20 Reviews</span>
+                                                </p>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					(85%)
+								   					</span>
+                                                    <span>10 Reviews</span>
+                                                </p>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					(70%)
+								   					</span>
+                                                    <span>5 Reviews</span>
+                                                </p>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					(10%)
+								   					</span>
+                                                    <span>0 Reviews</span>
+                                                </p>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					(0%)
+								   					</span>
+                                                    <span>0 Reviews</span>
+                                                </p>
+                                                <hr>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					(0%)
+								   					</span>
+                                                    <span>0 Reviews</span>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
