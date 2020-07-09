@@ -47,4 +47,10 @@ class OrderController extends Controller
         $this->userService->store($userRequest);
         return back();
     }
+
+    public function show()
+    {
+        $order=$this->orderService->getAllOfHouse();
+        return view('users.history',compact('order'));
+    }
 }

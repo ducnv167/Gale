@@ -27,4 +27,9 @@ class OrderService
         $newOrder->total_price = $orderRequest->total_price;
         $this->orderRepository->store($newOrder);
     }
+
+    public function getAllOfHouse()
+    {
+        return $this->orderRepository->getAllOfHouse();
+    }
 }

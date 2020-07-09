@@ -19,4 +19,9 @@ class OrderRepository
     {
         $newOrder->save();
     }
+
+    public function getAllOfHouse()
+    {
+        return $this->order->all();
+    }
 }
