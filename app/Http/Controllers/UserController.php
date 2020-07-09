@@ -52,9 +52,6 @@ class UserController extends Controller
         return back();
     }
 
-    public function rentHouse()
-    {
-        return view('rent-house.view');
-    }
+
 }
 

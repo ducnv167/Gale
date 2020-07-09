@@ -14,4 +14,9 @@ class OrderRepository
     {
         $this->order = $order;
     }
+
+    public function store($newOrder)
+    {
+        $newOrder->save();
+    }
 }
