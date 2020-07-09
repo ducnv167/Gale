@@ -8,8 +8,11 @@ use App\Http\Repositories\UserRepository;
 use App\Mail\ResetPasswordMail;
 use App\User;
 use Brian2694\Toastr\Toastr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
+
 
 class UserService
 {
@@ -47,18 +50,45 @@ class UserService
         return $this->userRepository->finById($id);
     }
 
-    public function changePassword($user, $request)
+    public function changePassword($oldUser, $request)
     {
-        $user->password = Hash::make($request->password);
-        if ($request->password == $request->repeatPassword) {
-            $this->userRepository->store($user);
-            return true;
-        }else{
+        $user = [
+            'email' => $oldUser->email,
+            'password' => $request->oldPassword
+        ];
+
+        if (Auth::attempt($user)) {
+            $oldUser->password = Hash::make($request->password);
+            if ($request->password == $request->repeatPassword) {
+                $this->userRepository->store($oldUser);
+                return true;
+            } else {
+                return false;
+            }
+        } else {
             return false;
         }
 
     }
 
+
+    public function update($request, $user)
+    {
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        if ($request->hasFile('image')) {
+            $currentImage = $user->image;
+            if ($currentImage) {
+                Storage::delete('/public/' . $currentImage);
+            }
+            $image = $request->file('image');
+            $path = $image->store('users/images', 'public');
+            $user->image = $path;
+        }
+        $this->userRepository->store($user);
+        return true;
+    }
+  
     function sendEmailResetPassword($request) {
         $email = $request->email;
         $user = $this->userRepository->findUserByEmail($email);
@@ -86,4 +116,5 @@ class UserService
         }
         return false;
     }
+
 }
