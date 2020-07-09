@@ -10,6 +10,7 @@
 <body>
 <h1>{{$data['title']}}</h1>
 <p>{{$data['body']}}</p>
+<a href="{{route('users.resetPasswordView', $data['id'])}}">Reset password here</a>
 <p>Thank you</p>
 </body>
 </html>

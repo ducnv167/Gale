@@ -65,11 +65,25 @@ class UserService
         if ($user == null) {
             return false;
         }
+        $id = $user->id;
         $data = [
+            'id' => $id,
             'title' => 'Reset password',
             'body' => 'Click link path to reset password.'
         ];
         Mail::to($email)->send(new ResetPasswordMail($data));
         return true;
+    }
+
+    function resetPassword($id, $request) {
+        $user = $this->userRepository->finById($id);
+        $password = $request->password;
+        $confirmPassword = $request->confirmPassword;
+        if ($password == $confirmPassword) {
+            $user->password = Hash::make($password);
+            $this->userRepository->store($user);
+            return true;
+        }
+        return false;
     }
 }

@@ -9,10 +9,10 @@
                             <div class="signin-image">
                                 <figure><img src="{{asset('users/images/signin-image.jpg')}}" alt="sing up image">
                                 </figure>
-                                <p data-toggle="modal" data-target="#myModalRegister" class="signup-image-link btn">Create
+                                <p data-toggle="modal" data-target="#myModalRegister" class="signup-image-link btn" data-dismiss="modal">Create
                                     an account</p>
                                 <hr>
-                                <p data-toggle="modal" data-target="#myModalForgotPassword" class="signup-image-link btn">Forgot password</p>
+                                <p data-toggle="modal" data-target="#myModalForgotPassword" class="signup-image-link btn" data-dismiss="modal">Forgot password</p>
                             </div>
                             <div class="signin-form">
                                 <h2 class="form-title">Sign up</h2>
@@ -58,4 +58,5 @@
         </div>
     </div>
 </div>
+
 

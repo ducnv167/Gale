@@ -29,6 +29,6 @@ class UserRepository
     }
 
     function findUserByEmail($email) {
-        return $this->user->whereEmail($email);
+        return $this->user->whereEmail($email)->first();
     }
 }

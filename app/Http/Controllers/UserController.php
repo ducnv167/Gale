@@ -72,5 +72,19 @@ class UserController extends Controller
         }
         return back();
     }
+
+    function resetPasswordView($id) {
+        return view('users.reset-password', compact('id'));
+    }
+
+    function resetPassword($id, Request $request) {
+        $result = $this->userService->resetPassword($id, $request);
+        if ($result) {
+            Toastr::success('Reset password successful!!!', 'Success', ["positionClass" => "toast-top-left"]);
+            return redirect()->route('home');
+        }
+        Toastr::error('Password not same!!!', 'Fail', ["positionClass" => "toast-top-left"]);
+        return back();
+    }
 }
 
