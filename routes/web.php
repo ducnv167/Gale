@@ -27,6 +27,10 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/rental', "HouseController@store")->name('house.store');
     });
 });
+Route::get('/rent-house', 'OrderController@rentHouse')->name('rent');
+Route::post('/rent-house', 'OrderController@store')->name('rent.store');
+Route::post('/rent-house1', 'OrderController@storeUser')->name('rent.storeUser');
+
 
 Route::prefix('house')->group(function () {
     Route::get('/{id}/details', 'HouseController@findById')->name('house.details');

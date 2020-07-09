@@ -136,7 +136,7 @@
             <div class="col-md-4">
                 <div
                     style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
-                    <form action="">
+                    <form action="{{ route('rent', $house) }}">
                         <div class="form-group">
                             Check-in: <input id="startDate" width="276" />
                             Checkout: <input id="endDate" width="276" />

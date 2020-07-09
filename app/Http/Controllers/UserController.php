@@ -46,10 +46,10 @@ class UserController extends Controller
         }
     }
 
-    function logout() {
+    function logout()
+    {
         Auth::logout();
         Toastr::success('See you again:))', 'Logout successful!!!', ["positionClass" => "toast-top-right"]);
         return back();
     }
 }
-
