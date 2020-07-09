@@ -5,11 +5,14 @@ namespace App\Http\Services;
 
 
 use App\Http\Repositories\UserRepository;
+use App\Mail\ResetPasswordMail;
 use App\User;
 use Brian2694\Toastr\Toastr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+
 
 class UserService
 {
@@ -68,6 +71,7 @@ class UserService
 
     }
 
+
     public function update($request, $user)
     {
         $user->name = $request->name;
@@ -84,4 +88,33 @@ class UserService
         $this->userRepository->store($user);
         return true;
     }
+  
+    function sendEmailResetPassword($request) {
+        $email = $request->email;
+        $user = $this->userRepository->findUserByEmail($email);
+        if ($user == null) {
+            return false;
+        }
+        $id = $user->id;
+        $data = [
+            'id' => $id,
+            'title' => 'Reset password',
+            'body' => 'Click link path to reset password.'
+        ];
+        Mail::to($email)->send(new ResetPasswordMail($data));
+        return true;
+    }
+
+    function resetPassword($id, $request) {
+        $user = $this->userRepository->finById($id);
+        $password = $request->password;
+        $confirmPassword = $request->confirmPassword;
+        if ($password == $confirmPassword) {
+            $user->password = Hash::make($password);
+            $this->userRepository->store($user);
+            return true;
+        }
+        return false;
+    }
+
 }

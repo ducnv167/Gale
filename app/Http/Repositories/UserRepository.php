@@ -27,4 +27,8 @@ class UserRepository
     public function finById($id){
         return $this->user->findOrFail($id);
     }
+
+    function findUserByEmail($email) {
+        return $this->user->whereEmail($email)->first();
+    }
 }
