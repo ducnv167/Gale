@@ -16,7 +16,7 @@
 <body>
 <nav class="navbar navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{route('home')}}">
             <img src="{{asset('images/logo-via-logohub.png')}}" width="300" height="50" class="d-inline-block align-top"
                  alt="" loading="lazy">
         </a>
@@ -33,8 +33,7 @@
                     <div class="w3-card-4" style="margin-top: 50px">
 
                         <div style="background-image: url({{ asset('images/anh1.jpg') }});">
-                            <h3 style="margin-left: 40px;padding-top: 50px">Sign in and enjoy member-only
-                                benefits!</h3>
+                            <h3 style="margin-left: 40px;padding-top: 50px">Sign in or Register under</h3>
                             <p style="margin: 40px">Sign up to experience a great booking site and receive more
                                 promotions.
                             </p>
@@ -128,21 +127,23 @@
                             </div>
                             <div class="form-group1 form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit"
-                                       value="Accept" required/>
+                                       value="Register" required/>
                             </div>
                         </form>
                     @endif
                 </div>
-                <form action="{{route('rent.store')}}" method="post">
-                    @csrf
-                    <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
-                    <input type="hidden" name="house_id" value="{{$house->id}}">
-                    <input type="hidden" name="total_price" value="{{$num*$house->price}}">
-                    <input type="hidden" name="arrival_date" value="{{$arrivalDate}}">
-                    <input type="hidden" name="departure_date" value="{{$departureDate}}">
-                    <input type="submit" class=" btn btn-outline-success" style="width: 100px" value="Rent now!">
-                </form>
-
+                    @if(\Illuminate\Support\Facades\Auth::user())
+                        <form action="{{route('rent.store')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
+                        <input type="hidden" name="house_id" value="{{$house->id}}">
+                        <input type="hidden" name="total_price" value="{{$num*$house->price}}">
+                        <input type="hidden" name="arrival_date" value="{{$arrivalDate}}">
+                        <input type="hidden" name="departure_date" value="{{$departureDate}}">
+                        <input type="submit" class=" btn btn-outline-success" style="width: 100px;background: linear-gradient(to bottom, #ff9933 0%, #ff5050 100%);
+" value="Rent now!">
+                    </form>
+                @endif
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-4">
@@ -207,7 +208,8 @@
         </div>
     </div>
 </div>
-
+<footer style="height: 100px">
+</footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
