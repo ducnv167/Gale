@@ -7,6 +7,7 @@ namespace App\Http\Services;
 use App\Http\Repositories\UserRepository;
 use App\User;
 use Brian2694\Toastr\Toastr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -46,14 +47,17 @@ class UserService
         return $this->userRepository->finById($id);
     }
 
-    public function changePassword($user, $request)
+    public function changePassword($oldUser, $request)
     {
-        dd($request->oldPassword);
-        if ($user->password == Hash::make($request->oldPassword)) {
+        $user = [
+            'email' => $oldUser->email,
+            'password' => $request->oldPassword
+        ];
 
-            $user->password = Hash::make($request->password);
+        if (Auth::attempt($user)) {
+            $oldUser->password = Hash::make($request->password);
             if ($request->password == $request->repeatPassword) {
-                $this->userRepository->store($user);
+                $this->userRepository->store($oldUser);
                 return true;
             } else {
                 return false;
