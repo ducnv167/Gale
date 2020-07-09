@@ -31,11 +31,12 @@ class HouseRepository
 
     public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
-        return $house = House::where([
-            ['bedroom_amount', '=', $bedRoom],
-            ['bathroom_amount', '=', $bathRoom],
-            ['price', '<', $priceLimit],
+        return $houses = House::where([
+            ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
+            ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
+            ['price', 'like','%'. $priceLimit .'%'],
             ['address', 'like', '%' . $location . '%'],
-        ])->paginate(9);
+        ])->paginate(6);
+
     }
 }

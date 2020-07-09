@@ -7,6 +7,7 @@ use App\Http\Services\UserService;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class UserController extends Controller
@@ -52,4 +53,59 @@ class UserController extends Controller
         Toastr::success('See you again:))', 'Logout successful!!!', ["positionClass" => "toast-top-right"]);
         return back();
     }
+
+
+    public function changePassword(Request $request,$id){
+        $user = $this->userService->findById($id);
+        if ($this->userService->changePassword($user,$request)){
+            Toastr::success('Reset password successful!!!', 'Success', ["positionClass" => "toast-top-left"]);
+        }else{
+            Toastr::error('Password not same!!!', 'Fail', ["positionClass" => "toast-top-left"]);
+        }
+        return back();
+    }
+
+
+    public function findById($id){
+        $user =$this->userService->findById($id);
+        return view('users.edit' ,compact('user'));
+    }
+
+    public function update(Request $request,$id){
+        $user= $this->userService->findById($id);
+        if ($this->userService->update($request,$user)){
+            Toastr::success('Update profile successful!!!', 'Success', ["positionClass" => "toast-top-left"]);
+        }else{
+            Toastr::error('Update profile fail', 'Fail', ["positionClass" => "toast-top-left"]);
+        }
+
+        return redirect()->route('home');
+    }
+
+    function sendEmailResetPassword(Request $request) {
+        $result = $this->userService->sendEmailResetPassword($request);
+
+        if ($result) {
+            Toastr::success('Send mail reset password successfully, check mail please!!!', 'Success', ["positionClass" => "toast-top-right"]);
+        } else {
+            Toastr::error('Email is not true, import again please!!!', 'Fail', ["positionClass" => "toast-top-right"]);
+        }
+        return back();
+    }
+
+    function resetPasswordView($id) {
+        return view('users.reset-password', compact('id'));
+    }
+
+    function resetPassword($id, Request $request) {
+        $result = $this->userService->resetPassword($id, $request);
+        if ($result) {
+            Toastr::success('Reset password successful!!!', 'Success', ["positionClass" => "toast-top-left"]);
+            return redirect()->route('home');
+        }
+        Toastr::error('Password not same!!!', 'Fail', ["positionClass" => "toast-top-left"]);
+        return back();
+
+    }
 }
+
