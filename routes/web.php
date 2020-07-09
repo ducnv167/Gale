@@ -19,7 +19,6 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/list-house', 'HouseController@getAll')->name('list.house');
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('host')->group(function () {
