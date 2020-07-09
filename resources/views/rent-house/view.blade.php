@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body style="background-image: url(https://www.htmlcsscolor.com/preview/gallery/F0F8FF.png)">
 <nav class="navbar navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="{{route('home')}}">
@@ -39,10 +39,11 @@
                             <p style="margin: 40px">Sign up to experience a great booking site and receive more
                                 promotions.
                             </p>
-                            <a style="margin-left: 40px;margin-bottom: 50px" href="" class="btn btn-success">Sign
+                            <a style="margin-left: 40px;margin-bottom: 50px" data-toggle="modal" data-target="#myModal" class="btn btn-success">Sign
                                 in</a>
                         </div>
                     </div>
+                    @include('users.login')
                 @endif
                 <br>
                 <h2>Booking information</h2>
@@ -228,16 +229,7 @@
                                         {{$house->bedroom_amount}}
                                     </td>
                                 </tr>
-{{--                                <tr>--}}
-{{--                                    <td class="col-12">--}}
-{{--                                        <h4>Total</h4>--}}
-{{--                                    </td>--}}
-{{--                                    <td>--}}
-{{--                                        <h4>{{$house->price*$rentingDays}}</h4>--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
                             </table>
-
                         </div>
                         <hr>
                         <div>
@@ -274,7 +266,7 @@
                         </div>
                         <hr>
                         <div>
-                            <h3 style="color: #fd7e14;font-weight: bold">Waring</h3>
+                            <h3 style="color: #fd7e14;font-weight: bold">Notite!</h3>
                             <h4>For example: Booking with a total amount of 100 USD, check-in at 2:00 pm on August
                                 31st
                                 and check-out on September 1st. The guest will be refunded 100 USD if cancel within
