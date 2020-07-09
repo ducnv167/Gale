@@ -8,6 +8,7 @@ use App\Http\Repositories\UserRepository;
 use App\User;
 use Brian2694\Toastr\Toastr;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserService
 {
@@ -47,13 +48,36 @@ class UserService
 
     public function changePassword($user, $request)
     {
-        $user->password = Hash::make($request->password);
-        if ($request->password == $request->repeatPassword) {
-            $this->userRepository->store($user);
-            return true;
-        }else{
+        dd($request->oldPassword);
+        if ($user->password == Hash::make($request->oldPassword)) {
+
+            $user->password = Hash::make($request->password);
+            if ($request->password == $request->repeatPassword) {
+                $this->userRepository->store($user);
+                return true;
+            } else {
+                return false;
+            }
+        } else {
             return false;
         }
 
+    }
+
+    public function update($request, $user)
+    {
+        $user->name = $request->name;
+        $user->phone = $request->phone;
+        if ($request->hasFile('image')) {
+            $currentImage = $user->image;
+            if ($currentImage) {
+                Storage::delete('/public/' . $currentImage);
+            }
+            $image = $request->file('image');
+            $path = $image->store('users/images', 'public');
+            $user->image = $path;
+        }
+        $this->userRepository->store($user);
+        return true;
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Services\UserService;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class UserController extends Controller
@@ -60,6 +61,22 @@ class UserController extends Controller
             Toastr::error('Password not same!!!', 'Fail', ["positionClass" => "toast-top-left"]);
         }
         return back();
+    }
+
+    public function findById($id){
+        $user =$this->userService->findById($id);
+        return view('users.edit' ,compact('user'));
+    }
+
+    public function update(Request $request,$id){
+        $user= $this->userService->findById($id);
+        if ($this->userService->update($request,$user)){
+            Toastr::success('Update profile successful!!!', 'Success', ["positionClass" => "toast-top-left"]);
+        }else{
+            Toastr::error('Update profile fail', 'Fail', ["positionClass" => "toast-top-left"]);
+        }
+
+        return redirect()->route('home');
     }
 }
 

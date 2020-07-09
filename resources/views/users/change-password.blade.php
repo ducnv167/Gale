@@ -1,6 +1,6 @@
 
 <div class="container">
-    <div class="modal fade" id="myModalResetPassword" role="dialog">
+    <div class="modal fade" id="myModalChangePassword" role="dialog">
         <div class="modal-dialog modal-dialog modal-lg">
             <div class="modal-content">
                 <section class="sign-in">
@@ -20,19 +20,25 @@
                                     <div class="form-group1">
                                         <label class="label-custom" for="your_pass"><i
                                                 class="zmdi zmdi-lock"></i></label>
+                                        <input type="password" name="oldPassword" id="your_pass" placeholder="Old Password"
+                                               minlength="6" required/>
+                                    </div>
+                                    <div class="form-group1">
+                                        <label class="label-custom" for="your_pass"><i
+                                                class="zmdi zmdi-lock"></i></label>
                                         <input type="password" name="password" id="your_pass" placeholder="New Password"
                                                minlength="6" required/>
                                     </div>
                                     <div class="form-group1">
                                         <label class="label-custom" for="your_pass"><i
                                                 class="zmdi zmdi-lock"></i></label>
-                                        <input type="password" name="repeatPassword" id="your_pass" placeholder="Confirm Password"
+                                        <input type="password" name="repeatPassword" id="your_pass" placeholder="Confirm New Password"
                                                minlength="6" required/>
                                     </div>
 
                                     <div class="form-group1 form-button">
                                         <input type="submit" name="signin" id="signin" class="form-submit"
-                                               value="Reset"/>
+                                               value="Change"/>
                                     </div>
                                 </form>
                             </div>
