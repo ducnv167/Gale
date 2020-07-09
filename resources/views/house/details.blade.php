@@ -113,8 +113,18 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
-                                aria-labelledby="pills-manufacturer-tab">
-                                {!! $house->description !!}
+                                 aria-labelledby="pills-manufacturer-tab">
+                                {!! $house->description !!} <br>
+                                <div class="map" style="visibility: hidden; display:inline;">{{$house->location}}</div>
+                                <div class="google-map">
+                                </div>
+                                <style>
+                                    iframe {
+                                        width: 100%;
+                                        margin-top: -90px;
+                                    }
+                                </style>
+                               
                             </div>
 
                             <div class="tab-pane fade" id="pills-review" role="tabpanel"
@@ -152,6 +162,7 @@
         </div>
     </div>
     <div class="container mt-5">
+
         <div class="row">
             @foreach($bonusHouse as $house)
             <div class="col-md-3">
@@ -184,6 +195,14 @@
             </div>
             @endforeach
         </div>
+
+    </section>
+    <script>
+        $(document).ready(function () {
+            let linkMap = $('.map').text();
+            $('.google-map').html(linkMap);
+        })
+    </script>
     </div>
 </section>
 <script>
@@ -206,4 +225,5 @@
         });
     });
 </script>
+
 @endsection

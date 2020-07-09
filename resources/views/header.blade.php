@@ -14,7 +14,6 @@
                 {{--                <li class="nav-item"><a href="agent.html" class="nav-link">Agent</a></li>--}}
                 {{--                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>--}}
                 <li class="nav-item"><a href="{{route('house.list')}}" class="nav-link">Properties</a></li>
-
                 {{--                <li class="nav-item"><p data-toggle="modal" data-target="#myModalRegister" class="nav-link btn">Register</p>--}}
                 {{--                </li>--}}
                 {{--                <li class="nav-item"><p class="nav-link" data-toggle="modal" data-target="#myModal">Login</p></li>--}}

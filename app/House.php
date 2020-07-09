@@ -19,6 +19,7 @@ class House extends Model
         'description',
         'address',
         'price',
+        'location',
     ];
 
     public function houseDetails()

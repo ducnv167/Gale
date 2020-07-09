@@ -52,7 +52,7 @@ class HouseService
             }
         }
     }
-  
+
     public function getAll()
     {
         return $this->houseRepository->getAll();
