@@ -138,7 +138,7 @@
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
-									   					({{ $rating['total'] != 0 ? $rating['5'] / $rating['total'] : 0 }} %)
+									   					({{ $rating['total'] != 0 ? round($rating['5'] / $rating['total']*100) : 0 }} %)
 								   					</span>
                                                     <span>{{ $rating['5'] }} Reviews</span>
                                                 </p>
@@ -149,7 +149,7 @@
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star" style="color: gray"></i>
-									   					({{ $rating['total'] != 0 ? $rating['4'] / $rating['total'] : 0 }} %)
+									   					({{ $rating['total'] != 0 ? round($rating['4'] / $rating['total']*100) : 0 }} %)
 								   					</span>
                                                     <span>{{ $rating['4'] }} Reviews</span>
                                                 </p>
@@ -160,7 +160,7 @@
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star" style="color: gray"></i>
 									   					<i class="fa fa-star" style="color: gray"></i>
-									   					({{ $rating['total'] != 0 ? $rating['3'] / $rating['total'] : 0 }} %)
+									   					({{ $rating['total'] != 0 ? round($rating['3'] / $rating['total']*100) : 0 }} %)
 								   					</span>
                                                     <span>{{ $rating['3'] }} Reviews</span>
                                                 </p>
@@ -171,7 +171,7 @@
 									   					<i class="fa fa-star" style="color: gray"></i>
 									   					<i class="fa fa-star" style="color: gray"></i>
 									   					<i class="fa fa-star" style="color: gray"></i>
-									   					({{ $rating['total'] != 0 ? $rating['2'] / $rating['total'] : 0 }} %)
+									   					({{ $rating['total'] != 0 ? round($rating['2'] / $rating['total']*100) : 0 }} %)
 								   					</span>
                                                     <span>{{ $rating['2'] }} Reviews</span>
                                                 </p>
@@ -182,7 +182,7 @@
 									   					<i class="fa fa-star" style="color: gray"></i>
 									   					<i class="fa fa-star" style="color: gray"></i>
 									   					<i class="fa fa-star" style="color: gray"></i>
-									   					({{ $rating['total'] != 0 ? $rating['1'] / $rating['total'] : 0 }} %)
+									   					({{ $rating['total'] != 0 ? round($rating['1'] / $rating['total']*100) : 0 }} %)
 								   					</span>
                                                     <span>{{ $rating['1'] }} Reviews</span>
                                                 </p>
@@ -194,7 +194,7 @@
 									   					<i class="fa fa-star star-3"></i>
 									   					<i class="fa fa-star star-4"></i>
 									   					<i class="fa fa-star star-5"></i>
-                                                        <span class="average">{{ $rating['total'] != 0 ? ($rating['5']*5 + $rating['4']*4 + $rating['3']*3 + $rating['2']*2 + $rating['1']*1) / $rating['total'] : 0 }}</span>
+                                                        <span class="average">{{ $rating['total'] != 0 ? round(($rating['5']*5 + $rating['4']*4 + $rating['3']*3 + $rating['2']*2 + $rating['1']*1) / $rating['total'], 2) : 0 }}</span>
 								   					</span>
                                                     <span>{{ $rating['total'] }} Reviews</span>
                                                 </p>
@@ -244,8 +244,6 @@
     <script>
         $(document).ready(function () {
             let average = $('.average').text();
-            console.log(average);
-            console.log(average < 1);
             if (average < 1) {
                 $('.star-1, .star-2, .star-3, .star-4, .star-5').css('color', 'gray');
             } else if (average < 2) {
