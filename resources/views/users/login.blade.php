@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="{{asset('users/css/style.css')}}">
 <div class="container">
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog modal-dialog modal-lg">
