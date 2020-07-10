@@ -47,4 +47,8 @@ class OrderController extends Controller
         $this->userService->store($userRequest);
         return back();
     }
+
+    public function cancelOrder($id){
+        dd($this->orderService->getById($id));
+    }
 }

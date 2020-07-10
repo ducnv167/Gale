@@ -19,4 +19,8 @@ class OrderRepository
     {
         $newOrder->save();
     }
+
+    public function findById($id){
+       return $orders = Order::query()->where('user_id','=',$id);
+    }
 }

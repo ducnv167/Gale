@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('host')->group(function () {
         Route::get('/rental', "HouseController@create")->name('house.create');
         Route::post('/rental', "HouseController@store")->name('house.store');
+        Route::get('/{id}/delete-order',"OrderController@cancelOrder")->name('order.cancel');
     });
 });
 Route::get('/rent-house/{id}', 'OrderController@rentHouse')->name('rent');
