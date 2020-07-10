@@ -52,4 +52,14 @@ class UserController extends Controller
         Toastr::success('See you again:))', 'Logout successful!!!', ["positionClass" => "toast-top-right"]);
         return back();
     }
+
+    public function changePassword(Request $request,$id){
+        $user = $this->userService->findById($id);
+        if ($this->userService->changePassword($user,$request)){
+            Toastr::success('Reset password successful!!!', 'Success', ["positionClass" => "toast-top-left"]);
+        }else{
+            Toastr::error('Password not same!!!', 'Fail', ["positionClass" => "toast-top-left"]);
+        }
+        return back();
+    }
 }
