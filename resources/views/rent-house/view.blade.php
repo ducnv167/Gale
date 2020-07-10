@@ -12,7 +12,7 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="{{asset('users/css/style.css')}}">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 
 <body style="background-image: url(https://www.htmlcsscolor.com/preview/gallery/F0F8FF.png)">
@@ -53,29 +53,29 @@
                         <img class="card-img-top" style="height: 30px" src="{{asset('images/card.jpeg')}}" alt="">
                         <table class="table">
                             <tr>
-                                <td>Check in</td>
+                                <td style="width: 150px"><i class="far fa-calendar-alt" style="font-size:20px;color:#2196F3"></i>&nbsp;Check in</td>
                                 <th>{{$request->check_in}}</th>
                             </tr>
                             <tr>
-                                <td>
-                                    Checkout
+                                <td style="width: 150px">
+                                    <i class="far fa-calendar-alt" style="font-size:20px;color:#2196F3"></i>&nbsp;Checkout
                                 </td>
                                 <th>{{$request->checkout}}</th>
                             </tr>
                             <tr>
-                                <th>
-                                    Damage Policy
+                                <th style="width: 200px">
+                                    <i class="fa fa-exclamation-triangle" style="font-size:20px;color:#D2691E"></i> &nbsp; Damage Policy
                                 </th>
                                 <td>
                                     You will be responsible for any damage to the rental property caused by you or your party during your stay.
                                 </td>
                             </tr>
                             <tr>
-                                <th>
-                                    House's rules
+                                <th style="width: 150px">
+                                    <i class="fa fa-tasks" style="font-size:20px;color:#228B22"></i> &nbsp;House's rules
                                 </th>
                                 <td>
-                                    ID/Passport or Deposit Required\nNo smoking in shared spaces and common areas\nNo shoes in house\nAvoid making noises after 10 pm\n
+                                  ID/Passport or Deposit Required\nNo smoking in shared spaces and common areas\nNo shoes in house\nAvoid making noises after 10 pm\n
                                 </td>
                             </tr>
                         </table>
@@ -191,7 +191,7 @@
                             <div class="row">
                                 <div class="col-7">
                                     <h3>{{$house->name}}</h3>
-                                    <p>{{$house->address}}</p>
+                                    <p><i class="fa fa-check" style="font-size:13px;color:#2196F3"></i>&nbsp;{{$house->address}}</p>
                                 </div>
                                 <div class="col-5">
                                     <img src="{{asset('storage/' . $house->houseDetails()->first()->filename)}}"
@@ -204,18 +204,17 @@
                             <table>
                                 <tr>
                                     <td class="col-12">
-                                        <h4>{{$house->house_category}}
-                                        </h4>
+                                        <h4>{{$house->house_category}}&nbsp;<i class="fa fa-check" style="font-size:13px;color:#228B22"></i></h4>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-12">
-                                        <h4>{{$house->room_category}}</h4>
+                                        <h4>{{$house->room_category}}&nbsp;<i class="fa fa-check" style="font-size:13px;color:#228B22"></i></h4>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-12">
-                                        Bathroom
+                                       Bathroom
                                     </td>
                                     <td>
                                          {{$house->bathroom_amount}}
@@ -223,7 +222,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-12">
-                                        Bedroon
+                                       Bedroom
                                     </td>
                                     <td>
                                         {{$house->bedroom_amount}}
@@ -266,7 +265,7 @@
                         </div>
                         <hr>
                         <div>
-                            <h3 style="color: #fd7e14;font-weight: bold">Notite!</h3>
+                            <h3 style="font-weight: bold"><i class="fa fa-bell" style="font-size:30px;color:#2196F3"></i>&nbsp;Notite!</h3>
                             <h4>For example: Booking with a total amount of 100 USD, check-in at 2:00 pm on August
                                 31st
                                 and check-out on September 1st. The guest will be refunded 100 USD if cancel within

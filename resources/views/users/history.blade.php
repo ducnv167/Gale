@@ -29,17 +29,16 @@
                 <table class="w3-table-all">
                     <tr>
                         <th></th>
-                        <th>Tenant name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Arrival date</th>
-                        <th>Departure date</th>
-                        <th>Pay total</th>
-
+                        <th><i class="fas fa-user-md" style="font-size:15px;color:#2196F3"></i> &nbsp;Tenant name</th>
+                        <th><i class="fas fa-envelope" style="font-size:20px;color:#2196F3"></i> &nbsp;Email</th>
+                        <th><i class="fas fa-phone" style="font-size:20px;color:#2196F3"></i> &nbsp;Phone</th>
+                        <th><i class="far fa-calendar-alt" style="font-size:20px;color:#2196F3"></i> &nbsp;Arrival date</th>
+                        <th><i class="far fa-calendar-alt" style="font-size:20px;color:#2196F3"></i> &nbsp;Departure date</th>
+                        <th><i class="fab fa-btc" style="font-size:20px;color:#2196F3"></i> &nbsp;Pay total</th>
                     </tr>
                     @foreach($order as $key=>$value)
                     <tr>
-                        <th>{{$key++}}</th>
+                        <th>{{++$key}}</th>
                         <th>{{$value->user->name}}</th>
                         <td>{{$value->user->email}}</td>
                         <td>{{$value->user->phone}}</td>
@@ -53,5 +52,7 @@
             </div>
         </div>
     </section>
+
+
 
 @endsection
