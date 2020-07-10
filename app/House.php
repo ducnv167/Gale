@@ -28,8 +28,10 @@ class House extends Model
     }
 
 
-    public function ratings() {
+    public function ratings()
+    {
         return $this->hasMany('App\Rating');
+    }
 
     public function orders()
     {
