@@ -124,7 +124,7 @@
                                         margin-top: -90px;
                                     }
                                 </style>
-                               
+
                             </div>
 
                             <div class="tab-pane fade" id="pills-review" role="tabpanel"
@@ -195,6 +195,7 @@
             </div>
             @endforeach
         </div>
+    </div>
 
     </section>
     <script>
@@ -203,8 +204,6 @@
             $('.google-map').html(linkMap);
         })
     </script>
-    </div>
-</section>
 <script>
     $(document).ready(function() {
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
