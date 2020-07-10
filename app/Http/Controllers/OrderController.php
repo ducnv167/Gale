@@ -23,7 +23,6 @@ class OrderController extends Controller
 
     public function rentHouse(Request $request, $id)
     {
-
         $checkIn = strtotime(str_replace('/', '-', $request->check_in));
         $arrivalDate = date('Y-m-d', $checkIn);
         $checkout = strtotime(str_replace('/', '-', $request->checkout));

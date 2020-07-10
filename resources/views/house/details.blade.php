@@ -60,183 +60,181 @@
                         <h2 id="name-house" data-id="{{$house->id}}">{{$house->name}}</h2>
                     </div>
                 </div>
-                <div class="col-md-12 pills">
-                    <div class="bd-example bd-example-tabs">
-                        <div class="d-flex">
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
-                                        href="#pills-description" role="tab" aria-controls="pills-description"
-                                        aria-expanded="true">Features</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill"
-                                        href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer"
-                                        aria-expanded="true">Description</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review"
-                                        role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
-                                aria-labelledby="pills-description-tab">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <ul class="features">
-                                            <li class="check"><span class="fa fa-check-circle"></span>Address:
-                                                {{$house->address}}
-                                            </li>
-                                            <li class="check"><span class="fa fa-check-circle"></span>Bed
-                                                Rooms: {{$house->bedroom_amount}}</li>
-                                            <li class="check"><span class="fa fa-check-circle"></span>Bath
-                                                Rooms: {{$house->bathroom_amount}}</li>
-                                            <li class="check"><span
-                                                    class="fa fa-check-circle"></span>{{$house->room_category}}</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <ul class="features">
-                                            <li class="check"><span class="fa fa-check-circle"></span>Year Build:: 2019
-                                            </li>
-                                            <li class="check"><span class="fa fa-check-circle"></span>Price:
-                                                {{$house->price}}</li>
-                                            <li class="check"><span class="fa fa-check-circle"></span>Security: 24/24
-                                            </li>
-                                            <li class="check"><span class="fa fa-check-circle"></span>Garage: 2</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
-                                aria-labelledby="pills-manufacturer-tab">
-                                {!! $house->description !!} <br>
-                                <div class="map" style="visibility: hidden; display:inline;">{{$house->location}}</div>
-                                <div class="google-map">
-                                </div>
-                                <style>
-                                    iframe {
-                                        width: 100%;
-                                        margin-top: -90px;
-                                    }
-                                </style>
-
-                            </div>
-
-                            <div class="tab-pane fade" id="pills-review" role="tabpanel"
-                                aria-labelledby="pills-review-tab">
-                                <div class="row">
-                                    <div class="col-md-7">
-                                        <h3 class="head">23 Reviews</h3>
-                                        {{--                                        <div class="review d-flex">--}}
-                                        <div>@comments(['model' => $house])
-                                        </div>
-                                        {{--                                        </div>--}}
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="rating-wrap">
-                                            <h3 class="head">Give a Review</h3>
-                                            <div class="wrap">
-                                                <p class="star" style="margin-top: 10px">
-                                                    <span style="margin-right: 18px">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        ({{ $rating['total'] != 0 ? round($rating['5'] / $rating['total']*100) : 0 }}
-                                                        %)
-                                                    </span>
-                                                    <span>{{ $rating['5'] }} Reviews</span>
-                                                </p>
-                                                <p class="star" style="margin-top: 10px">
-                                                    <span style="margin-right: 18px">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        ({{ $rating['total'] != 0 ? round($rating['4'] / $rating['total']*100) : 0 }}
-                                                        %)
-                                                    </span>
-                                                    <span>{{ $rating['4'] }} Reviews</span>
-                                                </p>
-                                                <p class="star" style="margin-top: 10px">
-                                                    <span style="margin-right: 18px">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        ({{ $rating['total'] != 0 ? round($rating['3'] / $rating['total']*100) : 0 }}
-                                                        %)
-                                                    </span>
-                                                    <span>{{ $rating['3'] }} Reviews</span>
-                                                </p>
-                                                <p class="star" style="margin-top: 10px">
-                                                    <span style="margin-right: 18px">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        ({{ $rating['total'] != 0 ? round($rating['2'] / $rating['total']*100) : 0 }}
-                                                        %)
-                                                    </span>
-                                                    <span>{{ $rating['2'] }} Reviews</span>
-                                                </p>
-                                                <p class="star" style="margin-top: 10px">
-                                                    <span style="margin-right: 18px">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        <i class="fa fa-star" style="color: gray"></i>
-                                                        ({{ $rating['total'] != 0 ? round($rating['1'] / $rating['total']*100) : 0 }}
-                                                        %)
-                                                    </span>
-                                                    <span>{{ $rating['1'] }} Reviews</span>
-                                                </p>
-                                                <hr>
-                                                <p class="star" style="margin-top: 10px">
-                                                    <span style="margin-right: 18px">
-                                                        <i class="fa fa-star star-1"></i>
-                                                        <i class="fa fa-star star-2"></i>
-                                                        <i class="fa fa-star star-3"></i>
-                                                        <i class="fa fa-star star-4"></i>
-                                                        <i class="fa fa-star star-5"></i>
-                                                        <span
-                                                            class="average">{{ $rating['total'] != 0 ? round(($rating['5']*5 + $rating['4']*4 + $rating['3']*3 + $rating['2']*2 + $rating['1']*1) / $rating['total'], 2) : 0 }}</span>
-                                                    </span>
-                                                    <span>{{ $rating['total'] }} Reviews</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="google-map">
                 </div>
+                <style>
+                    iframe {
+                        width: 700px;
+                        height: 410px;
+                    }
+                </style>
             </div>
             <div class="col-md-4">
                 <div
                     style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
                     <form action="{{ route('rent', $house->id) }}">
                         <div class="form-group">
-                            Check-in: <input id="startDate" name="check_in" />
-                            Checkout: <input id="endDate" name="checkout" />
+                            Check-in: <input id="startDate" name="check_in" readonly />
+                            Checkout: <input id="endDate" name="checkout" readonly />
                         </div>
                         <div class="form-group">
                             <button class="form-control"
-                                style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">Button</button>
+                                style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
+                                Button
+                            </button>
                         </div>
-
                     </form>
+                </div>
+            </div>
+            <div class="col-md-12 pills">
+                <div class="bd-example bd-example-tabs">
+                    <div class="d-flex">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
+                                    href="#pills-description" role="tab" aria-controls="pills-description"
+                                    aria-expanded="true">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill"
+                                    href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer"
+                                    aria-expanded="true">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review"
+                                    role="tab" aria-controls="pills-review" aria-expanded="true">Review</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+                            aria-labelledby="pills-description-tab">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <ul class="features">
+                                        <li class="check"><span class="fa fa-check-circle"></span>Address:
+                                            {{$house->address}}
+                                        </li>
+                                        <li class="check"><span class="fa fa-check-circle"></span>Bed
+                                            Rooms: {{$house->bedroom_amount}}</li>
+                                        <li class="check"><span class="fa fa-check-circle"></span>Bath
+                                            Rooms: {{$house->bathroom_amount}}</li>
+                                        <li class="check"><span
+                                                class="fa fa-check-circle"></span>{{$house->room_category}}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="features">
+                                        <li class="check"><span class="fa fa-check-circle"></span>Year Build:: 2019
+                                        </li>
+                                        <li class="check"><span class="fa fa-check-circle"></span>Price:
+                                            {{$house->price}}</li>
+                                        <li class="check"><span class="fa fa-check-circle"></span>Security: 24/24
+                                        </li>
+                                        <li class="check"><span class="fa fa-check-circle"></span>Garage: 2</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
+                            aria-labelledby="pills-manufacturer-tab">
+                            {!! $house->description !!} <br>
+                            <div class="map" style="visibility: hidden; display:inline;">{{$house->location}}</div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <h3 class="head">23 Reviews</h3>
+                                    {{--                                        <div class="review d-flex">--}}
+                                    <div>@comments(['model' => $house])
+                                    </div>
+                                    {{--                                        </div>--}}
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="rating-wrap">
+                                        <h3 class="head">Give a Review</h3>
+                                        <div class="wrap">
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    ({{ $rating['total'] != 0 ? round($rating['5'] / $rating['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $rating['5'] }} Reviews</span>
+                                            </p>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    ({{ $rating['total'] != 0 ? round($rating['4'] / $rating['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $rating['4'] }} Reviews</span>
+                                            </p>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    ({{ $rating['total'] != 0 ? round($rating['3'] / $rating['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $rating['3'] }} Reviews</span>
+                                            </p>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    ({{ $rating['total'] != 0 ? round($rating['2'] / $rating['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $rating['2'] }} Reviews</span>
+                                            </p>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    ({{ $rating['total'] != 0 ? round($rating['1'] / $rating['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $rating['1'] }} Reviews</span>
+                                            </p>
+                                            <hr>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star star-1"></i>
+                                                    <i class="fa fa-star star-2"></i>
+                                                    <i class="fa fa-star star-3"></i>
+                                                    <i class="fa fa-star star-4"></i>
+                                                    <i class="fa fa-star star-5"></i>
+                                                    <span
+                                                        class="average">{{ $rating['total'] != 0 ? round(($rating['5']*5 + $rating['4']*4 + $rating['3']*3 + $rating['2']*2 + $rating['1']*1) / $rating['total'], 2) : 0 }}</span>
+                                                </span>
+                                                <span>{{ $rating['total'] }} Reviews</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -252,12 +250,6 @@
                         <p class="price"><span class="orig-price">${{$house->price}}</span></p>
                     </a>
                     <div class="text">
-                        {{--                        <ul class="property_list">--}}
-                        {{--                            <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}
-                        </li>--}}
-                        {{--                            <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}
-                        </li>--}}
-                        {{--                        </ul>--}}
                         <h3><a href="#">{{$house->name}}</a></h3>
                         <span class="location">{{$house->address}}</span>
                         <a href="#" class="d-flex align-items-center justify-content-center btn-custom">
@@ -275,12 +267,7 @@
             </div>
             @endforeach
         </div>
-
     </div>
-    @foreach ($bookedDays as $key => $item)
-    <input type="text" id="booked_day{{$key}}" value="{{$bookedDays[$key]}}" hidden>
-    @endforeach
-    <input type="text" id="array_length" value="{{count($bookedDays)}}" hidden>
 </section>
 <script>
     $(document).ready(function () {
@@ -303,11 +290,12 @@
 </script>
 <script>
     $(document).ready(function(date) {
-    let bookedDays = [];
-    for (let i = 0; i < $('#array_length').val(); i++) {
-        bookedDays.push($('#booked_day' + i).val())
-    }
+    var bookedDays = [];
+    var maxDate;
 
+    // for (let i = 0; i < $('#array_length').val(); i++) {
+    //     bookedDays.push($('#booked_day' + i).val())
+    // }
     function getBookedDayOfHouse() {
         const houseId = $('#name-house').attr("data-id");
         let origin = window.location.origin;
@@ -316,34 +304,44 @@
             url: origin + "/houses/" + houseId + '/booked-day',
             dataType: "json",
             success: function (response) {
-                console.log(response)
+                bookedDays = response;
+                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                $('#startDate').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    iconsLibrary: 'fontawesome',
+                    format: 'dd/mm/yyyy',
+                    minDate: today,
+                    maxDate: function () {
+                        return $('#endDate').val();
+                    },
+                    disableDates: response,
+                });
+                disableEndTime(response)
             }
         });
     }
 
-        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-        $('#startDate').datepicker({
-            uiLibrary: 'bootstrap4',
-            iconsLibrary: 'fontawesome',
-            format: 'dd/mm/yyyy',
-            minDate: today,
-            maxDate: function () {
-                return $('#endDate').val();
-            },
-            disableDates: bookedDays,
-
-        });
-
+    function disableEndTime(day) {
         $('#endDate').datepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
             minDate: function () {
                 return $('#startDate').val();
             },
+            maxDate: function() {
+                let newStartDateFormat = $('#startDate').val().split("/");
+                let startDate = new Date(newStartDateFormat[2], newStartDateFormat[1] - 1, newStartDateFormat[0]);
+                for (let i = 0; i < bookedDays.length; i++) {
+                    if (startDate < new Date(bookedDays[i].split("/")[2], bookedDays[i].split("/")[1] - 1, bookedDays[i].split("/")[0])) {
+                        return bookedDays[i];
+                    }
+                }
+            },
             format: 'dd/mm/yyyy',
-            disableDates: bookedDays,
+            disableDates: day,
         });
-
-    });
+    }
+    getBookedDayOfHouse();
+});
 </script>
 @endsection
