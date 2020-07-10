@@ -149,7 +149,7 @@
                                  aria-labelledby="pills-review-tab">
                                 <div class="row">
                                     <div class="col-md-7">
-                                        <h3 class="head">23 Reviews</h3>
+                                        <h3 class="head">23 Comments</h3>
                                         {{--                                        <div class="review d-flex">--}}
                                         <div>@comments(['model' => $house])
                                         </div>
