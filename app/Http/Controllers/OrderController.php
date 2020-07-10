@@ -49,9 +49,25 @@ class OrderController extends Controller
         return back();
     }
 
+
     public function show($id)
     {
         $order = $this->orderService->getAllOfHouse($id);
         return view('users.history', compact('order'));
     }
 }
+
+    public function findOrderByUserId($id)
+    {
+        $orders = $this->orderService->getByIdUser($id);
+        $currentDate = Carbon::now();
+        return view('order.list', compact('orders','currentDate'));
+    }
+
+    public function deleteOrder($id){
+        $order = $this->orderService->getById($id);
+        $order->delete();
+        return redirect()->back();
+    }
+}
+

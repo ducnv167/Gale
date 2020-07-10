@@ -32,4 +32,12 @@ class OrderService
     {
         return $this->orderRepository->getAllOfHouse($id);
     }
+
+    public function getByIdUser($id){
+       return $orders = $this->orderRepository->findByIdUser($id);
+    }
+
+    public function getById($id){
+        return $order = $this->orderRepository->findById($id);
+    }
 }

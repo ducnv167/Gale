@@ -10,6 +10,7 @@
                                         class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a
                                     href="{{route('house.list')}}">Properties <i
                                         class="fa fa-chevron-right"></i></a></span>
+
                         <span>Properties Single <i class="fa fa-chevron-right"></i></span></p>
                     <h1 class="mb-3 bread">Property Details</h1>
                 </div>
@@ -62,10 +63,37 @@
                             <h2>{{$house->name}}</h2>
                         </div>
                     </div>
+                    <div class="google-map">
+                    </div>
+                    <style>
+                        iframe {
+                            width: 700px;
+                            height: 410px;
+                        }
+                    </style>
+                </div>
+                <div class="col-md-4">
+                    <div
+                        style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
+                        <form action="{{ route('rent', $house->id) }}">
+                            <div class="form-group">
+                                Check-in: <input id="startDate" name="check_in" width="276"/>
+                                Checkout: <input id="endDate" name="checkout" width="276"/>
+                            </div>
+                            <div class="form-group">
+                                <button class="form-control"
+                                        style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
+                                    Button
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
                     <div class="col-md-12 pills">
                         <div class="bd-example bd-example-tabs">
                             <div class="d-flex">
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
 
                                     <li class="nav-item">
                                         <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
@@ -140,21 +168,44 @@
 
                                 </div>
 
-                                <div class="tab-pane fade" id="pills-review" role="tabpanel"
-                                     aria-labelledby="pills-review-tab">
-                                    <div class="row">
-                                        <div class="col-md-7">
-                                            <h3 class="head">23 Reviews</h3>
-                                            {{--                                        <div class="review d-flex">--}}
-                                            <div>@comments(['model' => $house])
-                                            </div>
-                                            {{--                                        </div>--}}
+             
+                            <div class="tab-pane fade" id="pills-review" role="tabpanel"
+                                 aria-labelledby="pills-review-tab">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <h3 class="head">{{ count($rating['comments']) }} Comments</h3>
+                                        <div>
+                                            @foreach($rating['comments'] as $rating)
+                                                <div class="review d-flex">
+                                                    <div class="user-img"
+                                                         style="height: 100px; background-image: url('https://i.pinimg.com/236x/76/80/76/7680768d2115009e96ad70bd57146e74.jpg')"></div>
+                                                    <div class="desc">
+                                                        <h4>
+                                                            <span class="text-left">{{ $rating->user->name }}</span>
+                                                            <span
+                                                                class="text-right">{{ $rating->user->created_at }}</span>
+                                                        </h4>
+                                                        <p class="star" style="margin-top: 10px">
+									   				<span>
+                                                        @for($i = 0; $i < $rating->stars; $i++)
+                                                            <i class="fa fa-star"></i>
+                                                        @endfor
+								   					</span>
+                                                            <span class="text-right"><a href="#" class="reply"><i
+                                                                        class="fa fa-reply"></i></a></span>
+                                                        </p>
+                                                        <p style="margin-top: 10px">{{ $rating->comments }}</p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
-                                        <div class="col-md-5">
-                                            <div class="rating-wrap">
-                                                <h3 class="head">Give a Review</h3>
-                                                <div class="wrap">
-                                                    <p class="star" style="margin-top: 10px">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="rating-wrap">
+                                            <h3 class="head">Give a Review</h3>
+                                            <div class="wrap">
+                                                <p class="star" style="margin-top: 10px">
+
 									   				<span style="margin-right: 18px">
 									   					<i class="fa fa-star"></i>
 									   					<i class="fa fa-star"></i>
@@ -217,7 +268,8 @@
 									   					<i class="fa fa-star star-3"></i>
 									   					<i class="fa fa-star star-4"></i>
 									   					<i class="fa fa-star star-5"></i>
-                                                        <span class="average">{{ $rating['total'] != 0 ? round(($rating['5']*5 + $rating['4']*4 + $rating['3']*3 + $rating['2']*2 + $rating['1']*1) / $rating['total'], 2) : 0 }}</span>
+                                                        <span
+                                                            class="average">{{ $rating['total'] != 0 ? round(($rating['5']*5 + $rating['4']*4 + $rating['3']*3 + $rating['2']*2 + $rating['1']*1) / $rating['total'], 2) : 0 }}</span>
 								   					</span>
                                                         <span>{{ $rating['total'] }} Reviews</span>
                                                     </p>
@@ -230,6 +282,7 @@
                         </div>
                     </div>
                 </div>
+
                 @if(\Illuminate\Support\Facades\Auth::user()->id!==$house->user_id)
                     <div class="col-md-4">
                         <div
@@ -262,12 +315,14 @@
                                 <p class="price"><span class="orig-price">${{$house->price}}</span></p>
                             </a>
                             <div class="text">
+
                                 {{--                        <ul class="property_list">--}}
                                 {{--                            <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}
                                 </li>--}}
                                 {{--                            <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}
                                 </li>--}}
                                 {{--                        </ul>--}}
+
                                 <h3><a href="#">{{$house->name}}</a></h3>
                                 <span class="location">{{$house->address}}</span>
                                 <a href="#" class="d-flex align-items-center justify-content-center btn-custom">
@@ -286,13 +341,6 @@
                     </div>
                 @endforeach
             </div>
-
-        </div>
-        @foreach ($bookedDays as $key => $item)
-            <input type="text" id="booked_day{{$key}}" value="{{$bookedDays[$key]}}" hidden>
-        @endforeach
-        <input type="text" id="array_length" value="{{count($bookedDays)}}" hidden>
-    </section>
     <script>
         $(document).ready(function () {
             let average = $('.average').text();
@@ -314,11 +362,11 @@
     </script>
     <script>
         let bookedDays = [];
-        console.log($('#array_length').val())
+
         for (let i = 0; i < $('#array_length').val(); i++) {
             bookedDays.push($('#booked_day' + i).val())
         }
-        console.log(bookedDays)
+
         $(document).ready(function (date) {
             var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
             $('#startDate').datepicker({
@@ -330,9 +378,8 @@
                     return $('#endDate').val();
                 },
                 disableDates: bookedDays,
-
             });
-            console.log(today)
+
             $('#endDate').datepicker({
                 uiLibrary: 'bootstrap4',
                 iconsLibrary: 'fontawesome',
