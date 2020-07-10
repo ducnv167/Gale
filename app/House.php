@@ -19,11 +19,18 @@ class House extends Model
         'description',
         'address',
         'price',
+        'location',
     ];
 
     public function houseDetails()
     {
         return $this->hasMany('App\HouseDetail');
+    }
+
+
+    public function ratings()
+    {
+        return $this->hasMany('App\Rating');
     }
 
     public function orders()

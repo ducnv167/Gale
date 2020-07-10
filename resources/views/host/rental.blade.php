@@ -76,6 +76,7 @@
                             @error('address')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+
                             <div class="form-group">
                                 <label for="">Price</label>
                                 <input class="form-control @error('price') is-invalid @enderror" type="text"
@@ -84,6 +85,15 @@
                             @error('price')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+
+{{--                            them location map--}}
+                            <div class="form-group">
+                                <label for="">Location</label>
+                                <input class="form-control " type="text" name="location" id="">
+                            </div>
+
+
+{{--                            end them location map--}}
                             <div class="form-group @error('description') is-invalid @enderror">
                                 <label for="">Description</label>
                                 <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
