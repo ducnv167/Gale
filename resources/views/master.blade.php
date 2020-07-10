@@ -27,7 +27,11 @@
     <link rel="stylesheet" href="{{asset('users/fonts/material-icon/css/material-design-iconic-font.min.css')}}">
     <link rel="stylesheet" href="{{asset('users/css/style.css')}}">
     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+    <link rel="stylesheet" href="{{asset('css/rating.css')}}">
+
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body>
