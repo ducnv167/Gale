@@ -48,4 +48,17 @@ class OrderController extends Controller
         $this->userService->store($userRequest);
         return back();
     }
+
+    public function findOrderByUserId($id)
+    {
+        $orders = $this->orderService->getByIdUser($id);
+        $currentDate = Carbon::now();
+        return view('order.list', compact('orders','currentDate'));
+    }
+
+    public function deleteOrder($id){
+        $order = $this->orderService->getById($id);
+        $order->delete();
+        return redirect()->back();
+    }
 }
