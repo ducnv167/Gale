@@ -21,7 +21,7 @@ class OrderController extends Controller
         $this->userService = $userService;
     }
 
-    public function rentHouse(Request $request,$id)
+    public function rentHouse(Request $request, $id)
     {
         $checkIn = strtotime($request->check_in);
         $arrivalDate = date('Y-m-d', $checkIn);
@@ -31,7 +31,7 @@ class OrderController extends Controller
         $departureDateCarbon = Carbon::create($departureDate);
         $rentingDays = $departureDateCarbon->diffInDays($arrivalDateCarbon);
         $house = House::findOrFail($id);
-        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays','house'));
+        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays', 'house'));
     }
 
     public function store(Request $request)

@@ -6,6 +6,9 @@ use App\Http\Requests\RentalStep1;
 use App\Http\Services\HouseService;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
+use function PHPSTORM_META\type;
 
 class HouseController extends Controller
 {
@@ -19,6 +22,18 @@ class HouseController extends Controller
     public function findById($id)
     {
         $house = $this->houseService->findById($id);
+        $orders = $house->orders()->get();
+        $bookedDays = [];
+        foreach ($orders as $key => $value) {
+            $checkIn = Carbon::create($orders[$key]->arrival_date);
+            $checkOut = Carbon::create($orders[$key]->departure_date);
+            $diff = $checkOut->diffInDays($checkIn);
+            array_push($bookedDays, date('d/m/Y', $checkIn->addDays(0)->timestamp));
+            for ($i = 0; $i < $diff; $i++) {
+                $day = $checkIn->addDay()->timestamp;
+                array_push($bookedDays, date('d/m/Y', $day));
+            }
+        }
         $houseList = $this->houseService->getAll();
         $array = [];
         foreach ($houseList as $item) {
@@ -28,7 +43,7 @@ class HouseController extends Controller
         shuffle($array);
         // get 4 bonus result
         $bonusHouse = array_slice($array, 0, 4);
-        return view('house.details', compact('house', 'bonusHouse'));
+        return view('house.details', compact('house', 'bonusHouse', 'bookedDays'));
     }
 
     public function create(Request $request)
