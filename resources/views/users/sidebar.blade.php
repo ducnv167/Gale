@@ -27,7 +27,7 @@
                                                                                            class="fas fa-store"></i>Store</a>
             <hr>
             <a href="{{route('order.cancel',\Illuminate\Support\Facades\Auth::user()->id)}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px"
-                                                                  class="fas fa-shopping-cart"></i>Cancel Order</a>
+                                                                  class="fas fa-shopping-cart"></i>Orders</a>
             <hr>
             <a style="color: #34ce57" class="nav-link" href="{{route('users.logout')}}"><i style="margin-right: 25px"
                                                                                            class="fas fa-sign-out-alt"></i>Logout</a>

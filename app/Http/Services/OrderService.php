@@ -28,7 +28,11 @@ class OrderService
         $this->orderRepository->store($newOrder);
     }
 
+    public function getByIdUser($id){
+       return $orders = $this->orderRepository->findByIdUser($id);
+    }
+
     public function getById($id){
-       return $orders = $this->orderRepository->findById($id);
+        return $order = $this->orderRepository->findById($id);
     }
 }

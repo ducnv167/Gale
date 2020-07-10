@@ -21,7 +21,7 @@ class OrderController extends Controller
         $this->userService = $userService;
     }
 
-    public function rentHouse(Request $request,$id)
+    public function rentHouse(Request $request, $id)
     {
         $checkIn = strtotime($request->check_in);
         $arrivalDate = date('Y-m-d', $checkIn);
@@ -31,7 +31,7 @@ class OrderController extends Controller
         $departureDateCarbon = Carbon::create($departureDate);
         $rentingDays = $departureDateCarbon->diffInDays($arrivalDateCarbon);
         $house = House::findOrFail($id);
-        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays','house','request'));
+        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays', 'house', 'request'));
     }
 
     public function store(Request $request)
@@ -48,7 +48,16 @@ class OrderController extends Controller
         return back();
     }
 
-    public function cancelOrder($id){
-        dd($this->orderService->getById($id));
+    public function findOrderByUserId($id)
+    {
+        $orders = $this->orderService->getByIdUser($id);
+        $currentDate = Carbon::now();
+        return view('order.list', compact('orders','currentDate'));
+    }
+
+    public function deleteOrder($id){
+        $order = $this->orderService->getById($id);
+        $order->delete();
+        return redirect()->back();
     }
 }

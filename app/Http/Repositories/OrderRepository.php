@@ -20,7 +20,11 @@ class OrderRepository
         $newOrder->save();
     }
 
+    public function findByIdUser($id){
+       return $orders = Order::where('user_id','=',$id)->get();
+    }
+
     public function findById($id){
-       return $orders = Order::query()->where('user_id','=',$id);
+        return $order = Order::query()->findOrFail($id);
     }
 }
