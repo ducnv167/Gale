@@ -44,7 +44,10 @@ Route::prefix('users')->group(function () {
     Route::post('login', 'UserController@loginHandling')->name('users.loginHandling');
     Route::get('logout', 'UserController@logout')->name('users.logout');
 
+
     Route::get('/{id}/rent-history','OrderController@show')->name('users.history-show');
+    Route::get('/{userId}/rental-list','UserController@rentalList')->name('users.rental-list');
+
 
     Route::post('/{id}/change-password','UserController@changePassword')->name('user.changePassword');
     Route::get('/{id}/edit','UserController@findById')->name('user.edit');
