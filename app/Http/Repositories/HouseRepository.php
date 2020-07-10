@@ -31,11 +31,24 @@ class HouseRepository
 
     public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
-        return $house = House::where([
-            ['bedroom_amount', '=', $bedRoom],
-            ['bathroom_amount', '=', $bathRoom],
-            ['price', '<', $priceLimit],
+        return $houses = House::where([
+            ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
+            ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
+            ['price', 'like','%'. $priceLimit .'%'],
             ['address', 'like', '%' . $location . '%'],
-        ])->paginate(9);
+        ])->paginate(6);
+
+    }
+
+    function getRatingById($id) {
+        $houseById = $this->findById($id);
+        return [
+          '1' =>   $houseById->ratings()->where('stars', '=', 1)->count(),
+          '2' =>   $houseById->ratings()->where('stars', '=', 2)->count(),
+          '3' =>   $houseById->ratings()->where('stars', '=', 3)->count(),
+          '4' =>   $houseById->ratings()->where('stars', '=', 4)->count(),
+          '5' =>   $houseById->ratings()->where('stars', '=', 5)->count(),
+          'total' =>   $houseById->ratings()->count()
+        ];
     }
 }

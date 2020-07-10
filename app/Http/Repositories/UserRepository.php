@@ -23,4 +23,12 @@ class UserRepository
     function loginHandling($user) {
         return Auth::attempt($user);
     }
+
+    public function finById($id){
+        return $this->user->findOrFail($id);
+    }
+
+    function findUserByEmail($email) {
+        return $this->user->whereEmail($email)->first();
+    }
 }

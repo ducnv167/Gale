@@ -23,9 +23,10 @@ class OrderController extends Controller
 
     public function rentHouse(Request $request, $id)
     {
-        $checkIn = strtotime($request->check_in);
+
+        $checkIn = strtotime(str_replace('/', '-', $request->check_in));
         $arrivalDate = date('Y-m-d', $checkIn);
-        $checkout = strtotime($request->checkout);
+        $checkout = strtotime(str_replace('/', '-', $request->checkout));
         $departureDate = date('Y-m-d', $checkout);
         $arrivalDateCarbon = Carbon::create($arrivalDate);
         $departureDateCarbon = Carbon::create($departureDate);

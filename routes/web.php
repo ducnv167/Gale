@@ -19,7 +19,6 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/list-house', 'HouseController@getAll')->name('list.house');
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('host')->group(function () {
@@ -44,7 +43,15 @@ Route::prefix('users')->group(function () {
     Route::get('login', 'UserController@login')->name('users.login');
     Route::post('login', 'UserController@loginHandling')->name('users.loginHandling');
     Route::get('logout', 'UserController@logout')->name('users.logout');
+
     Route::get('/{id}/rent-history','OrderController@show')->name('users.history-show');
+
+    Route::post('/{id}/change-password','UserController@changePassword')->name('user.changePassword');
+    Route::get('/{id}/edit','UserController@findById')->name('user.edit');
+    Route::post('/{id}/update','UserController@update')->name('user.update');
+    Route::post('forgot-password', 'UserController@sendEmailResetPassword')->name('users.sendEmailResetPassword');
+    Route::get('reset-password/{id}', 'UserController@resetPasswordView')->name('users.resetPasswordView');
+    Route::post('reset-password/{id}', 'UserController@resetPassword')->name('users.resetPassword');
 });
 //login google
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect')->name('login-google');

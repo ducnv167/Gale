@@ -13,18 +13,23 @@
             </div>
         </div>
         <div class="sidebar"
-             style="width: 200px; display: none; position: absolute; background: #f7f7f7; padding: 30px; border-radius: 5px">
-            <a href="" style="color: #34ce57; text-align: center" class="nav-link"> <img style="width:30px; border-radius: 100%; margin: auto; display: block"
-                                                             src="{{asset('storage/'.\Illuminate\Support\Facades\Auth::user()->image)}}"
-                                                             ><div>{{\Illuminate\Support\Facades\Auth::user()->name}}</div></a>
+             style="width: 300px; display: none; position: absolute; background: #f7f7f7; padding: 30px; border-radius: 5px">
+
+            <a href="" style="color: #34ce57" class="nav-link" data-toggle="modal" data-target="#myModalEditUser"><i style="margin-right: 25px"
+                    class="fas fa-user-alt"></i>{{\Illuminate\Support\Facades\Auth::user()->name}}
+            </a>
+
             <hr>
-            <a href="" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-user-alt"></i>Detail</a>
+            <a href="" data-toggle="modal" data-target="#myModalChangePassword" style="color: #34ce57" class="nav-link"><i
+                    style="margin-right: 25px" class="fas fa-key"></i>Change password</a>
             <hr>
-            <a href="{{route('house.create')}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-store"></i>Store</a>
+            <a href="{{route('house.create')}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px"
+                                                                                           class="fas fa-store"></i>Store</a>
             <hr>
             <a href="" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-shopping-cart"></i>Rent - History</a>
             <hr>
-            <a style="color: #34ce57" class="nav-link" href="{{route('users.logout')}}"><i style="margin-right: 25px" class="fas fa-sign-out-alt"></i>Logout</a>
+            <a style="color: #34ce57" class="nav-link" href="{{route('users.logout')}}"><i style="margin-right: 25px"
+                                                                                           class="fas fa-sign-out-alt"></i>Logout</a>
         </div>
     </li>
 @else
@@ -36,6 +41,7 @@
     <li class="nav-item">
         <div data-toggle="modal" data-target="#myModalRegister" class="nav-link btn">Register</div>
     </li>
+
 @endif
 <script>
     $(document).ready(function () {

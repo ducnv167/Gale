@@ -113,19 +113,103 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel"
-                                aria-labelledby="pills-manufacturer-tab">
-                                {!! $house->description !!}
+                                 aria-labelledby="pills-manufacturer-tab">
+                                {!! $house->description !!} <br>
+                                <div class="map" style="visibility: hidden; display:inline;">{{$house->location}}</div>
+                                <div class="google-map">
+                                </div>
+                                <style>
+                                    iframe {
+                                        width: 100%;
+                                        margin-top: -90px;
+                                    }
+                                </style>
+                               
                             </div>
 
                             <div class="tab-pane fade" id="pills-review" role="tabpanel"
                                 aria-labelledby="pills-review-tab">
                                 <div class="row">
-                                    <div class="col-md-9">
+                                    <div class="col-md-7">
                                         <h3 class="head">23 Reviews</h3>
                                         {{--                                        <div class="review d-flex">--}}
                                         <div>@comments(['model' => $house])
                                         </div>
                                         {{--                                        </div>--}}
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="rating-wrap">
+                                            <h3 class="head">Give a Review</h3>
+                                            <div class="wrap">
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					({{ $rating['total'] != 0 ? round($rating['5'] / $rating['total']*100) : 0 }} %)
+								   					</span>
+                                                    <span>{{ $rating['5'] }} Reviews</span>
+                                                </p>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					({{ $rating['total'] != 0 ? round($rating['4'] / $rating['total']*100) : 0 }} %)
+								   					</span>
+                                                    <span>{{ $rating['4'] }} Reviews</span>
+                                                </p>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					({{ $rating['total'] != 0 ? round($rating['3'] / $rating['total']*100) : 0 }} %)
+								   					</span>
+                                                    <span>{{ $rating['3'] }} Reviews</span>
+                                                </p>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					({{ $rating['total'] != 0 ? round($rating['2'] / $rating['total']*100) : 0 }} %)
+								   					</span>
+                                                    <span>{{ $rating['2'] }} Reviews</span>
+                                                </p>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					<i class="fa fa-star" style="color: gray"></i>
+									   					({{ $rating['total'] != 0 ? round($rating['1'] / $rating['total']*100) : 0 }} %)
+								   					</span>
+                                                    <span>{{ $rating['1'] }} Reviews</span>
+                                                </p>
+                                                <hr>
+                                                <p class="star" style="margin-top: 10px">
+									   				<span style="margin-right: 18px">
+									   					<i class="fa fa-star star-1"></i>
+									   					<i class="fa fa-star star-2"></i>
+									   					<i class="fa fa-star star-3"></i>
+									   					<i class="fa fa-star star-4"></i>
+									   					<i class="fa fa-star star-5"></i>
+                                                        <span class="average">{{ $rating['total'] != 0 ? round(($rating['5']*5 + $rating['4']*4 + $rating['3']*3 + $rating['2']*2 + $rating['1']*1) / $rating['total'], 2) : 0 }}</span>
+								   					</span>
+                                                    <span>{{ $rating['total'] }} Reviews</span>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -152,6 +236,7 @@
         </div>
     </div>
     <div class="container mt-5">
+
         <div class="row">
             @foreach($bonusHouse as $house)
             <div class="col-md-3">
@@ -184,25 +269,61 @@
             </div>
             @endforeach
         </div>
+
     </div>
+    @foreach ($bookedDays as $key => $item)
+    <input type="text" id="booked_day{{$key}}" value="{{$bookedDays[$key]}}" hidden>
+    @endforeach
+    <input type="text" id="array_length" value="{{count($bookedDays)}}" hidden>
 </section>
+    <script>
+        $(document).ready(function () {
+            let average = $('.average').text();
+            if (average < 1) {
+                $('.star-1, .star-2, .star-3, .star-4, .star-5').css('color', 'gray');
+            } else if (average < 2) {
+                $('.star-2, .star-3, .star-4, .star-5').css('color', 'gray');
+            } else if (average < 3) {
+                $('.star-3, .star-4, .star-5').css('color', 'gray');
+            } else if (average < 4) {
+                $('.star-4, .star-5').css('color', 'gray');
+            } else if (average < 5) {
+                $('.star-5').css('color', 'gray');
+            }
+            
+            let linkMap = $('.map').text();
+            $('.google-map').html(linkMap);
+        })
+    </script>
 <script>
-    $(document).ready(function() {
+    let bookedDays = [];
+    console.log($('#array_length').val())
+    for (let i = 0; i < $('#array_length').val(); i++) {
+        bookedDays.push($('#booked_day' + i).val())
+    }
+    console.log(bookedDays)
+    $(document).ready(function(date) {
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
         $('#startDate').datepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
+            format: 'dd/mm/yyyy',
             minDate: today,
             maxDate: function () {
                 return $('#endDate').val();
             },
+            disableDates: bookedDays,
+
         });
+        console.log(today)
         $('#endDate').datepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
             minDate: function () {
                 return $('#startDate').val();
             },
+            format: 'dd/mm/yyyy',
+            disableDates: bookedDays,
         });
     });
 </script>

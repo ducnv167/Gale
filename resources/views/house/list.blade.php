@@ -38,6 +38,7 @@
                                         <div class="select-wrap">
 {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                             <select name="bed_room" id="" class="form-control">
+                                                <option style="color: #495057" value="" selected>Choose</option>
                                                 <option style="color: #495057" value="1">1</option>
                                                 <option style="color: #495057" value="2">2</option>
                                                 <option style="color: #495057" value="3">3</option>
@@ -54,6 +55,7 @@
                                         <div class="select-wrap">
                                             {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                             <select name="bath_room" id="" class="form-control">
+                                                <option style="color: #495057" value="" selected>Choose</option>
                                                 <option style="color: #495057" value="1">1</option>
                                                 <option style="color: #495057" value="2">2</option>
                                                 <option style="color: #495057" value="3">3</option>
@@ -79,6 +81,7 @@
                                         <div class="select-wrap">
                                             {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                             <select name="price_limit" id="" class="form-control">
+                                                <option style="color: #495057" value="" selected>Choose</option>
                                                 <option style="color: #495057" value="500000">500,000</option>
                                                 <option style="color: #495057" value="1000000">1,000,000</option>
                                                 <option style="color: #495057" value="1500000">1,500,000</option>
@@ -116,7 +119,7 @@
         </div>
         <div class="row">
             @if(count($houses)== 0)
-            Non-data
+            <h3 style="text-align: center">Non-data</h3>
             @endif
             @foreach ($houses as $house)
             <div class="col-md-4">
@@ -149,7 +152,7 @@
         </div>
         <div class="row mt-5">
             <div class="col text-center">
-                <div style="margin-top: 30px">{{$houses->links()}}</div>
+                <div style="margin-top: 30px">{{ $houses->appends(request()->query())}}</div>
             </div>
         </div>
     </div>
