@@ -149,11 +149,32 @@
                                  aria-labelledby="pills-review-tab">
                                 <div class="row">
                                     <div class="col-md-7">
-                                        <h3 class="head">23 Comments</h3>
-                                        {{--                                        <div class="review d-flex">--}}
-                                        <div>@comments(['model' => $house])
+                                        <h3 class="head">{{ count($rating['comments']) }} Comments</h3>
+                                        <div>
+                                            @foreach($rating['comments'] as $rating)
+                                                <div class="review d-flex">
+                                                    <div class="user-img"
+                                                         style="height: 100px; background-image: url('https://i.pinimg.com/236x/76/80/76/7680768d2115009e96ad70bd57146e74.jpg')"></div>
+                                                    <div class="desc">
+                                                        <h4>
+                                                            <span class="text-left">{{ $rating->user->name }}</span>
+                                                            <span
+                                                                class="text-right">{{ $rating->user->created_at }}</span>
+                                                        </h4>
+                                                        <p class="star" style="margin-top: 10px">
+									   				<span>
+                                                        @for($i = 0; $i < $rating->stars; $i++)
+                                                            <i class="fa fa-star"></i>
+                                                        @endfor
+								   					</span>
+                                                            <span class="text-right"><a href="#" class="reply"><i
+                                                                        class="fa fa-reply"></i></a></span>
+                                                        </p>
+                                                        <p style="margin-top: 10px">{{ $rating->comments }}</p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
                                         </div>
-                                        {{--                                        </div>--}}
                                     </div>
                                     <div class="col-md-5">
                                         <div class="rating-wrap">

@@ -4,6 +4,7 @@ namespace App\Http\Repositories;
 
 
 use App\House;
+use Carbon\Carbon;
 
 class HouseRepository
 {
@@ -50,7 +51,7 @@ class HouseRepository
             '4' => $houseById->ratings()->where('stars', '=', 4)->count(),
             '5' => $houseById->ratings()->where('stars', '=', 5)->count(),
             'total' => $houseById->ratings()->where('stars', '!=', '')->count(),
-            'comment' => $houseById->ratings()->where('comment', '!=', '')->get()
+            'comments' => $houseById->ratings()->where('comments', '!=', '')->get(),
         ];
     }
 }

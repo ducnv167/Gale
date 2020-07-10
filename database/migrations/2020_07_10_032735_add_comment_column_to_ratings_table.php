@@ -14,7 +14,7 @@ class AddCommentColumnToRatingsTable extends Migration
     public function up()
     {
         Schema::table('ratings', function (Blueprint $table) {
-            $table->longText('comment')->nullable();
+            $table->longText('comments')->nullable();
             $table->unsignedBigInteger('user_id')->after('house_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('stars')->nullable()->change();

@@ -46,7 +46,6 @@ class HouseController extends Controller
 
        $rating = $this->houseService->getRatingById($id);
 
-
         return view('house.details', compact('house', 'bonusHouse', 'bookedDays', 'rating'));
     }
 
