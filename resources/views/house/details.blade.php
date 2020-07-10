@@ -279,7 +279,6 @@
                 @endforeach
             </div>
         </div>
-        </div>
         @foreach ($bookedDays as $key => $item)
             <input type="text" id="booked_day{{$key}}" value="{{$bookedDays[$key]}}" hidden>
         @endforeach
