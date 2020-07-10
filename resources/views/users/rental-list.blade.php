@@ -119,7 +119,7 @@
             </div>
             <div class="row">
                 @if(count($houses)== 0)
-                    <h3 style="text-align: center">Non-data</h3>
+                    <h3 style="text-align: center"> You don't have rental house!</h3>
                 @endif
                 @foreach ($houses as $house)
                     <div class="col-md-4">

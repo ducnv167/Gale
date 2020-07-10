@@ -59,3 +59,4 @@ Route::prefix('users')->group(function () {
 //login google
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect')->name('login-google');
 Route::get('/callback/{provider}', 'SocialController@callback');
+
