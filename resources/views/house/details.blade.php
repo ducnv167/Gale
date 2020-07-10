@@ -271,7 +271,12 @@
         </div>
     </div>
 
-    </section>
+    </div>
+    @foreach ($bookedDays as $key => $item)
+    <input type="text" id="booked_day{{$key}}" value="{{$bookedDays[$key]}}" hidden>
+    @endforeach
+    <input type="text" id="array_length" value="{{count($bookedDays)}}" hidden>
+</section>
     <script>
         $(document).ready(function () {
             let average = $('.average').text();
@@ -292,22 +297,34 @@
         })
     </script>
 <script>
-    $(document).ready(function() {
+    let bookedDays = [];
+    console.log($('#array_length').val())
+    for (let i = 0; i < $('#array_length').val(); i++) {
+        bookedDays.push($('#booked_day' + i).val())
+    }
+    console.log(bookedDays)
+    $(document).ready(function(date) {
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
         $('#startDate').datepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
+            format: 'dd/mm/yyyy',
             minDate: today,
             maxDate: function () {
                 return $('#endDate').val();
             },
+            disableDates: bookedDays,
+
         });
+        console.log(today)
         $('#endDate').datepicker({
             uiLibrary: 'bootstrap4',
             iconsLibrary: 'fontawesome',
             minDate: function () {
                 return $('#startDate').val();
             },
+            format: 'dd/mm/yyyy',
+            disableDates: bookedDays,
         });
     });
 </script>
