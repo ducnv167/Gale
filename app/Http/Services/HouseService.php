@@ -62,6 +62,10 @@ class HouseService
     {
         return $this->houseRepository->search($bedRoom,$bathRoom,$priceLimit,$location);
     }
+
+    function getRatingById($id) {
+        return $this->houseRepository->getRatingById($id);
+    }
 }
 
 
