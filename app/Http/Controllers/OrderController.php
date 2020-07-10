@@ -21,17 +21,18 @@ class OrderController extends Controller
         $this->userService = $userService;
     }
 
-    public function rentHouse(Request $request,$id)
+    public function rentHouse(Request $request, $id)
     {
-        $checkIn = strtotime($request->check_in);
+
+        $checkIn = strtotime(str_replace('/', '-', $request->check_in));
         $arrivalDate = date('Y-m-d', $checkIn);
-        $checkout = strtotime($request->checkout);
+        $checkout = strtotime(str_replace('/', '-', $request->checkout));
         $departureDate = date('Y-m-d', $checkout);
         $arrivalDateCarbon = Carbon::create($arrivalDate);
         $departureDateCarbon = Carbon::create($departureDate);
         $rentingDays = $departureDateCarbon->diffInDays($arrivalDateCarbon);
         $house = House::findOrFail($id);
-        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays','house','request'));
+        return view('rent-house.view', compact('arrivalDate', 'departureDate', 'rentingDays', 'house', 'request'));
     }
 
     public function store(Request $request)
