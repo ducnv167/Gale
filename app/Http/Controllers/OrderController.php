@@ -55,7 +55,6 @@ class OrderController extends Controller
         $order = $this->orderService->getAllOfHouse($id);
         return view('users.history', compact('order'));
     }
-}
 
     public function findOrderByUserId($id)
     {

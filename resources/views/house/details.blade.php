@@ -72,29 +72,29 @@
                         }
                     </style>
                 </div>
-                <div class="col-md-4">
-                    <div
-                        style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
-                        <form action="{{ route('rent', $house->id) }}">
-                            <div class="form-group">
-                                Check-in: <input id="startDate" name="check_in" width="276"/>
-                                Checkout: <input id="endDate" name="checkout" width="276"/>
-                            </div>
-                            <div class="form-group">
-                                <button class="form-control"
-                                        style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
-                                    Button
-                                </button>
-                            </div>
-
-                        </form>
+                @if(\Illuminate\Support\Facades\Auth::user()->id!==$house->user_id)
+                    <div class="col-md-4">
+                        <div
+                                style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
+                            <form action="{{ route('rent', $house->id) }}">
+                                <div class="form-group">
+                                    Check-in: <input id="startDate" name="check_in" width="276"/>
+                                    Checkout: <input id="endDate" name="checkout" width="276"/>
+                                </div>
+                                <div class="form-group">
+                                    <button class="form-control"
+                                            style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
+                                        Button
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
+                @endif
                     <div class="col-md-12 pills">
                         <div class="bd-example bd-example-tabs">
                             <div class="d-flex">
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
-
                                     <li class="nav-item">
                                         <a class="nav-link active" id="pills-description-tab" data-toggle="pill"
                                            href="#pills-description" role="tab" aria-controls="pills-description"
@@ -282,28 +282,7 @@
                         </div>
                     </div>
                 </div>
-
-                @if(\Illuminate\Support\Facades\Auth::user()->id!==$house->user_id)
-                    <div class="col-md-4">
-                        <div
-                                style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
-                            <form action="{{ route('rent', $house->id) }}">
-                                <div class="form-group">
-                                    Check-in: <input id="startDate" name="check_in" width="276"/>
-                                    Checkout: <input id="endDate" name="checkout" width="276"/>
-                                </div>
-                                <div class="form-group">
-                                    <button class="form-control"
-                                            style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
-                                        Button
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                @endif
             </div>
-        </div>
         <div class="container mt-5">
 
             <div class="row">
@@ -341,6 +320,8 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+    </section>
     <script>
         $(document).ready(function () {
             let average = $('.average').text();
@@ -391,4 +372,5 @@
             });
         });
     </script>
+
 @endsection
