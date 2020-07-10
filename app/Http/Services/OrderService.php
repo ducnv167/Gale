@@ -27,4 +27,12 @@ class OrderService
         $newOrder->total_price = $orderRequest->total_price;
         $this->orderRepository->store($newOrder);
     }
+
+    public function getByIdUser($id){
+       return $orders = $this->orderRepository->findByIdUser($id);
+    }
+
+    public function getById($id){
+        return $order = $this->orderRepository->findById($id);
+    }
 }
