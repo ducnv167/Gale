@@ -53,8 +53,7 @@ class UserController extends Controller
         Toastr::success('See you again:))', 'Logout successful!!!', ["positionClass" => "toast-top-right"]);
         return back();
     }
-
-
+  
     public function changePassword(Request $request,$id){
         $user = $this->userService->findById($id);
         if ($this->userService->changePassword($user,$request)){
