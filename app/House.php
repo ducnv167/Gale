@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+
 use Laravelista\Comments\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
@@ -8,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class House extends Model
 {
     use Commentable;
+
     protected $fillable = [
         'name',
         'house_category',
@@ -17,6 +19,7 @@ class House extends Model
         'description',
         'address',
         'price',
+        'location',
     ];
 
     public function houseDetails()
@@ -24,7 +27,12 @@ class House extends Model
         return $this->hasMany('App\HouseDetail');
     }
 
+
     public function ratings() {
         return $this->hasMany('App\Rating');
+
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
     }
 }
