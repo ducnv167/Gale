@@ -26,6 +26,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/rental', "HouseController@store")->name('house.store');
         Route::get('/{id}/get-orders',"OrderController@findOrderByUserId")->name('order.cancel');
         Route::get('/{id}/delete-order',"OrderController@deleteOrder")->name('order.delete');
+        Route::post('review', 'RatingController@create')->name('ratings.create');
+        Route::post('{id}/update-review', 'RatingController@update')->name('ratings.update');
     });
 });
 Route::get('/rent-house/{id}', 'OrderController@rentHouse')->name('rent');
