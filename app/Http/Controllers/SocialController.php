@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
@@ -23,7 +24,7 @@ class SocialController extends Controller
         $user = $this->createUser($getInfo, $provider);
 
         auth()->login($user);
-
+        Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
         return back();
     }
 

@@ -29,7 +29,6 @@ class UserRequest extends FormRequest
             'password' => 'required|min:6|max:20',
             'repeatPassword' => 'required|min:6|max:20|same:password',
             'phone' => 'required|min:10|numeric',
-//            'role' => 'required|min:5|max:6',
             'image' => 'required|image'
         ];
     }
