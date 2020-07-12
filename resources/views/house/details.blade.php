@@ -16,61 +16,52 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section class="ftco-section ftco-property-details">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="property-details">
-                        <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                @foreach ($house->houseDetails as $key => $item)
-                                    <li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}" @if ($key===0)
-                                        {{'class="active"'}} @endif></li>
-                                @endforeach
-                            </ol>
-                            <div class="carousel-inner">
-                                @foreach ($house->houseDetails as $key => $item)
-                                    <div class="carousel-item @if ($key == 0)
+    </div>
+</section>
+<section class="ftco-section ftco-property-details">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="property-details">
+                    <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            @foreach ($house->houseDetails as $key => $item)
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}" @if ($key===0)
+                                {{'class="active"'}} @endif></li>
+                            @endforeach
+                        </ol>
+                        <div class="carousel-inner">
+                            @foreach ($house->houseDetails as $key => $item)
+                            <div class="carousel-item @if ($key == 0)
                                     {{"active"}}
                                     @endif">
-                                        <img src="{{ asset('storage/' . $item->filename) }}" class="d-block w-100"
-                                             alt="image">
-                                    </div>
-                                @endforeach
+                                <img src="{{ asset('storage/' . $item->filename) }}" class="d-block w-100" alt="image">
                             </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                               data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                               data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
+                            @endforeach
                         </div>
-                        <br>
-                        <br>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
+                    <br>
+                    <br>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="col-md-12">
-                        <div class="text">
-                            <span class="subheading">{{$house->house_category}}</span>
-                            <h2>{{$house->name}}</h2>
-                        </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <div class="text">
+                        <span class="subheading">{{$house->house_category}}</span>
+                        <h2 id="name-house" data-id="{{$house->id}}">{{$house->name}}</h2>
                     </div>
-                    <div class="google-map">
-                    </div>
-                    <style>
-                        iframe {
-                            width: 700px;
-                            height: 410px;
-                        }
-                    </style>
                 </div>
                 @if(\Illuminate\Support\Facades\Auth::user()->id!==$house->user_id)
                     <div class="col-md-4">
@@ -165,10 +156,8 @@
                                             margin-top: -90px;
                                         }
                                     </style>
-
                                 </div>
-
-             
+                            </div>
                             <div class="tab-pane fade" id="pills-review" role="tabpanel"
                                  aria-labelledby="pills-review-tab">
                                 <div class="row">
@@ -316,10 +305,12 @@
                                     <span class="text-right">{{$house->created_at}}</span>
                                 </div>
                             </div>
+                            <span class="text-right">{{$house->created_at}}</span>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
+            @endforeach
         </div>
     </section>
     <script>
@@ -340,37 +331,61 @@
             let linkMap = $('.map').text();
             $('.google-map').html(linkMap);
         })
-    </script>
-    <script>
-        let bookedDays = [];
+</script>
+<script>
+    $(document).ready(function(date) {
+    var bookedDays = [];
+    var maxDate;
 
-        for (let i = 0; i < $('#array_length').val(); i++) {
-            bookedDays.push($('#booked_day' + i).val())
-        }
-
-        $(document).ready(function (date) {
-            var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-            $('#startDate').datepicker({
-                uiLibrary: 'bootstrap4',
-                iconsLibrary: 'fontawesome',
-                format: 'dd/mm/yyyy',
-                minDate: today,
-                maxDate: function () {
-                    return $('#endDate').val();
-                },
-                disableDates: bookedDays,
-            });
-
-            $('#endDate').datepicker({
-                uiLibrary: 'bootstrap4',
-                iconsLibrary: 'fontawesome',
-                minDate: function () {
-                    return $('#startDate').val();
-                },
-                format: 'dd/mm/yyyy',
-                disableDates: bookedDays,
-            });
+    // for (let i = 0; i < $('#array_length').val(); i++) {
+    //     bookedDays.push($('#booked_day' + i).val())
+    // }
+    function getBookedDayOfHouse() {
+        const houseId = $('#name-house').attr("data-id");
+        let origin = window.location.origin;
+        $.ajax({
+            type: "GET",
+            url: origin + "/houses/" + houseId + '/booked-day',
+            dataType: "json",
+            success: function (response) {
+                bookedDays = response;
+                var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+                $('#startDate').datepicker({
+                    uiLibrary: 'bootstrap4',
+                    iconsLibrary: 'fontawesome',
+                    format: 'dd/mm/yyyy',
+                    minDate: today,
+                    maxDate: function () {
+                        return $('#endDate').val();
+                    },
+                    disableDates: response,
+                });
+                disableEndTime(response)
+            }
         });
-    </script>
+    }
 
+    function disableEndTime(day) {
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            },
+            maxDate: function() {
+                let newStartDateFormat = $('#startDate').val().split("/");
+                let startDate = new Date(newStartDateFormat[2], newStartDateFormat[1] - 1, newStartDateFormat[0]);
+                for (let i = 0; i < bookedDays.length; i++) {
+                    if (startDate < new Date(bookedDays[i].split("/")[2], bookedDays[i].split("/")[1] - 1, bookedDays[i].split("/")[0])) {
+                        return bookedDays[i];
+                    }
+                }
+            },
+            format: 'dd/mm/yyyy',
+            disableDates: day,
+        });
+    }
+    getBookedDayOfHouse();
+});
+</script>
 @endsection

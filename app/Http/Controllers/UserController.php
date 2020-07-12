@@ -114,7 +114,6 @@ class UserController extends Controller
         }
         Toastr::error('Password not same!!!', 'Fail', ["positionClass" => "toast-top-left"]);
         return back();
-
     }
 
     public function rentalList($userId)
@@ -123,4 +122,3 @@ class UserController extends Controller
         return view('users.rental-list', compact('houses'));
     }
 }
-
