@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Http\Services\HouseService;
 use App\Http\Services\UserService;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
@@ -13,9 +14,12 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
     protected $userService;
-    public function __construct(UserService $userService)
+    protected $houseService;
+
+    public function __construct(UserService $userService, HouseService $houseService)
     {
         $this->userService = $userService;
+        $this->houseService = $houseService;
     }
 
     function create()
@@ -110,5 +114,11 @@ class UserController extends Controller
         }
         Toastr::error('Password not same!!!', 'Fail', ["positionClass" => "toast-top-left"]);
         return back();
+    }
+
+    public function rentalList($userId)
+    {
+        $houses = $this->userService->findHouseByUserId($userId);
+        return view('users.rental-list', compact('houses'));
     }
 }

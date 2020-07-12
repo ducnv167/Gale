@@ -48,6 +48,13 @@ class OrderController extends Controller
         return back();
     }
 
+
+    public function show($id)
+    {
+        $order = $this->orderService->getAllOfHouse($id);
+        return view('users.history', compact('order'));
+    }
+
     public function findOrderByUserId($id)
     {
         $orders = $this->orderService->getByIdUser($id);
@@ -61,3 +68,4 @@ class OrderController extends Controller
         return redirect()->back();
     }
 }
+
