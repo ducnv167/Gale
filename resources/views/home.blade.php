@@ -23,7 +23,9 @@
                                     <div class="form-group">
                                         <label for="#">Keyword</label>
                                         <div class="form-field">
-                                            <input type="text" class="form-control" placeholder="Enter Keyword">
+                                            <input class="btn btn-warning" data-toggle="modal" data-target="#myModalPickDay" value="Choose Day" id="input-chooseDay" readonly>
+                                            <input type="hidden" id="input-start" name="startDate">
+                                            <input type="hidden" id="input-end" name="endDate">
                                         </div>
                                     </div>
                                 </div>
