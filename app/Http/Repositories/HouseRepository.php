@@ -5,6 +5,7 @@ namespace App\Http\Repositories;
 
 use App\House;
 use Carbon\Carbon;
+use PDO;
 
 class HouseRepository
 {
@@ -30,15 +31,14 @@ class HouseRepository
         return $this->house::paginate(6);
     }
 
-    public function search($bedRoom, $bathRoom, $priceLimit, $location, $startDate, $endDate)
+    public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
         return $houses = House::where([
             ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
             ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
             ['price', 'like', '%' . $priceLimit . '%'],
             ['address', 'like', '%' . $location . '%'],
-        ])->paginate(6);
-
+        ])->get();
     }
 
     function getReviewById($id)

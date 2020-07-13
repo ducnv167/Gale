@@ -63,21 +63,10 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Location</label>
-                                        <div class="form-field">
-                                            <div class="icon"><span class="fa fa-search"></span></div>
-                                            <input type="text" class="form-control" name="location"
-                                                   placeholder="Location">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg align-self-end">
-                                    <div class="form-group">
                                         <label for="#">Price Limit</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
-                                                <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                                <select name="price_limit" id="" class="form-control">
+                                                <select name="bath_room" id="" class="form-control">
                                                     <option style="color: #495057" value="" selected>Choose</option>
                                                     <option style="color: #495057" value="500000">500,000</option>
                                                     <option style="color: #495057" value="1000000">1,000,000</option>
@@ -86,6 +75,16 @@
                                                     <option style="color: #495057" value="5000000">5,000,000</option>
                                                 </select>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg align-items-end">
+                                    <div class="form-group">
+                                        <label for="#">Location</label>
+                                        <div class="form-field">
+                                            <div class="icon"><span class="fa fa-search"></span></div>
+                                            <input type="text" class="form-control" name="location"
+                                                   placeholder="Location">
                                         </div>
                                     </div>
                                 </div>
