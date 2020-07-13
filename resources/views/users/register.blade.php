@@ -52,22 +52,6 @@
                                         <strong></strong>
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-control form-control-sm" name="role" id="roleInput"
-                                            required>
-                                            <option selected disabled>Role</option>
-                                            <option <?php echo old('role') == 'Admin' ? 'selected' : ''?>>Admin
-                                            </option>
-                                            <option <?php echo old('role') == 'Leaser' ? 'selected' : ''?>>Leaser
-                                            </option>
-                                            <option <?php echo old('role') == 'Render' ? 'selected' : ''?>>Renter
-                                            </option>
-                                        </select>
-                                    </div>
-                                    <div role="alert" id="roleError">
-                                        <strong></strong>
-                                    </div>
-                                    <hr>
-                                    <div class="form-group">
                                         <input type="file" class="form-control-file" name="image" id="imageInput">
                                     </div>
                                     <div role="alert" id="imageError">
@@ -107,18 +91,25 @@
                 data: formData,
                 contentType: false,
                 processData: false,
-                success: () => window.location.reload(),
+                success: () => {
+                    swal({ title: 'Register account successfully!!!', type: 'success' });
+                    $('*').click(function () {
+                        window.location.reload()
+                    })
+                },
                 error: (response) => {
                     if (response.status === 422) {
                         let errors = response.responseJSON.errors;
-
                         Object.keys(errors).forEach(function (key) {
-                            console.log("#" + key + "Error");
                             $("#" + key + "Input").addClass('form-control is-invalid');
                             $("#" + key + "Error").css({'margin-top':'-20px','margin-bottom':'30px'}).children('strong').css('color','red').text(errors[key][0]);
                         });
                     } else {
-                        window.location.reload();
+                        $("#emailInput").addClass('form-control is-invalid');
+                        $('#emailError').css({
+                            'margin-top': '-20px',
+                            'margin-bottom': '30px'
+                        }).children('strong').css('color', 'red').text('Email already exist!!!')
                     }
                 }
             })

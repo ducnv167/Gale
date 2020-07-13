@@ -58,6 +58,7 @@ class UserController extends Controller
         return back();
     }
 
+
     public function changePassword(Request $request, $id)
     {
         $user = $this->userService->findById($id);

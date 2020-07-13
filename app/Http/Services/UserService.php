@@ -30,7 +30,6 @@ class UserService
         $data->email = $userRequest->email;
         $data->password = Hash::make($userRequest->password);
         $data->phone = $userRequest->phone;
-//        $data->role = $userRequest->role;
         $image = $userRequest->image->store('image', 'public');
         $data->image = $image;
         $this->userRepository->store($data);
@@ -88,6 +87,7 @@ class UserService
         $this->userRepository->store($user);
         return true;
     }
+
 
     function sendEmailResetPassword($request)
     {

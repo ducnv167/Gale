@@ -51,7 +51,7 @@ class HouseRepository
         return $houses->paginate(6);
     }
 
-    function getRatingById($id)
+    function getReviewById($id)
     {
         $houseById = $this->findById($id);
         return [
