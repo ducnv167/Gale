@@ -175,6 +175,7 @@
                                 aria-labelledby="pills-manufacturer-tab">
                                 {!! $house->description !!} <br>
                                 <div class="map" style="visibility: hidden; display:inline;">{{$house->location}}</div>
+
                                 <div class="google-map">
                                 </div>
                                 <style>
@@ -183,6 +184,7 @@
                                         margin-top: -90px;
                                     }
                                 </style>
+
                             </div>
 
                             <div class="tab-pane fade" id="pills-review" role="tabpanel"

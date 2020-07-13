@@ -85,6 +85,10 @@ class HouseController extends Controller
         return view('house.list', compact('houses'));
     }
 
+    public function getSeller(){
+        $houses = $this->houseService->getAll();
+        return view('home', compact('houses'));
+    }
     public function getBookedDay($houseId)
     {
         $house = $this->houseService->findById($houseId);
