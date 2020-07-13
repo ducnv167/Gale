@@ -30,7 +30,6 @@ class SocialController extends Controller
 
         Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->route('home');
-
     }
 
     function createUser($getInfo, $provider)

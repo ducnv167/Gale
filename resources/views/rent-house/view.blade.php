@@ -274,7 +274,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-12"></td>
-                                    <th>(VND)</th>
+                                    <th>($)</th>
                                 </tr>
                             </table>
                         </div>
