@@ -78,7 +78,7 @@
                             @enderror
 
                             <div class="form-group">
-                                <label for="">Price</label>
+                                <label for="">Price($)</label>
                                 <input class="form-control @error('price') is-invalid @enderror" type="text"
                                     name="price" id="">
                             </div>
@@ -86,14 +86,14 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
 
-{{--                            them location map--}}
+                            {{--                            them location map--}}
                             <div class="form-group">
                                 <label for="">Location</label>
                                 <input class="form-control " type="text" name="location" id="">
                             </div>
 
 
-{{--                            end them location map--}}
+                            {{--                            end them location map--}}
                             <div class="form-group @error('description') is-invalid @enderror">
                                 <label for="">Description</label>
                                 <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
@@ -106,13 +106,21 @@
                             @enderror
                             <div class="form-group @error('image') is-invalid @enderror">
                                 <label for="">Image</label>
-                                <div class="file-loading">
+                                {{-- <div class="file-loading">
                                     <input id="image" name="image[]" type="file" multiple>
-                                </div>
+                                </div> --}}
+                                <input id="image" name="image[]" type="file" class="file"
+                                    data-browse-on-zone-click="true" multiple>
+                                <div id="file-errors"></div>
+                                @if (session('extension'))
+                                <div class="alert alert-danger">{{session('extension')}}</div>
+                                @endif
+
                             </div>
                             @error('image')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                             <button class="btn-lg btn-success" style="float: right">Confirm</button>
                         </form>
                     </div>
@@ -124,7 +132,9 @@
 <script>
     $("#image").fileinput({
     theme: "fas",
-    uploadUrl: "/file-upload-batch/2"
+    uploadUrl: "/file-upload-batch/2",
+    elErrorContainer: '#file-errors',
+    allowedFileExtensions: ["jpg", "png", "jpeg"]
 });
 </script>
 @endsection

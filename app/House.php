@@ -20,6 +20,7 @@ class House extends Model
         'address',
         'price',
         'location',
+        'user_id',
     ];
 
     public function houseDetails()
