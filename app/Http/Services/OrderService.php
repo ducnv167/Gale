@@ -28,6 +28,11 @@ class OrderService
         $this->orderRepository->store($newOrder);
     }
 
+    public function getAllOfHouse($id)
+    {
+        return $this->orderRepository->getAllOfHouse($id);
+    }
+
     public function getByIdUser($id){
        return $orders = $this->orderRepository->findByIdUser($id);
     }

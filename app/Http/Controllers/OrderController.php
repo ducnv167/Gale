@@ -23,7 +23,10 @@ class OrderController extends Controller
 
     public function rentHouse(Request $request, $id)
     {
-
+        $request->validate([
+            'check_in' => 'required',
+            'checkout' => 'required'
+        ]);
         $checkIn = strtotime(str_replace('/', '-', $request->check_in));
         $arrivalDate = date('Y-m-d', $checkIn);
         $checkout = strtotime(str_replace('/', '-', $request->checkout));
@@ -49,14 +52,21 @@ class OrderController extends Controller
         return back();
     }
 
+    public function show($id)
+    {
+        $order = $this->orderService->getAllOfHouse($id);
+        return view('users.history', compact('order'));
+    }
+
     public function findOrderByUserId($id)
     {
         $orders = $this->orderService->getByIdUser($id);
         $currentDate = Carbon::now();
-        return view('order.list', compact('orders','currentDate'));
+        return view('order.list', compact('orders', 'currentDate'));
     }
 
-    public function deleteOrder($id){
+    public function deleteOrder($id)
+    {
         $order = $this->orderService->getById($id);
         $order->delete();
         return redirect()->back();

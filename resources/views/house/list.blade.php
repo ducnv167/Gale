@@ -140,7 +140,7 @@
                         </a>
                         <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
                             <div class="d-flex align-items-center">
-                                <div class="img" style="background-image: url({{asset('images/bg_2.jpg')}});"></div>
+                                <div class="img" style="background-image: url({{asset('#')}});"></div>
                                 {{--                                <h3 class="ml-2">John Dorf</h3>--}}
                             </div>
                             <span class="text-right">{{$house->created_at}}</span>

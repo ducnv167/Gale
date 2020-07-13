@@ -88,7 +88,9 @@ class UserService
         return true;
     }
 
-    function sendEmailResetPassword($request) {
+
+    function sendEmailResetPassword($request)
+    {
         $email = $request->email;
         $user = $this->userRepository->findUserByEmail($email);
         if ($user == null) {
@@ -104,7 +106,8 @@ class UserService
         return true;
     }
 
-    function resetPassword($id, $request) {
+    function resetPassword($id, $request)
+    {
         $user = $this->userRepository->finById($id);
         $password = $request->password;
         $confirmPassword = $request->confirmPassword;
@@ -116,4 +119,8 @@ class UserService
         return false;
     }
 
+    public function findHouseByUserId($userId)
+    {
+        return $this->userRepository->findHouseByUserId($userId);
+    }
 }

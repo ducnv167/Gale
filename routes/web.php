@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', 'HouseController@getSeller')->name('home');
 
 
 
@@ -36,10 +34,11 @@ Route::post('/rent-house', 'OrderController@store')->name('rent.store');
 Route::post('/rent-house1', 'OrderController@storeUser')->name('rent.storeUser');
 
 
-Route::prefix('house')->group(function () {
+Route::prefix('houses')->group(function () {
     Route::get('/{id}/details', 'HouseController@findById')->name('house.details');
-    Route::get('/list', 'HouseController@getAll')->name('house.list');
+    Route::get('/', 'HouseController@getAll')->name('house.list');
     Route::get('/search', 'HouseController@search')->name('list.search');
+    Route::get('/{id}/booked-day', 'HouseController@getBookedDay');
 });
 
 Route::prefix('users')->group(function () {
@@ -48,6 +47,8 @@ Route::prefix('users')->group(function () {
     Route::get('login', 'UserController@login')->name('users.login');
     Route::post('login', 'UserController@loginHandling')->name('users.loginHandling');
     Route::get('logout', 'UserController@logout')->name('users.logout');
+    Route::get('/{id}/rent-history','OrderController@show')->name('users.history-show');
+    Route::get('/{userId}/rental-list','UserController@rentalList')->name('users.rental-list');
     Route::post('/{id}/change-password','UserController@changePassword')->name('user.changePassword');
     Route::get('/{id}/edit','UserController@findById')->name('user.edit');
     Route::post('/{id}/update','UserController@update')->name('user.update');
