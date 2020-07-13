@@ -72,19 +72,20 @@
                                             <input type="hidden" name="user" value="{{ $order->user_id }}">
                                             <div>
                                                 <h3>Star Rating</h3>
-                                                @for($i = 1; $i <= ($existRating['stars'] ? $existRating['stars'] : 5);
-                                                    $i++) <span class="fa fa-star star-{{ $i }} checked"></span>
-                                                    @endfor
-                                                    @for($i = ($existRating['stars'] ? $existRating['stars'] + 1 : 6);
-                                                    $i <= 5; $i++ ) <span class="fa fa-star star-{{ $i }}"></span>
-                                                        @endfor
-                                                        <br>
-                                                        <input class="result-rating1 btn btn-success"
-                                                            style="width: 130px; background: #24A148"
-                                                            value="{{ $existRating['stars']? $ratingArray[$existRating['stars']] : 'Excellent' }}"
-                                                            readonly>
-                                                        <input name="stars" class="result-rating2" type="hidden"
-                                                            value="{{ $existRating['stars'] ? $existRating['stars'] : 5 }}">
+                                                
+                                                @for($i = 1; $i <= ($existRating ? $existRating['stars'] : 5); $i++)
+                                                    <span class="fa fa-star star-{{ $i }} checked"></span>
+                                                @endfor
+                                                @for($i = ($existRating ? $existRating['stars'] + 1 : 6); $i <= 5; $i++ )
+                                                    <span class="fa fa-star star-{{ $i }}"></span>
+                                                @endfor
+                                                <br>
+                                                <input
+                                                    class="result-rating1 btn btn-success"
+                                                    style="width: 130px; background: #24A148"
+                                                    value="{{ $existRating ? $existRating['stars'] : 'Excellent' }}" readonly>
+                                                <input name="stars" class="result-rating2" type="hidden" value="{{ $existRating ? $existRating['stars'] : 5 }}">
+
                                             </div>
                                             <div id="ratingError">
 
@@ -93,7 +94,9 @@
                                             <div class="form-group">
                                                 <h3>Description</h3>
                                                 <textarea class="form-control" name="comments" cols="30"
-                                                    rows="5">{{ $existRating['comments'] }}</textarea>
+
+                                                          rows="5">{{ $existRating ? $existRating['comments'] : '' }}</textarea>
+
                                             </div>
                                             <hr>
                                             @if($existRating)
