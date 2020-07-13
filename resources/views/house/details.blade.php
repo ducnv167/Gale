@@ -214,88 +214,89 @@
                                         @endforeach
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-5">
-                                <div class="rating-wrap">
-                                    <h3 class="head">Total reviews</h3>
-                                    <div class="wrap">
-                                        <p class="star" style="margin-top: 10px">
-                                            <span style="margin-right: 18px">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                ({{ $reviews['total'] != 0 ? round($reviews['5'] / $reviews['total']*100) : 0 }}
-                                                %)
-                                            </span>
-                                            <span>{{ $reviews['5'] }} Reviews</span>
-                                        </p>
-                                        <p class="star" style="margin-top: 10px">
-                                            <span style="margin-right: 18px">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                ({{ $reviews['total'] != 0 ? round($reviews['4'] / $reviews['total']*100) : 0 }}
-                                                %)
-                                            </span>
-                                            <span>{{ $reviews['4'] }} Reviews</span>
-                                        </p>
-                                        <p class="star" style="margin-top: 10px">
-                                            <span style="margin-right: 18px">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                ({{ $reviews['total'] != 0 ? round($reviews['3'] / $reviews['total']*100) : 0 }}
-                                                %)
-                                            </span>
-                                            <span>{{ $reviews['3'] }} Reviews</span>
-                                        </p>
-                                        <p class="star" style="margin-top: 10px">
-                                            <span style="margin-right: 18px">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                ({{ $reviews['total'] != 0 ? round($reviews['2'] / $reviews['total']*100) : 0 }}
-                                                %)
-                                            </span>
-                                            <span>{{ $reviews['2'] }} Reviews</span>
-                                        </p>
-                                        <p class="star" style="margin-top: 10px">
-                                            <span style="margin-right: 18px">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                <i class="fa fa-star" style="color: gray"></i>
-                                                ({{ $reviews['total'] != 0 ? round($reviews['1'] / $reviews['total']*100) : 0 }}
-                                                %)
-                                            </span>
-                                            <span>{{ $reviews['1'] }} Reviews</span>
-                                        </p>
-                                        <hr>
-                                        <p class="star" style="margin-top: 10px">
-                                            <span style="margin-right: 18px">
-                                                <i class="fa fa-star star-1"></i>
-                                                <i class="fa fa-star star-2"></i>
-                                                <i class="fa fa-star star-3"></i>
-                                                <i class="fa fa-star star-4"></i>
-                                                <i class="fa fa-star star-5"></i>
-                                                <span
-                                                    class="average">{{ $reviews['total'] != 0 ? round(($reviews['5']*5 + $reviews['4']*4 + $reviews['3']*3 + $reviews['2']*2 + $reviews['1']*1) / $reviews['total'], 2) : 0 }}</span>
-                                            </span>
-                                            <span>{{ $reviews['total'] }} Reviews</span>
+                                <div class="col-md-6">
+                                    <div class="rating-wrap">
+                                        <h3 class="head">Total reviews</h3>
+                                        <div class="wrap">
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    ({{ $reviews['total'] != 0 ? round($reviews['5'] / $reviews['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $reviews['5'] }} Reviews</span>
+                                            </p>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    ({{ $reviews['total'] != 0 ? round($reviews['4'] / $reviews['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $reviews['4'] }} Reviews</span>
+                                            </p>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    ({{ $reviews['total'] != 0 ? round($reviews['3'] / $reviews['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $reviews['3'] }} Reviews</span>
+                                            </p>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    ({{ $reviews['total'] != 0 ? round($reviews['2'] / $reviews['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $reviews['2'] }} Reviews</span>
+                                            </p>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    <i class="fa fa-star" style="color: gray"></i>
+                                                    ({{ $reviews['total'] != 0 ? round($reviews['1'] / $reviews['total']*100) : 0 }}
+                                                    %)
+                                                </span>
+                                                <span>{{ $reviews['1'] }} Reviews</span>
+                                            </p>
+                                            <hr>
+                                            <p class="star" style="margin-top: 10px">
+                                                <span style="margin-right: 18px">
+                                                    <i class="fa fa-star star-1"></i>
+                                                    <i class="fa fa-star star-2"></i>
+                                                    <i class="fa fa-star star-3"></i>
+                                                    <i class="fa fa-star star-4"></i>
+                                                    <i class="fa fa-star star-5"></i>
+                                                    <span
+                                                        class="average">{{ $reviews['total'] != 0 ? round(($reviews['5']*5 + $reviews['4']*4 + $reviews['3']*3 + $reviews['2']*2 + $reviews['1']*1) / $reviews['total'], 2) : 0 }}</span>
+                                                </span>
+                                                <span>{{ $reviews['total'] }} Reviews</span>
 
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
