@@ -46,9 +46,9 @@ class HouseService
                         'filename' => $filename
                     ]);
                 }
+                return true;
             } else {
-                session()->flash('error', 'Sai dinh dang anh');
-                return redirect()->route('house.create');
+                return false;
             }
         }
     }
@@ -60,12 +60,11 @@ class HouseService
 
     public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
-        return $this->houseRepository->search($bedRoom,$bathRoom,$priceLimit,$location);
+        return $this->houseRepository->search($bedRoom, $bathRoom, $priceLimit, $location);
     }
 
-    function getRatingById($id) {
+    function getRatingById($id)
+    {
         return $this->houseRepository->getRatingById($id);
     }
 }
-
-

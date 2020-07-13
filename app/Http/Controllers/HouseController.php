@@ -22,16 +22,6 @@ class HouseController extends Controller
         $house = $this->houseService->findById($id);
         $orders = $house->orders()->get();
         $bookedDays = [];
-        // foreach ($orders as $key => $value) {
-        //     $checkIn = Carbon::create($orders[$key]->arrival_date);
-        //     $checkOut = Carbon::create($orders[$key]->departure_date);
-        //     $diff = $checkOut->diffInDays($checkIn);
-        //     array_push($bookedDays, date('d/m/Y', $checkIn->addDays(0)->timestamp));
-        //     for ($i = 0; $i < $diff; $i++) {
-        //         $day = $checkIn->addDay()->timestamp;
-        //         array_push($bookedDays, date('d/m/Y', $day));
-        //     }
-        // }
         $houseList = $this->houseService->getAll();
         $array = [];
         foreach ($houseList as $item) {
@@ -63,9 +53,13 @@ class HouseController extends Controller
             'price' => 'required | numeric',
             'image' => 'required',
         ]);
-        $this->houseService->store($request);
-        Toastr::success('Posting is successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
-        return redirect()->route('home');
+        if ($this->houseService->store($request)) {
+            Toastr::success('Posting is successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
+            return redirect()->route('home');
+        } else {
+            session()->flash('extension', 'Only "jpg, png, jpeg" files are supported.');
+            return redirect()->route('house.create');
+        }
     }
 
     public function getAll()

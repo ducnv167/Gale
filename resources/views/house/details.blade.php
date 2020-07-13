@@ -79,6 +79,7 @@
                     style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
                     <form action="{{ route('rent', $house->id) }}">
                         <div class="form-group">
+                            <h4><b>{{$house->price}}$</b><small> /night</small></h4>
                             Check-in: <input class="@error('check_in') is-invalid @enderror" id="startDate"
                                 name="check_in" readonly required />
                             @error('check_in')
