@@ -32,4 +32,8 @@ class RatingService
         $rating->comments = $request->comments;
         $this->ratingRepository->save($rating);
     }
+
+    function delete($id) {
+        $this->ratingRepository->delete($id);
+    }
 }

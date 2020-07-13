@@ -21,4 +21,9 @@ class RatingRepository
     function getById($id) {
         return $this->rating->findOrFail($id);
     }
+
+    function delete($id) {
+        $rating = $this->getById($id);
+        $rating->delete();
+    }
 }

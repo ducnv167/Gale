@@ -81,10 +81,10 @@
                                                 @endfor
                                                 <br>
                                                 <input
-                                                    class="result-rating btn btn-success"
+                                                    class="result-rating1 btn btn-success"
                                                     style="width: 130px; background: #24A148"
                                                     value="{{ $existRating['stars']? $ratingArray[$existRating['stars']] : 'Excellent' }}" readonly>
-                                                <input name="stars" id="result-rating" type="hidden" value="{{ $existRating['stars'] ? $existRating['stars'] : 5 }}">
+                                                <input name="stars" class="result-rating2" type="hidden" value="{{ $existRating['stars'] ? $existRating['stars'] : 5 }}">
                                             </div>
                                             <div id="ratingError">
 
@@ -92,16 +92,13 @@
                                             <hr>
                                             <div class="form-group">
                                                 <h3>Description</h3>
-                                                <textarea class="form-control" name="comments" id="" cols="30"
-                                                          rows="10">{{ $existRating['comments'] }}</textarea>
-                                                <script>
-                                                    CKEDITOR.replace('comments');
-                                                </script>
+                                                <textarea class="form-control" name="comments" cols="30"
+                                                          rows="5">{{ $existRating['comments'] }}</textarea>
                                             </div>
                                             <hr>
                                             @if($existRating)
-                                                <input type="submit" class="col-5 btn btn-primary" value="Edit">
-                                                <a class="col-5 btn btn-secondary" style="float: right">Delete</a>
+                                                <input type="submit" class="col-5 btn btn-primary" id="edit" value="Edit">
+                                                <a onclick="return confirm('Are you delete your review?')" href="{{ route('ratings.delete', $existRating['id']) }}" class="col-5 btn btn-secondary" style="float: right">Delete</a>
                                             @else
                                                 <input type="submit" class="btn-primary" value="Send">
                                             @endif
@@ -113,32 +110,32 @@
                                 $(document).ready(function () {
                                     $('.star-5').hover(function () {
                                         $('.star-5, .star-4, .star-3, .star-2, .star-1').addClass('checked');
-                                        $('.result-rating').val('Excellent');
-                                        $('#result-rating').val(5);
+                                        $('.result-rating1').val('Excellent');
+                                        $('.result-rating2').val(5);
                                     });
                                     $('.star-4').hover(function () {
                                         $('.star-5').removeClass('checked');
                                         $('.star-4, .star-3, .star-2, .star-1').addClass('checked');
-                                        $('.result-rating').val('Good');
-                                        $('#result-rating').val(4);
+                                        $('.result-rating1').val('Good');
+                                        $('.result-rating2').val(4);
                                     });
                                     $('.star-3').hover(function () {
                                         $('.star-5, .star-4').removeClass('checked');
                                         $('.star-3, .star-2, .star-1').addClass('checked');
-                                        $('.result-rating').val('Ok');
-                                        $('#result-rating').val(3);
+                                        $('.result-rating1').val('Ok');
+                                        $('.result-rating2').val(3);
                                     });
                                     $('.star-2').hover(function () {
                                         $('.star-5, .star-4, .star-3').removeClass('checked');
                                         $('.star-2, .star-1').addClass('checked');
-                                        $('.result-rating').val('Poor');
-                                        $('#result-rating').val(2);
+                                        $('.result-rating1').val('Poor');
+                                        $('.result-rating2').val(2);
                                     });
                                     $('.star-1').hover(function () {
                                         $('.star-5, .star-4, .star-3, .star-2').removeClass('checked');
                                         $('.star-1').addClass('checked');
-                                        $('.result-rating').val('Very bad');
-                                        $('#result-rating').val(1);
+                                        $('.result-rating1').val('Very bad');
+                                        $('.result-rating2').val(1);
                                     });
 
                                     $("{{'#formReviewCreate'.$key}}").submit(function (e) {

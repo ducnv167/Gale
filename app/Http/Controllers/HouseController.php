@@ -44,9 +44,10 @@ class HouseController extends Controller
         // get 4 bonus result
         $bonusHouse = array_slice($array, 0, 4);
 
-       $rating = $this->houseService->getRatingById($id);
+       $reviews = $this->houseService->getReviewById($id);
 
-        return view('house.details', compact('house', 'bonusHouse', 'bookedDays', 'rating'));
+
+        return view('house.details', compact('house', 'bonusHouse', 'bookedDays', 'reviews'));
     }
 
     public function create(Request $request)

@@ -20,4 +20,9 @@ class RatingController extends Controller
     function update($id, Request $request) {
         $this->ratingService->update($id, $request);
     }
+
+    function delete($id) {
+        $this->ratingService->delete($id);
+        return back();
+    }
 }

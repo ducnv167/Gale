@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}/delete-order',"OrderController@deleteOrder")->name('order.delete');
         Route::post('review', 'RatingController@create')->name('ratings.create');
         Route::post('{id}/update-review', 'RatingController@update')->name('ratings.update');
+        Route::get('{id}/delete-review', 'RatingController@delete')->name('ratings.delete');
     });
 });
 Route::get('/rent-house/{id}', 'OrderController@rentHouse')->name('rent');
