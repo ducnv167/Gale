@@ -31,10 +31,9 @@ class HouseController extends Controller
         shuffle($array);
         // get 4 bonus result
         $bonusHouse = array_slice($array, 0, 4);
-      
+
         $reviews = $this->houseService->getReviewById($id);
         return view('house.details', compact('house', 'bonusHouse', 'bookedDays', 'reviews'));
-
     }
 
     public function create()
@@ -81,7 +80,8 @@ class HouseController extends Controller
         return view('house.list', compact('houses'));
     }
 
-    public function getSeller(){
+    public function getSeller()
+    {
         $houses = $this->houseService->getAll();
         return view('home', compact('houses'));
     }

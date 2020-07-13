@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
 <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('images/bg_1.jpg') }}');"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -59,10 +60,20 @@
                 <div
                     style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
                     <form action="{{ route('rent', $house->id) }}">
-                        <div class="form-group">
-                            Check-in: <input id="startDate" name="check_in" readonly required />
-                            Checkout: <input id="endDate" name="checkout" readonly required />
-                        </div>
+                        <h4><b>{{$house->price}}$</b><small> /night</small></h4>
+                        Check-in: <input class="@error('check_in') is-invalid @enderror" id="startDate" name="check_in"
+                            readonly required />
+                        @error('check_in')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        Checkout: <input class="@error('checkout') is-invalid @enderror" id="endDate" name="checkout"
+                            readonly required />
+                        @error('checkout')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        @if(session('date'))
+                        <div class="alert alert-danger">{{ session('date') }}</div>
+                        @endif
                         <div class="form-group">
                             <button class="form-control"
                                 style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
@@ -90,6 +101,9 @@
                             @error('checkout')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
+                            @if(session('date'))
+                            <div class="alert alert-danger">{{ session('date') }}</div>
+                            @endif
                         </div>
                         <div class="form-group">
                             <button class="form-control"
@@ -290,7 +304,6 @@
                                                         class="average">{{ $reviews['total'] != 0 ? round(($reviews['5']*5 + $reviews['4']*4 + $reviews['3']*3 + $reviews['2']*2 + $reviews['1']*1) / $reviews['total'], 2) : 0 }}</span>
                                                 </span>
                                                 <span>{{ $reviews['total'] }} Reviews</span>
-
                                             </p>
                                         </div>
                                     </div>
