@@ -194,7 +194,7 @@
                                         @foreach($reviews['comments'] as $rating)
                                         <div class="review d-flex">
                                             <div class="user-img"
-                                                style="height: 100px; background-image: url('https://i.pinimg.com/236x/76/80/76/7680768d2115009e96ad70bd57146e74.jpg')">
+                                                style="height: 100px; background-image: url('{{$rating->user->image}}')">
                                             </div>
                                             <div class="desc">
                                                 <h4>
