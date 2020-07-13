@@ -71,10 +71,7 @@
                         @error('checkout')
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-                        @if(session('date'))
-                        <div class="alert alert-danger">{{ session('date') }}</div>
-                        @endif
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <button class="form-control"
                                 style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
                                 Book now
@@ -101,11 +98,8 @@
                             @error('checkout')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            @if(session('date'))
-                            <div class="alert alert-danger">{{ session('date') }}</div>
-                            @endif
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <button class="form-control"
                                 style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
                                 Book now
@@ -327,14 +321,6 @@
                         <p class="price"><span class="orig-price">${{$house->price}}</span></p>
                     </a>
                     <div class="text">
-
-                        {{--                        <ul class="property_list">--}}
-                        {{--                            <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}
-                        </li>--}}
-                        {{--                            <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}
-                        </li>--}}
-                        {{--                        </ul>--}}
-
                         <h3><a href="#">{{$house->name}}</a></h3>
                         <span class="location">{{$house->address}}</span>
                         <a href="#" class="d-flex align-items-center justify-content-center btn-custom">
@@ -384,15 +370,31 @@
                     url: origin + "/houses/" + houseId + '/booked-day',
                     dataType: "json",
                     success: function (response) {
+                        console.log($('#endDate').val())
                         bookedDays = response;
                         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
                         $('#startDate').datepicker({
                             uiLibrary: 'bootstrap4',
                             iconsLibrary: 'fontawesome',
                             format: 'dd/mm/yyyy',
-                            minDate: today,
+                            minDate: function () {
+                                if ($('#endDate').val() === '') {
+                                   return today;
+                                } else {
+                                    let
+                                     newEndDateFormat = $('#endDate').val().split("/");
+                                    let endDate = new Date(newEndDateFormat[2], newEndDateFormat[1] - 1, newEndDateFormat[0]);
+                                    for (let i = bookedDays.length - 1; i >= 0; i--) {
+                                        if (endDate > new Date(bookedDays[i].split("/")[2], bookedDays[i].split("/")[1] - 1, bookedDays[i].split("/")[0])) {
+                                            return bookedDays[i];
+                                        }
+                                     }
+                                }
+                            },
                             maxDate: function () {
-                                return $('#endDate').val();
+                                let newMaxDateFormat = $('#endDate').val().split("/");
+                                let maxDate = new Date(newMaxDateFormat[2], newMaxDateFormat[1] - 1, newMaxDateFormat[0]);
+                                return maxDate.setDate(maxDate.getDate() - 1);
                             },
                             disableDates: response,
                             showOtherMonths: false,
@@ -402,13 +404,18 @@
                 });
             }
             function disableEndTime(day) {
+                let today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
                 $('#endDate').datepicker({
                     uiLibrary: 'bootstrap4',
                     iconsLibrary: 'fontawesome',
                     minDate: function () {
+                        if ($('#startDate').val() === '') {
+                            return today;
+                        } else {
                         let newMinDateFormat = $('#startDate').val().split("/");
                         let minDate = new Date(newMinDateFormat[2], newMinDateFormat[1] - 1, newMinDateFormat[0]);
                         return minDate.setDate(minDate.getDate() + 1);
+                        }
                     },
                     maxDate: function () {
                         let newStartDateFormat = $('#startDate').val().split("/");
