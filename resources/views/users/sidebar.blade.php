@@ -27,8 +27,8 @@
                                                                                            class="fas fa-store"></i>Store</a>
             <hr>
 
-            <a href="{{route('users.rental-list',\Illuminate\Support\Facades\Auth::user()->id)}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-shopping-cart"></i>Rental list</a>
-
+            <a href="{{route('users.rental-list',\Illuminate\Support\Facades\Auth::user()->id)}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-list"></i>Rental list</a>
+            <hr>
             <a href="{{route('order.cancel',\Illuminate\Support\Facades\Auth::user()->id)}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px"
                                                                   class="fas fa-shopping-cart"></i>Orders</a>
 
