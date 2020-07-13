@@ -8,8 +8,6 @@ use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-use function PHPSTORM_META\type;
-
 class HouseController extends Controller
 {
     protected $houseService;
@@ -24,16 +22,16 @@ class HouseController extends Controller
         $house = $this->houseService->findById($id);
         $orders = $house->orders()->get();
         $bookedDays = [];
-        foreach ($orders as $key => $value) {
-            $checkIn = Carbon::create($orders[$key]->arrival_date);
-            $checkOut = Carbon::create($orders[$key]->departure_date);
-            $diff = $checkOut->diffInDays($checkIn);
-            array_push($bookedDays, date('d/m/Y', $checkIn->addDays(0)->timestamp));
-            for ($i = 0; $i < $diff; $i++) {
-                $day = $checkIn->addDay()->timestamp;
-                array_push($bookedDays, date('d/m/Y', $day));
-            }
-        }
+        // foreach ($orders as $key => $value) {
+        //     $checkIn = Carbon::create($orders[$key]->arrival_date);
+        //     $checkOut = Carbon::create($orders[$key]->departure_date);
+        //     $diff = $checkOut->diffInDays($checkIn);
+        //     array_push($bookedDays, date('d/m/Y', $checkIn->addDays(0)->timestamp));
+        //     for ($i = 0; $i < $diff; $i++) {
+        //         $day = $checkIn->addDay()->timestamp;
+        //         array_push($bookedDays, date('d/m/Y', $day));
+        //     }
+        // }
         $houseList = $this->houseService->getAll();
         $array = [];
         foreach ($houseList as $item) {
@@ -43,13 +41,11 @@ class HouseController extends Controller
         shuffle($array);
         // get 4 bonus result
         $bonusHouse = array_slice($array, 0, 4);
-
-       $rating = $this->houseService->getRatingById($id);
-
+        $rating = $this->houseService->getRatingById($id);
         return view('house.details', compact('house', 'bonusHouse', 'bookedDays', 'rating'));
     }
 
-    public function create(Request $request)
+    public function create()
     {
         return view('host.rental');
     }
@@ -67,7 +63,7 @@ class HouseController extends Controller
             'price' => 'required | numeric',
             'image' => 'required',
         ]);
-        $house = $this->houseService->store($request);
+        $this->houseService->store($request);
         Toastr::success('Posting is successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->route('home');
     }
@@ -92,5 +88,22 @@ class HouseController extends Controller
     public function getSeller(){
         $houses = $this->houseService->getAll();
         return view('home', compact('houses'));
+    }
+    public function getBookedDay($houseId)
+    {
+        $house = $this->houseService->findById($houseId);
+        $orders = $house->orders()->get();
+        $bookedDays = [];
+        foreach ($orders as $key => $value) {
+            $checkIn = Carbon::create($orders[$key]->arrival_date);
+            $checkOut = Carbon::create($orders[$key]->departure_date);
+            $diff = $checkOut->diffInDays($checkIn);
+            array_push($bookedDays, date('d/m/Y', $checkIn->addDays(0)->timestamp));
+            for ($i = 0; $i < $diff; $i++) {
+                $day = $checkIn->addDay()->timestamp;
+                array_push($bookedDays, date('d/m/Y', $day));
+            }
+        }
+        return response()->json($bookedDays);
     }
 }

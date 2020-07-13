@@ -1,4 +1,4 @@
-<footer class="ftco-footer ftco-section">
+<footer class="ftco-footer ftco-section" style="padding-top: 20px;padding-bottom: 0;height: 355px">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md">
@@ -39,7 +39,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Trương Duy Hùng</a></li>
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Nguyễn Trọng Nam</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Lê Văn Đức</a></li>
+                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Nguyễn Văn Đức</a></li>
                         <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Trần Văn Tâm</a></li>
                     </ul>
                 </div>
@@ -60,19 +60,19 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12 text-center">--}}
 
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-                    is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                                                                      target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-            </div>
-        </div>
+{{--                <p>--}}
+{{--                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--}}
+{{--                    Copyright &copy;--}}
+{{--                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template--}}
+{{--                    is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"--}}
+{{--                                                                                      target="_blank">Viroto team</a>--}}
+{{--                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->--}}
+{{--                </p>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 </footer>
 

@@ -4,6 +4,7 @@
 namespace App\Http\Repositories;
 
 
+use App\House;
 use App\Order;
 
 class OrderRepository
@@ -20,6 +21,13 @@ class OrderRepository
         $newOrder->save();
     }
 
+
+    public function getAllOfHouse($id)
+    {
+
+         return Order::where('house_id', '=', $id)->get();
+    }
+
     public function findByIdUser($id){
        return $orders = Order::where('user_id','=',$id)->get();
     }
@@ -28,3 +36,4 @@ class OrderRepository
         return $order = Order::query()->findOrFail($id);
     }
 }
+
