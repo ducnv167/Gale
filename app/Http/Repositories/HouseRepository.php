@@ -30,7 +30,7 @@ class HouseRepository
         return $this->house::paginate(6);
     }
 
-    public function search($bedRoom, $bathRoom, $priceLimit, $location)
+    public function search($bedRoom, $bathRoom, $priceLimit, $location, $startDate, $endDate)
     {
         return $houses = House::where([
             ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
