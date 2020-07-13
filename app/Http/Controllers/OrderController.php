@@ -48,7 +48,6 @@ class OrderController extends Controller
         return back();
     }
 
-
     public function show($id)
     {
         $order = $this->orderService->getAllOfHouse($id);
@@ -59,13 +58,13 @@ class OrderController extends Controller
     {
         $orders = $this->orderService->getByIdUser($id);
         $currentDate = Carbon::now();
-        return view('order.list', compact('orders','currentDate'));
+        return view('order.list', compact('orders', 'currentDate'));
     }
 
-    public function deleteOrder($id){
+    public function deleteOrder($id)
+    {
         $order = $this->orderService->getById($id);
         $order->delete();
         return redirect()->back();
     }
 }
-
