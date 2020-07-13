@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnStatusToOrdersTable extends Migration
+class AddColumnStatusToHousesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddColumnStatusToOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->string('status')->default('Confirmed')->nullable();
+        Schema::table('houses', function (Blueprint $table) {
+            $table->string('status')->default('Empty')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ class AddColumnStatusToOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('houses', function (Blueprint $table) {
             //
         });
     }
