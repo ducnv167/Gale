@@ -77,7 +77,9 @@ class HouseController extends Controller
         $bathRoom = $request->input('bath_room');
         $priceLimit = $request->input('price_limit');
         $location = $request->input('location');
-        $houses = $this->houseService->search($bedRoom, $bathRoom, $priceLimit, $location);
+        $startDate = $request->input('startDate');
+        $endDate = $request->input('endDate');
+        $houses = $this->houseService->search($bedRoom, $bathRoom, $priceLimit, $location,$startDate,$endDate);
         return view('house.list', compact('houses'));
     }
 

@@ -15,7 +15,7 @@ class AddColumUserIdIntoHouseTable extends Migration
     {
         Schema::table('houses', function (Blueprint $table) {
 //            $table->foreignId('user_id')->constrained();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nulladble();
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
