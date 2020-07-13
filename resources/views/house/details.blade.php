@@ -188,7 +188,7 @@
 
                         <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                     <h3 class="head">{{ count($reviews['comments']) }} Comments</h3>
                                     <div>
                                         @foreach($reviews['comments'] as $rating)
@@ -216,7 +216,7 @@
                                 </div>
                                 <div class="col-md-5">
                                     <div class="rating-wrap">
-                                        <h3 class="head">Give a Review</h3>
+                                        <h3 class="head">Total reviews</h3>
                                         <div class="wrap">
                                             <p class="star" style="margin-top: 10px">
                                                 <span style="margin-right: 18px">
