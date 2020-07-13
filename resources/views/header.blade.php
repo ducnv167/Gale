@@ -27,6 +27,7 @@
 @include('users.login')
 @include('users.register')
 @include('users.forgot-password')
+@include('pick-day-modal')
 @if(\Illuminate\Support\Facades\Auth::user())
     @include('users.change-password')
     @include('users.edit')
