@@ -144,18 +144,8 @@
                                  aria-labelledby="pills-manufacturer-tab">
                                 {!! $house->description !!} <br>
                                 <div class="map" style="visibility: hidden; display:inline;">{{$house->location}}</div>
-<<<<<<< HEAD
-                                <div class="google-map">
-                                </div>
-                                <style>
-                                    iframe {
-                                        width: 100%;
-                                        margin-top: -90px;
-                                    }
-                                </style>
 
-=======
->>>>>>> cb6dfa1d3d6c42031b0a89aff73e28b3a92391c2
+
                             </div>
                             <div class="tab-pane fade" id="pills-review" role="tabpanel"
                                  aria-labelledby="pills-review-tab">
