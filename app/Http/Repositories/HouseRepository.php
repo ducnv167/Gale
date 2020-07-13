@@ -41,7 +41,7 @@ class HouseRepository
 
     }
 
-    function getRatingById($id)
+    function getReviewById($id)
     {
         $houseById = $this->findById($id);
         return [

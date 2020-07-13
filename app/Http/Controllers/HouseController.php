@@ -31,8 +31,10 @@ class HouseController extends Controller
         shuffle($array);
         // get 4 bonus result
         $bonusHouse = array_slice($array, 0, 4);
-        $rating = $this->houseService->getRatingById($id);
-        return view('house.details', compact('house', 'bonusHouse', 'bookedDays', 'rating'));
+      
+        $reviews = $this->houseService->getReviewById($id);
+        return view('house.details', compact('house', 'bonusHouse', 'bookedDays', 'reviews'));
+
     }
 
     public function create()
