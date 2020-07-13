@@ -1,32 +1,32 @@
 @extends('master')
 @section('content')
-<?php
-        $ratingArray = [
-            '1' => 'Very Bad',
-            '2' => 'Poor',
-            '3' => 'Ok',
-            '4' => 'Good',
-            '5' => 'Excellent',
-        ]
+    <?php
+    $ratingArray = [
+        '1' => 'Very Bad',
+        '2' => 'Poor',
+        '3' => 'Ok',
+        '4' => 'Good',
+        '5' => 'Excellent',
+    ]
     ?>
-<section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('images/bg_1.jpg') }});"
-    data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-            <div class="col-md-9 ftco-animate pb-0 text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Host <i
-                                class="fa fa-chevron-right"></i></a></span> <span>Rental <i
-                            class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">Rental</h1>
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({{ asset('images/bg_1.jpg') }});"
+             data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate pb-0 text-center">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Host <i
+                                        class="fa fa-chevron-right"></i></a></span> <span>Rental <i
+                                    class="fa fa-chevron-right"></i></span></p>
+                    <h1 class="mb-3 bread">Rental</h1>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<div>
-    <div class="container">
-        <table class="table table-striped">
-            <thead>
+    </section>
+    <div>
+        <div class="container">
+            <table class="table table-striped">
+                <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name House</th>
@@ -36,23 +36,24 @@
                     <th scope="col">Action</th>
                     <th scope="col"></th>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 @foreach($orders as $key=> $order)
-                <tr>
-                    <th scope="row">{{++$key}}</th>
-                    <td>{{$order->house->name}}</td>
-                    <td>{{\Carbon\Carbon::create($order->arrival_date)->toFormattedDateString()}}</td>
-                    <td>{{\Carbon\Carbon::create($order->departure_date)->toFormattedDateString()}}</td>
-                    <td>{{$order->status}}</td>
-                    <input type="text" hidden
-                        value="{{$date= \Carbon\Carbon::create($order->arrival_date)->diffInDays($currentDate) }}">
-                    {{-- @dd($date) --}}
-                    @if( $date < 1) <td>
-                        </td>
+                    <tr>
+                        <th scope="row">{{++$key}}</th>
+                        <td>{{$order->house->name}}</td>
+                        <td>{{\Carbon\Carbon::create($order->arrival_date)->toFormattedDateString()}}</td>
+                        <td>{{\Carbon\Carbon::create($order->departure_date)->toFormattedDateString()}}</td>
+                        <td>{{$order->status}}</td>
+                        <input type="text" hidden
+                               value="{{$date= \Carbon\Carbon::create($order->arrival_date)->diffInDays($currentDate) }}">
+                        {{-- @dd($date) --}}
+                        @if( $date < 1)
+                            <td>
+                            </td>
                         @else
-                        <td><a href="{{route('order.delete',$order->id)}}" class="btn btn-warning"
-                                onclick="return confirm('Are you sure?')">Cancel</a></td>
+                            <td><a href="{{route('order.delete',$order->id)}}" class="btn btn-warning"
+                                   onclick="return confirm('Are you sure?')">Cancel</a></td>
                         @endif
                         <td>
                             <?php
@@ -64,15 +65,15 @@
                                 <div class="modal-dialog modal-dialog modal-lg">
                                     <div class="container modal-content" style="background: #f7f7f7">
                                         <form class="container" method="post"
-                                            id="{{ $existRating ? 'formReviewUpdate'.$key : 'formReviewCreate'.$key }}"
-                                            style="margin: 20px" action="">
+                                              id="{{ $existRating ? 'formReviewUpdate'.$key : 'formReviewCreate'.$key }}"
+                                              style="margin: 20px" action="">
                                             @csrf
                                             <h2 style="text-align: center">Review</h2>
                                             <input type="hidden" name="house" value="{{ $order->house_id }}">
                                             <input type="hidden" name="user" value="{{ $order->user_id }}">
                                             <div>
                                                 <h3>Star Rating</h3>
-                                                
+
                                                 @for($i = 1; $i <= ($existRating ? $existRating['stars'] : 5); $i++)
                                                     <span class="fa fa-star star-{{ $i }} checked"></span>
                                                 @endfor
@@ -81,10 +82,12 @@
                                                 @endfor
                                                 <br>
                                                 <input
-                                                    class="result-rating1 btn btn-success"
-                                                    style="width: 130px; background: #24A148"
-                                                    value="{{ $existRating ? $existRating['stars'] : 'Excellent' }}" readonly>
-                                                <input name="stars" class="result-rating2" type="hidden" value="{{ $existRating ? $existRating['stars'] : 5 }}">
+                                                        class="result-rating1 btn btn-success"
+                                                        style="width: 130px; background: #24A148"
+                                                        value="{{ $existRating ? $existRating['stars'] : 'Excellent' }}"
+                                                        readonly>
+                                                <input name="stars" class="result-rating2" type="hidden"
+                                                       value="{{ $existRating ? $existRating['stars'] : 5 }}">
 
                                             </div>
                                             <div id="ratingError">
@@ -100,12 +103,13 @@
                                             </div>
                                             <hr>
                                             @if($existRating)
-                                            <input type="submit" class="col-5 btn btn-primary" id="edit" value="Edit">
-                                            <a onclick="return confirm('Are you delete your review?')"
-                                                href="{{ route('ratings.delete', $existRating['id']) }}"
-                                                class="col-5 btn btn-secondary" style="float: right">Delete</a>
+                                                <input type="submit" class="col-5 btn btn-primary" id="edit"
+                                                       value="Edit">
+                                                <a onclick="return confirm('Are you delete your review?')"
+                                                   href="{{ route('ratings.delete', $existRating['id']) }}"
+                                                   class="col-5 btn btn-secondary" style="float: right">Delete</a>
                                             @else
-                                            <input type="submit" class="btn-primary" value="Send">
+                                                <input type="submit" class="btn-primary" value="Send">
                                             @endif
                                         </form>
                                     </div>
@@ -173,8 +177,8 @@
                                 })
                             </script>
                             @if($existRating)
-                            <script>
-                                $(document).ready(function () {
+                                <script>
+                                    $(document).ready(function () {
                                         $("{{'#formReviewUpdate'.$key}}").submit(function (e) {
                                             e.preventDefault();
                                             let formData = new FormData(this);
@@ -203,14 +207,14 @@
                                             })
                                         })
                                     });
-                            </script>
+                                </script>
                             @endif
                         </td>
-                </tr>
+                    </tr>
                 @endforeach
-            </tbody>
+                </tbody>
 
-        </table>
+            </table>
+        </div>
     </div>
-</div>
 @endsection
