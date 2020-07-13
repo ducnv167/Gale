@@ -61,7 +61,7 @@ class HouseService
     public function search($bedRoom, $bathRoom, $priceLimit, $location,$startDate,$endDate)
     {
 
-        return $this->houseRepository->search($bedRoom, $bathRoom, $priceLimit, $location);
+        return $this->houseRepository->search($bedRoom, $bathRoom, $priceLimit, $location,$startDate,$endDate);
     }
 
 

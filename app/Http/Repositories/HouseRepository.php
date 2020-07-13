@@ -32,23 +32,13 @@ class HouseRepository
 
     public function search($bedRoom, $bathRoom, $priceLimit, $location, $startDate, $endDate)
     {
-        $houses = House::where([
+        return $houses = House::where([
             ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
             ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
             ['price', 'like', '%' . $priceLimit . '%'],
             ['address', 'like', '%' . $location . '%'],
-        ]);
+        ])->paginate(6);
 
-        foreach ($houses as $house) {
-            $house->orders()->whereNotIn([
-                ['arrival_date', '<', $startDate] and
-                ['departure', '<', $endDate]
-                    or
-                ['arrival_date', '>', $startDate]and
-                ['departure', '>', $endDate]
-            ]);
-        }
-        return $houses->paginate(6);
     }
 
     function getReviewById($id)
