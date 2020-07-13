@@ -382,6 +382,7 @@
                                 return $('#endDate').val();
                             },
                             disableDates: response,
+                            showOtherMonths: false,
                         });
                         disableEndTime(response)
                     }
@@ -405,6 +406,7 @@
                             }
                         }
                     },
+                    showOtherMonths: false,
                     format: 'dd/mm/yyyy',
                     disableDates: day,
                 });
