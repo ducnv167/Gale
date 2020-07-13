@@ -395,7 +395,9 @@
                     uiLibrary: 'bootstrap4',
                     iconsLibrary: 'fontawesome',
                     minDate: function () {
-                        return $('#startDate').val();
+                        let newMinDateFormat = $('#startDate').val().split("/");
+                        let minDate = new Date(newMinDateFormat[2], newMinDateFormat[1] - 1, newMinDateFormat[0]);
+                        return minDate.setDate(minDate.getDate() + 1);
                     },
                     maxDate: function () {
                         let newStartDateFormat = $('#startDate').val().split("/");
