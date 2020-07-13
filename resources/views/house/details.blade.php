@@ -20,7 +20,7 @@
 <section class="ftco-section ftco-property-details">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8" style="height: 500px">
                 <div class="property-details">
                     <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -34,7 +34,7 @@
                             <div class="carousel-item @if ($key == 0)
                                     {{"active"}}
                                     @endif">
-                                <img src="{{ asset('storage/' . $item->filename) }}" class="d-block w-100" alt="image">
+                                <img src="{{ asset('storage/' . $item->filename) }}" class="d-block" style="height: 500px" alt="image">
                             </div>
                             @endforeach
                         </div>
