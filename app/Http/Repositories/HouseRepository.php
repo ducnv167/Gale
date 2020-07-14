@@ -33,12 +33,22 @@ class HouseRepository
 
     public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
-        return $houses = House::where([
-            ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
-            ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
-            ['price', '<=', $priceLimit],
-            ['address', 'like', '%' . $location . '%'],
-        ])->get();
+        if ($priceLimit) {
+            $houses = House::where([
+                ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
+                ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
+                ['price', '<=', $priceLimit],
+                ['address', 'like', '%' . $location . '%'],
+            ])->get();
+        } else {
+            $houses = House::where([
+                ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
+                ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
+                ['address', 'like', '%' . $location . '%'],
+            ])->get();
+        }
+        return $houses;
+
     }
 
     function getReviewById($id)
