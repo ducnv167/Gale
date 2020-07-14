@@ -31,10 +31,9 @@ class HouseController extends Controller
         shuffle($array);
         // get 4 bonus result
         $bonusHouse = array_slice($array, 0, 4);
-      
+
         $reviews = $this->houseService->getReviewById($id);
         return view('house.details', compact('house', 'bonusHouse', 'bookedDays', 'reviews'));
-
     }
 
     public function create()
@@ -83,7 +82,8 @@ class HouseController extends Controller
         return view('house.list', compact('houses'));
     }
 
-    public function getSeller(){
+    public function getSeller()
+    {
         $houses = $this->houseService->getAll();
         return view('home', compact('houses'));
     }
@@ -96,12 +96,16 @@ class HouseController extends Controller
             $checkIn = Carbon::create($orders[$key]->arrival_date);
             $checkOut = Carbon::create($orders[$key]->departure_date);
             $diff = $checkOut->diffInDays($checkIn);
-            array_push($bookedDays, date('d/m/Y', $checkIn->addDays(0)->timestamp));
+            array_push($bookedDays, $checkIn->addDays(0)->timestamp);
             for ($i = 0; $i < $diff; $i++) {
                 $day = $checkIn->addDay()->timestamp;
-                array_push($bookedDays, date('d/m/Y', $day));
+                array_push($bookedDays, $day);
             }
         }
-        return response()->json($bookedDays);
+        sort($bookedDays);
+        for ($i = 0; $i < count($bookedDays); $i++) {
+            $bookedDays[$i] = date('d/m/Y', $bookedDays[$i]);
+        }
+        return $bookedDays;
     }
 }

@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
 <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('images/bg_1.jpg') }}');"
     data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
@@ -19,7 +20,7 @@
 </section>
 <section class="ftco-section ftco-property-details">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="col-md-8">
                 <div class="property-details">
                     <div id="carouselExampleIndicators" class="carousel slide container" data-ride="carousel">
@@ -59,11 +60,18 @@
                 <div
                     style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
                     <form action="{{ route('rent', $house->id) }}">
-                        <div class="form-group">
-                            Check-in: <input id="startDate" name="check_in" readonly required />
-                            Checkout: <input id="endDate" name="checkout" readonly required />
-                        </div>
-                        <div class="form-group">
+                        <h4><b>{{$house->price}}$</b><small> /night</small></h4>
+                        Check-in: <input class="@error('check_in') is-invalid @enderror" id="startDate" name="check_in"
+                            readonly required />
+                        @error('check_in')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        Checkout: <input class="@error('checkout') is-invalid @enderror" id="endDate" name="checkout"
+                            readonly required />
+                        @error('checkout')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <div class="form-group mt-2">
                             <button class="form-control"
                                 style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
                                 Book now
@@ -91,7 +99,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-2">
                             <button class="form-control"
                                 style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
                                 Book now
@@ -290,7 +298,6 @@
                                                         class="average">{{ $reviews['total'] != 0 ? round(($reviews['5']*5 + $reviews['4']*4 + $reviews['3']*3 + $reviews['2']*2 + $reviews['1']*1) / $reviews['total'], 2) : 0 }}</span>
                                                 </span>
                                                 <span>{{ $reviews['total'] }} Reviews</span>
-
                                             </p>
                                         </div>
                                     </div>
@@ -314,14 +321,6 @@
                         <p class="price"><span class="orig-price">${{$house->price}}</span></p>
                     </a>
                     <div class="text">
-
-                        {{--                        <ul class="property_list">--}}
-                        {{--                            <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}
-                        </li>--}}
-                        {{--                            <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}
-                        </li>--}}
-                        {{--                        </ul>--}}
-
                         <h3><a href="#">{{$house->name}}</a></h3>
                         <span class="location">{{$house->address}}</span>
                         <a href="#" class="d-flex align-items-center justify-content-center btn-custom">
@@ -342,76 +341,4 @@
         </div>
     </div>
 </section>
-<script>
-    $(document).ready(function () {
-            let average = $('.average').text();
-            if (average < 1) {
-                $('.star-1, .star-2, .star-3, .star-4, .star-5').css('color', 'gray');
-            } else if (average < 2) {
-                $('.star-2, .star-3, .star-4, .star-5').css('color', 'gray');
-            } else if (average < 3) {
-                $('.star-3, .star-4, .star-5').css('color', 'gray');
-            } else if (average < 4) {
-                $('.star-4, .star-5').css('color', 'gray');
-            } else if (average < 5) {
-                $('.star-5').css('color', 'gray');
-            }
-            let linkMap = $('.map').text();
-            $('.google-map').html(linkMap);
-        })
-</script>
-<script>
-    $(document).ready(function (date) {
-            var bookedDays = [];
-            function getBookedDayOfHouse() {
-                const houseId = $('#name-house').attr("data-id");
-                let origin = window.location.origin;
-                $.ajax({
-                    type: "GET",
-                    url: origin + "/houses/" + houseId + '/booked-day',
-                    dataType: "json",
-                    success: function (response) {
-                        bookedDays = response;
-                        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-                        $('#startDate').datepicker({
-                            uiLibrary: 'bootstrap4',
-                            iconsLibrary: 'fontawesome',
-                            format: 'dd/mm/yyyy',
-                            minDate: today,
-                            maxDate: function () {
-                                return $('#endDate').val();
-                            },
-                            disableDates: response,
-                            showOtherMonths: false,
-                        });
-                        disableEndTime(response)
-                    }
-                });
-            }
-            function disableEndTime(day) {
-                $('#endDate').datepicker({
-                    uiLibrary: 'bootstrap4',
-                    iconsLibrary: 'fontawesome',
-                    minDate: function () {
-                        let newMinDateFormat = $('#startDate').val().split("/");
-                        let minDate = new Date(newMinDateFormat[2], newMinDateFormat[1] - 1, newMinDateFormat[0]);
-                        return minDate.setDate(minDate.getDate() + 1);
-                    },
-                    maxDate: function () {
-                        let newStartDateFormat = $('#startDate').val().split("/");
-                        let startDate = new Date(newStartDateFormat[2], newStartDateFormat[1] - 1, newStartDateFormat[0]);
-                        for (let i = 0; i < bookedDays.length; i++) {
-                            if (startDate < new Date(bookedDays[i].split("/")[2], bookedDays[i].split("/")[1] - 1, bookedDays[i].split("/")[0])) {
-                                return bookedDays[i];
-                            }
-                        }
-                    },
-                    showOtherMonths: false,
-                    format: 'dd/mm/yyyy',
-                    disableDates: day,
-                });
-            }
-            getBookedDayOfHouse();
-        });
-</script>
 @endsection
