@@ -73,7 +73,7 @@
                         @enderror
                         <div class="form-group mt-2">
                             <button class="form-control"
-                                style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
+                                style="color: white !important;background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
                                 Book now
                             </button>
                         </div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="form-group mt-2">
                             <button class="form-control"
-                                style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important">
+                                style="background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important; color: white !important;">
                                 Book now
                             </button>
                         </div>

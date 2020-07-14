@@ -36,7 +36,7 @@ class HouseRepository
         return $houses = House::where([
             ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
             ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
-            ['price', 'like', '%' . $priceLimit . '%'],
+            ['price', '<=', $priceLimit],
             ['address', 'like', '%' . $location . '%'],
         ])->get();
     }
