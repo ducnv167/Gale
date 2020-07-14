@@ -25,7 +25,7 @@
             minDate: new Date(),
             format: 'yyyy-mm-dd',
             maxDate: function () {
-                return $('#endDate').val()
+                return $('#endDate1').val()
             }
 
         }).change(function () {
@@ -39,7 +39,6 @@
         $('#btn-chooseDay').click(function () {
             let startDate = $('#startDate1').val();
             let endDate = $('#endDate1').val();
-            console.log(startDate);
             if (startDate === '') {
                 startDate = new Date();
             }
