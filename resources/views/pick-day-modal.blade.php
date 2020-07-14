@@ -28,11 +28,13 @@
                 return $('#endDate').val()
             }
 
+        }).change(function () {
+            $('#endDate1').datepicker({
+                minDate: $('#startDate1').val(),
+                format: 'yyyy-mm-dd',
+            });
         });
-        $('#endDate1').datepicker({
-            minDate: 0,
-            format: 'yyyy-mm-dd',
-        });
+
 
         $('#btn-chooseDay').click(function () {
             let startDate = $('#startDate1').val();
