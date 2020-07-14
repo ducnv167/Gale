@@ -117,6 +117,7 @@
                             </div>
                             <script>
                                 $(document).ready(function () {
+                                    $('.checked').css('color','#24A148');
                                     $('.star-5').hover(function () {
                                         $('.star-5, .star-4, .star-3, .star-2, .star-1').css('color','#24A148');
                                         $('.result-rating1').val('Excellent');
