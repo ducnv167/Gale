@@ -1,5 +1,6 @@
 $(document).ready(function (date) {
     var bookedDays = [];
+
     function getBookedDayOfHouse() {
         const houseId = $("#name-house").attr("data-id");
         let origin = window.location.origin;
@@ -10,7 +11,7 @@ $(document).ready(function (date) {
             success: function (response) {
                 console.log($("#endDate").val());
                 bookedDays = response;
-                var today = new Date(
+                let today = new Date(
                     new Date().getFullYear(),
                     new Date().getMonth(),
                     new Date().getDate()
@@ -43,6 +44,7 @@ $(document).ready(function (date) {
                                     return bookedDays[i];
                                 }
                             }
+                            return today;
                         }
                     },
                     maxDate: function () {
@@ -61,6 +63,7 @@ $(document).ready(function (date) {
             },
         });
     }
+
     function disableEndTime(day) {
         let today = new Date(
             new Date().getFullYear(),
@@ -101,6 +104,8 @@ $(document).ready(function (date) {
                     ) {
                         return bookedDays[i];
                     }
+
+
                 }
             },
             showOtherMonths: false,
@@ -108,5 +113,6 @@ $(document).ready(function (date) {
             disableDates: day,
         });
     }
+
     getBookedDayOfHouse();
 });

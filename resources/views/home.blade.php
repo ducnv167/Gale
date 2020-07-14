@@ -66,8 +66,8 @@
                                         <label for="#">Price Limit</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
-                                                <select name="bath_room" id="" class="form-control">
-                                                    <option style="color: #495057" value="" selected>Choose</option>
+                                                <select name="price_limit" id="" class="form-control">
+                                                    <option style="color: #495057" value="0" selected>Choose</option>
                                                     <option style="color: #495057" value="500000">500,000</option>
                                                     <option style="color: #495057" value="1000000">1,000,000</option>
                                                     <option style="color: #495057" value="1500000">1,500,000</option>

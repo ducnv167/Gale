@@ -84,7 +84,7 @@
                                                 <input
                                                         class="result-rating1 btn btn-success"
                                                         style="width: 130px; background: #24A148"
-                                                        value="{{ $existRating ? $existRating['stars'] : 'Excellent' }}"
+                                                        value="{{ $existRating ? $ratingArray[$existRating['stars']] : 'Excellent' }}"
                                                         readonly>
                                                 <input name="stars" class="result-rating2" type="hidden"
                                                        value="{{ $existRating ? $existRating['stars'] : 5 }}">
@@ -117,32 +117,33 @@
                             </div>
                             <script>
                                 $(document).ready(function () {
+                                    $('.checked').css('color','#24A148');
                                     $('.star-5').hover(function () {
-                                        $('.star-5, .star-4, .star-3, .star-2, .star-1').addClass('checked');
+                                        $('.star-5, .star-4, .star-3, .star-2, .star-1').css('color','#24A148');
                                         $('.result-rating1').val('Excellent');
                                         $('.result-rating2').val(5);
                                     });
                                     $('.star-4').hover(function () {
-                                        $('.star-5').removeClass('checked');
-                                        $('.star-4, .star-3, .star-2, .star-1').addClass('checked');
+                                        $('.star-5').css('color','gray');
+                                        $('.star-4, .star-3, .star-2, .star-1').css('color','#24A148');
                                         $('.result-rating1').val('Good');
                                         $('.result-rating2').val(4);
                                     });
                                     $('.star-3').hover(function () {
-                                        $('.star-5, .star-4').removeClass('checked');
-                                        $('.star-3, .star-2, .star-1').addClass('checked');
+                                        $('.star-5, .star-4').css('color','gray');
+                                        $('.star-3, .star-2, .star-1').css('color','#24A148');
                                         $('.result-rating1').val('Ok');
                                         $('.result-rating2').val(3);
                                     });
                                     $('.star-2').hover(function () {
-                                        $('.star-5, .star-4, .star-3').removeClass('checked');
-                                        $('.star-2, .star-1').addClass('checked');
+                                        $('.star-5, .star-4, .star-3').css('color','gray');
+                                        $('.star-2, .star-1').css('color','#24A148');
                                         $('.result-rating1').val('Poor');
                                         $('.result-rating2').val(2);
                                     });
                                     $('.star-1').hover(function () {
-                                        $('.star-5, .star-4, .star-3, .star-2').removeClass('checked');
-                                        $('.star-1').addClass('checked');
+                                        $('.star-5, .star-4, .star-3, .star-2').css('color','gray');
+                                        $('.star-1').css('color','#24A148');
                                         $('.result-rating1').val('Very bad');
                                         $('.result-rating2').val(1);
                                     });
