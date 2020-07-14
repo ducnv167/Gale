@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RentalStep1;
 use App\Http\Services\HouseService;
+use App\Http\Services\OrderService;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -70,16 +71,29 @@ class HouseController extends Controller
     }
 
 
-    public function search(Request $request)
+    public function search(Request $request, OrderService $orderService)
     {
+        $startDate = $request->input('startDate');
+        $endDate = $request->input('endDate');
+        $orders = $orderService->search($startDate, $endDate);
+        $arrayIdHouseInOder = [];
+        foreach ($orders as $order) {
+            array_push($arrayIdHouseInOder, $order->house_id);
+        }
+
         $bedRoom = $request->input('bed_room');
         $bathRoom = $request->input('bath_room');
         $priceLimit = $request->input('price_limit');
         $location = $request->input('location');
-        $startDate = $request->input('startDate');
-        $endDate = $request->input('endDate');
-        $houses = $this->houseService->search($bedRoom, $bathRoom, $priceLimit, $location,$startDate,$endDate);
-        return view('house.list', compact('houses'));
+        $houses = $this->houseService->search($bedRoom, $bathRoom, $priceLimit, $location);
+        $arrayHouse = [];
+        foreach ($houses as $house) {
+            if (!in_array($house->id, $arrayIdHouseInOder)) {
+                array_push($arrayHouse, $house);
+            }
+        }
+
+        return view('house.list-search', compact('arrayHouse'));
     }
 
     public function getSeller()

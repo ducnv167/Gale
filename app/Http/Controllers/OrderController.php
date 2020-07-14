@@ -60,6 +60,7 @@ class OrderController extends Controller
 
     public function findOrderByUserId($id)
     {
+        $this->orderService->updateStatus();
         $orders = $this->orderService->getByIdUser($id);
         $currentDate = Carbon::now();
         return view('order.list', compact('orders', 'currentDate'));

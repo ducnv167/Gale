@@ -73,6 +73,7 @@
                                         <label for="#">Price Limit</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
+                                                {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                                 <select name="price_limit" id="" class="form-control">
                                                     <option style="color: #495057" value="" selected>Choose</option>
                                                     <option style="color: #495057" value="500000">500,000</option>
@@ -121,44 +122,39 @@
                 </div>
             </div>
             <div class="row">
-                @if(count($houses)== 0)
+                @if(count($arrayHouse)== 0)
                     <h3 style="text-align: center">Non-data</h3>
                 @endif
-                @foreach ($houses as $house)
+                @foreach ($arrayHouse as $house)
 
-                        <div class="col-md-4">
-                            <div class="property-wrap ftco-animate">
-                                <a href="{{route('house.details', $house->id)}}" class="img"
-                                   style="background-image: url({{asset('storage/' . $house->houseDetails()->first()->filename)}})">
-                                    <p class="price"><span class="orig-price">${{$house->price}}</span></p>
+                    <div class="col-md-4">
+                        <div class="property-wrap ftco-animate">
+                            <a href="{{route('house.details', $house->id)}}" class="img"
+                               style="background-image: url({{asset('storage/' . $house->houseDetails()->first()->filename)}})">
+                                <p class="price"><span class="orig-price">${{$house->price}}</span></p>
+                            </a>
+                            <div class="text">
+                                {{--                        <ul class="property_list">--}}
+                                {{--                            <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}</li>--}}
+                                {{--                            <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}</li>--}}
+                                {{--                        </ul>--}}
+                                <h3><a href="#">{{$house->name}}</a></h3>
+                                <span class="location">{{$house->address}}</span>
+                                <a href="#" class="d-flex align-items-center justify-content-center btn-custom">
+                                    <span class="fa fa-link"></span>
                                 </a>
-                                <div class="text">
-                                    {{--                        <ul class="property_list">--}}
-                                    {{--                            <li><span class="flaticon-bed"></span>{{$house->bedroom_amount}}</li>--}}
-                                    {{--                            <li><span class="flaticon-bathtub"></span>{{$house->bathroom_amount}}</li>--}}
-                                    {{--                        </ul>--}}
-                                    <h3><a href="#">{{$house->name}}</a></h3>
-                                    <span class="location">{{$house->address}}</span>
-                                    <a href="#" class="d-flex align-items-center justify-content-center btn-custom">
-                                        <span class="fa fa-link"></span>
-                                    </a>
-                                    <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
-                                        <div class="d-flex align-items-center">
-                                            <div class="img" style="background-image: url({{asset('#')}});"></div>
-                                            {{--                                <h3 class="ml-2">John Dorf</h3>--}}
-                                        </div>
-                                        <span class="text-right">{{$house->created_at}}</span>
+                                <div class="list-team d-flex align-items-center mt-2 pt-2 border-top">
+                                    <div class="d-flex align-items-center">
+                                        <div class="img" style="background-image: url({{asset('#')}});"></div>
+                                        {{--                                <h3 class="ml-2">John Dorf</h3>--}}
                                     </div>
+                                    <span class="text-right">{{$house->created_at}}</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                 @endforeach
-            </div>
-            <div class="row mt-5">
-                <div class="col text-center">
-                    <div style="margin-top: 30px">{{ $houses->appends(request()->query())}}</div>
-                </div>
             </div>
         </div>
     </section>

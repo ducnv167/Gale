@@ -40,4 +40,16 @@ class OrderService
     public function getById($id){
         return $order = $this->orderRepository->findById($id);
     }
+
+    function updateStatus() {
+        foreach ($this->orderRepository->getAll() as $order) {
+            if ($order->departure_date < date('Y-m-d')) {
+                $this->orderRepository->updateStatus($order);
+            }
+        }
+    }
+
+    function search($startDate, $endDate) {
+        return $this->orderRepository->search($startDate, $endDate);
+    }
 }

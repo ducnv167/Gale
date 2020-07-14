@@ -5,8 +5,8 @@
                 style="border: 1px solid rgb(221, 221, 221); border-radius: 12px; padding: 24px; box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px; position: sticky; top: 150px; height: 500px;">
 
                 <div class="form-group">
-                    Check-in: <input type="text" id="startDate" name="check_in" required/>
-                    Checkout: <input type="text" id="endDate" name="checkout" required/>
+                    Check-in: <input type="text" id="startDate1" name="check_in" required/>
+                    Checkout: <input type="text" id="endDate1" name="checkout" required/>
                 </div>
                 <div class="form-group">
                     <button id="btn-chooseDay" class="form-control" data-dismiss="modal"
@@ -21,22 +21,25 @@
 <script>
 
     $(document).ready(function () {
-        $('#startDate').datepicker({
+        $('#startDate1').datepicker({
             minDate: new Date(),
-            format: 'yyyy/mm/dd',
+            format: 'yyyy-mm-dd',
             maxDate: function () {
                 return $('#endDate').val()
             }
 
-        });
-        $('#endDate').datepicker({
-            minDate: new Date(),
-            format: 'yyyy/mm/dd',
+        }).change(function () {
+            $('#endDate1').datepicker({
+                minDate: $('#startDate1').val(),
+                format: 'yyyy-mm-dd',
+            });
         });
 
+
         $('#btn-chooseDay').click(function () {
-            let startDate = $('#startDate').val();
-            let endDate = $('#endDate').val();
+            let startDate = $('#startDate1').val();
+            let endDate = $('#endDate1').val();
+            console.log(startDate);
             if (startDate === '') {
                 startDate = new Date();
             }

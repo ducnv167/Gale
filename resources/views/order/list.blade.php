@@ -60,7 +60,7 @@
                             $rating = new \App\Rating();
                             $existRating = $rating->where('house_id', '=', $order->house_id)->where('user_id', '=', $order->user_id)->first();
                             ?>
-                            <div class="btn" data-toggle="modal" data-target="{{'#myReview' . $key}}">Review</div>
+                            <div class="btn btn-success" data-toggle="modal" data-target="{{'#myReview' . $key}}">Review</div>
                             <div class="modal fade" id="{{'myReview' . $key}}" role="dialog">
                                 <div class="modal-dialog modal-dialog modal-lg">
                                     <div class="container modal-content" style="background: #f7f7f7">
