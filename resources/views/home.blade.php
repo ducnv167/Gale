@@ -242,162 +242,162 @@
     {{--Featured Properties end--}}
 
 
-    <section class="ftco-section services-section bg-darken">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12 text-center heading-section heading-section-white ftco-animate">
-                    <span class="subheading">Work flow</span>
-                    <h2 class="mb-3">How it works</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services services-2">
-                        <div class="media-body py-md-4 text-center">
-                            <div class="icon mb-1 d-flex align-items-center justify-content-center"><span>01</span>
-                                <img src="images/blob.svg" alt="">
-                            </div>
-                            <h3>Evaluate Property</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services services-2">
-                        <div class="media-body py-md-4 text-center">
-                            <div class="icon mb-1 d-flex align-items-center justify-content-center"><span>02</span>
-                                <img src="images/blob.svg" alt=""></div>
-                            <h3>Meet Your Agent</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services services-2">
-                        <div class="media-body py-md-4 text-center">
-                            <div class="icon mb-1 d-flex align-items-center justify-content-center"><span>03</span>
-                                <img src="images/blob.svg" alt=""></div>
-                            <h3>Close the Deal</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services services-2">
-                        <div class="media-body py-md-4 text-center">
-                            <div class="icon mb-1 d-flex align-items-center justify-content-center"><span>04</span>
-                                <img src="images/blob.svg" alt=""></div>
-                            <h3>Have Your Property</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="ftco-section services-section bg-darken">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row justify-content-center">--}}
+{{--                <div class="col-md-12 text-center heading-section heading-section-white ftco-animate">--}}
+{{--                    <span class="subheading">Work flow</span>--}}
+{{--                    <h2 class="mb-3">How it works</h2>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-3 d-flex align-self-stretch ftco-animate">--}}
+{{--                    <div class="media block-6 services services-2">--}}
+{{--                        <div class="media-body py-md-4 text-center">--}}
+{{--                            <div class="icon mb-1 d-flex align-items-center justify-content-center"><span>01</span>--}}
+{{--                                <img src="images/blob.svg" alt="">--}}
+{{--                            </div>--}}
+{{--                            <h3>Evaluate Property</h3>--}}
+{{--                            <p>A small river named Duden flows by their place and supplies it with the necessary--}}
+{{--                                regelialia.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 d-flex align-self-stretch ftco-animate">--}}
+{{--                    <div class="media block-6 services services-2">--}}
+{{--                        <div class="media-body py-md-4 text-center">--}}
+{{--                            <div class="icon mb-1 d-flex align-items-center justify-content-center"><span>02</span>--}}
+{{--                                <img src="images/blob.svg" alt=""></div>--}}
+{{--                            <h3>Meet Your Agent</h3>--}}
+{{--                            <p>A small river named Duden flows by their place and supplies it with the necessary--}}
+{{--                                regelialia.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 d-flex align-self-stretch ftco-animate">--}}
+{{--                    <div class="media block-6 services services-2">--}}
+{{--                        <div class="media-body py-md-4 text-center">--}}
+{{--                            <div class="icon mb-1 d-flex align-items-center justify-content-center"><span>03</span>--}}
+{{--                                <img src="images/blob.svg" alt=""></div>--}}
+{{--                            <h3>Close the Deal</h3>--}}
+{{--                            <p>A small river named Duden flows by their place and supplies it with the necessary--}}
+{{--                                regelialia.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 d-flex align-self-stretch ftco-animate">--}}
+{{--                    <div class="media block-6 services services-2">--}}
+{{--                        <div class="media-body py-md-4 text-center">--}}
+{{--                            <div class="icon mb-1 d-flex align-items-center justify-content-center"><span>04</span>--}}
+{{--                                <img src="images/blob.svg" alt=""></div>--}}
+{{--                            <h3>Have Your Property</h3>--}}
+{{--                            <p>A small river named Duden flows by their place and supplies it with the necessary--}}
+{{--                                regelialia.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
-    <section class="ftco-counter img" id="section-counter">
-        <div class="container">
-            <div class="row pt-md-5">
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18 py-5 mb-4">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="1000">0</strong>
-                            <span>Area <br>Population</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18 py-5 mb-4">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="2500">0</strong>
-                            <span>Total <br>Properties</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18 py-5 mb-4">
-                        <div class="text text-border d-flex align-items-center">
-                            <strong class="number" data-number="500">0</strong>
-                            <span>Average <br>House</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
-                    <div class="block-18 py-5 mb-4">
-                        <div class="text d-flex align-items-center">
-                            <strong class="number" data-number="67">0</strong>
-                            <span>Total <br>Branches</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="ftco-counter img" id="section-counter">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row pt-md-5">--}}
+{{--                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">--}}
+{{--                    <div class="block-18 py-5 mb-4">--}}
+{{--                        <div class="text text-border d-flex align-items-center">--}}
+{{--                            <strong class="number" data-number="1000">0</strong>--}}
+{{--                            <span>Area <br>Population</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">--}}
+{{--                    <div class="block-18 py-5 mb-4">--}}
+{{--                        <div class="text text-border d-flex align-items-center">--}}
+{{--                            <strong class="number" data-number="2500">0</strong>--}}
+{{--                            <span>Total <br>Properties</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">--}}
+{{--                    <div class="block-18 py-5 mb-4">--}}
+{{--                        <div class="text text-border d-flex align-items-center">--}}
+{{--                            <strong class="number" data-number="500">0</strong>--}}
+{{--                            <span>Average <br>House</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">--}}
+{{--                    <div class="block-18 py-5 mb-4">--}}
+{{--                        <div class="text d-flex align-items-center">--}}
+{{--                            <strong class="number" data-number="67">0</strong>--}}
+{{--                            <span>Total <br>Branches</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
-    <section class="ftco-section ftco-agent">
-        <div class="container">
-            <div class="row justify-content-center pb-5">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <span class="subheading">Agents</span>
-                    <h2 class="mb-4">Our Agents</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="images/team-2.jpg" class="img-fluid" alt="Colorlib Template">
-                            <div class="desc">
-                                <h3><a href="properties.html">Carlos Henderson</a></h3>
-                                <p class="h-info"><span class="location">Listing</span> <span class="details">10
-                                    Properties</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="images/team-2.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">Mike Bochs</a></h3>
-                            <p class="h-info"><span class="location">Listing</span> <span class="details">10
-                                Properties</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="images/team-3.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">Jessica Moore</a></h3>
-                            <p class="h-info"><span class="location">Listing</span> <span class="details">10
-                                Properties</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 ftco-animate">
-                    <div class="agent">
-                        <div class="img">
-                            <img src="images/team-4.jpg" class="img-fluid" alt="Colorlib Template">
-                        </div>
-                        <div class="desc">
-                            <h3><a href="properties.html">Sarah Geronimo</a></h3>
-                            <p class="h-info"><span class="position">Listing</span> <span class="details">10
-                                Properties</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="ftco-section ftco-agent">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row justify-content-center pb-5">--}}
+{{--                <div class="col-md-12 heading-section text-center ftco-animate">--}}
+{{--                    <span class="subheading">Agents</span>--}}
+{{--                    <h2 class="mb-4">Our Agents</h2>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-3 ftco-animate">--}}
+{{--                    <div class="agent">--}}
+{{--                        <div class="img">--}}
+{{--                            <img src="images/team-2.jpg" class="img-fluid" alt="Colorlib Template">--}}
+{{--                            <div class="desc">--}}
+{{--                                <h3><a href="properties.html">Carlos Henderson</a></h3>--}}
+{{--                                <p class="h-info"><span class="location">Listing</span> <span class="details">10--}}
+{{--                                    Properties</span></p>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 ftco-animate">--}}
+{{--                    <div class="agent">--}}
+{{--                        <div class="img">--}}
+{{--                            <img src="images/team-2.jpg" class="img-fluid" alt="Colorlib Template">--}}
+{{--                        </div>--}}
+{{--                        <div class="desc">--}}
+{{--                            <h3><a href="properties.html">Mike Bochs</a></h3>--}}
+{{--                            <p class="h-info"><span class="location">Listing</span> <span class="details">10--}}
+{{--                                Properties</span></p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 ftco-animate">--}}
+{{--                    <div class="agent">--}}
+{{--                        <div class="img">--}}
+{{--                            <img src="images/team-3.jpg" class="img-fluid" alt="Colorlib Template">--}}
+{{--                        </div>--}}
+{{--                        <div class="desc">--}}
+{{--                            <h3><a href="properties.html">Jessica Moore</a></h3>--}}
+{{--                            <p class="h-info"><span class="location">Listing</span> <span class="details">10--}}
+{{--                                Properties</span></p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 ftco-animate">--}}
+{{--                    <div class="agent">--}}
+{{--                        <div class="img">--}}
+{{--                            <img src="images/team-4.jpg" class="img-fluid" alt="Colorlib Template">--}}
+{{--                        </div>--}}
+{{--                        <div class="desc">--}}
+{{--                            <h3><a href="properties.html">Sarah Geronimo</a></h3>--}}
+{{--                            <p class="h-info"><span class="position">Listing</span> <span class="details">10--}}
+{{--                                Properties</span></p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 @endsection

@@ -18,16 +18,9 @@ class SocialController extends Controller
 
     public function callback($provider)
     {
-
         $getInfo = Socialite::driver($provider)->stateless()->user();
-
         $user = $this->createUser($getInfo, $provider);
-
         auth()->login($user);
-
-
-
-
         Toastr::success('Login successful!!!', 'Success', ["positionClass" => "toast-top-right"]);
         return redirect()->route('home');
     }
