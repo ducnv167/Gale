@@ -5,17 +5,22 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RentalStep1;
 use App\Http\Services\HouseService;
 use App\Http\Services\OrderService;
+use App\Http\Services\UserService;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class HouseController extends Controller
 {
     protected $houseService;
-
-    public function __construct(HouseService $houseService)
+    private $userService;
+    private $orderService;
+    public function __construct(HouseService $houseService, UserService $userService, OrderService $orderService)
     {
         $this->houseService = $houseService;
+        $this->userService = $userService;
+        $this->orderService = $orderService;
     }
 
     public function findById($id)
@@ -101,6 +106,7 @@ class HouseController extends Controller
         $houses = $this->houseService->getAll();
         return view('home', compact('houses'));
     }
+
     public function getBookedDay($houseId)
     {
         $house = $this->houseService->findById($houseId);
@@ -121,5 +127,41 @@ class HouseController extends Controller
             $bookedDays[$i] = date('d/m/Y', $bookedDays[$i]);
         }
         return $bookedDays;
+    }
+
+    public function edit($id)
+    {
+        $house = $this->houseService->findById($id);
+        return view('house.edit', compact('house'));
+    }
+
+    public function save(Request $request, $id)
+    {
+        //$house = $this->houseService->findById($id);
+        $all_rent =  $this->orderService->getAllOfHouse($id);
+        $end_date = Carbon::now()->format('Y-m-d');
+        foreach ($all_rent as $house_renting){
+            if ($house_renting->departure_date >= $end_date ){
+                Toastr::warning('Nhà này đang được cho thuê', 'Lỗi', ["positionClass" => "toast-top-right"]);
+                return redirect()->route('users.rental-list',Auth::user()->id);
+            }
+        }
+        $this->houseService->delete($id);
+        $this->houseService->store($request);
+        Toastr::success('Sửa thành công', 'Thành công', ["positionClass" => "toast-top-right"]);
+        return redirect()->route('users.rental-list',Auth::user()->id);
+    }
+
+    public function delete($id){
+        $all_rent =  $this->orderService->getAllOfHouse($id);
+        $end_date = Carbon::now()->format('Y-m-d');
+        foreach ($all_rent as $house_renting){
+            if ($house_renting->departure_date >= $end_date ){
+                Toastr::warning('Nhà này đang được cho thuê', 'Lỗi', ["positionClass" => "toast-top-right"]);
+                return redirect()->route('users.rental-list',Auth::user()->id);
+            }
+        }
+        $this->houseService->delete($id);
+        return redirect()->route('users.rental-list',Auth::user()->id);
     }
 }

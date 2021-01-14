@@ -5,6 +5,7 @@ namespace App\Http\Repositories;
 
 use App\House;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use PDO;
 
 class HouseRepository
@@ -31,6 +32,11 @@ class HouseRepository
         return $this->house::paginate(6);
     }
 
+    public function delete($id)
+    {
+        $this->findById($id)->delete();
+    }
+
     public function search($bedRoom, $bathRoom, $priceLimit, $location)
     {
         if ($priceLimit) {
@@ -39,12 +45,14 @@ class HouseRepository
                 ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
                 ['price', '<=', $priceLimit],
                 ['address', 'like', '%' . $location . '%'],
+                ['user_id','<>',Auth::user()->id]
             ])->get();
         } else {
             $houses = House::where([
                 ['bedroom_amount', 'like', '%' . $bedRoom . '%'],
                 ['bathroom_amount', 'like', '%' . $bathRoom . '%'],
                 ['address', 'like', '%' . $location . '%'],
+                ['user_id','<>',Auth::user()->id]
             ])->get();
         }
         return $houses;

@@ -6,7 +6,7 @@
                     <div class="container">
                         <div class="signup-content">
                             <div class="signup-form" style=" margin-left: -10px; margin-right: -20px">
-                                <h2 class="form-title">Register</h2>
+                                <h2 class="form-title">Đăng kí</h2>
                                 <form id="registerForm" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group1">
@@ -46,7 +46,7 @@
                                     <div class="form-group1">
                                         <label class="label-custom" for="pass"><i class="fas fa-phone"></i></label>
                                         <input type="number" value="{{old('phone')}}" name="phone" id="phoneInput"
-                                            placeholder="Phone" required/>
+                                            placeholder="Điện thoại" required/>
                                     </div>
                                     <div role="alert" id="phoneError">
                                         <strong></strong>
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="form-group1 form-button">
                                         <input type="submit" name="signup" id="signup" class="form-submit"
-                                            value="Register" required/>
+                                            value="Đăng kí" required/>
                                     </div>
                                 </form>
                             </div>

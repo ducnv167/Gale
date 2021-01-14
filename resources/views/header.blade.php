@@ -8,15 +8,15 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Trang chủ</a></li>
 
                 {{--                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>--}}
                 {{--                <li class="nav-item"><a href="agent.html" class="nav-link">Agent</a></li>--}}
                 {{--                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>--}}
-                <li class="nav-item"><a href="{{route('house.list')}}" class="nav-link">List House</a></li>
+                <li class="nav-item"><a href="{{route('house.list')}}" class="nav-link">Danh sách nhà</a></li>
                 {{--                <li class="nav-item"><p data-toggle="modal" data-target="#myModalRegister" class="nav-link btn">Register</p>--}}
                 {{--                </li>--}}
-                {{--                <li class="nav-item"><p class="nav-link" data-toggle="modal" data-target="#myModal">Login</p></li>--}}
+{{--                                <li class="nav-item"><p class="nav-link" data-toggle="modal" data-target="#myModal">Đăng nhập</p></li>--}}
                 <li class="nav-item">
                     @include('users.sidebar')
                 </li>

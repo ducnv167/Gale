@@ -67,4 +67,9 @@ class HouseService
     function getReviewById($id) {
         return $this->houseRepository->getReviewById($id);
     }
+
+    public function delete($id){
+        $this->houseDetailRepository->delete($id);
+        $this->houseRepository->delete($id);
+    }
 }

@@ -17,4 +17,8 @@ class HouseDetailRepository
     {
         $this->houseDetail->create($data);
     }
+
+    public function delete($house_id){
+        $this->houseDetail->where('house_id', $house_id)->delete();
+    }
 }

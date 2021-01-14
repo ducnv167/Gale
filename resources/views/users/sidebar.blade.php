@@ -21,30 +21,30 @@
 
             <hr>
             <a href="" data-toggle="modal" data-target="#myModalChangePassword" style="color: #34ce57" class="nav-link"><i
-                    style="margin-right: 25px" class="fas fa-key"></i>Change password</a>
+                    style="margin-right: 25px" class="fas fa-key"></i>Đổi mật khẩu</a>
             <hr>
             <a href="{{route('house.create')}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px"
-                                                                                           class="fas fa-store"></i>Store</a>
+                                                                                           class="fas fa-store"></i>Thêm mới nhà cho thuê</a>
             <hr>
 
-            <a href="{{route('users.rental-list',\Illuminate\Support\Facades\Auth::user()->id)}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-list"></i>Rental list</a>
+            <a href="{{route('users.rental-list',\Illuminate\Support\Facades\Auth::user()->id)}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px" class="fas fa-list"></i>Danh sách nhà</a>
             <hr>
             <a href="{{route('order.cancel',\Illuminate\Support\Facades\Auth::user()->id)}}" style="color: #34ce57" class="nav-link"><i style="margin-right: 25px"
-                                                                  class="fas fa-shopping-cart"></i>Orders</a>
+                                                                  class="fas fa-shopping-cart"></i>Danh sách nhà đã thuê</a>
 
             <hr>
             <a style="color: #34ce57" class="nav-link" href="{{route('users.logout')}}"><i style="margin-right: 25px"
-                                                                                           class="fas fa-sign-out-alt"></i>Logout</a>
+                                                                                           class="fas fa-sign-out-alt"></i>Đăng xuất</a>
         </div>
     </li>
 @else
     <li class="nav-item">
         <div class="nav-link btn" data-toggle="modal" data-target="#myModal">
-            Login
+            Đăng nhập
         </div>
     </li>
     <li class="nav-item">
-        <div data-toggle="modal" data-target="#myModalRegister" class="nav-link btn">Register</div>
+        <div data-toggle="modal" data-target="#myModalRegister" class="nav-link btn">Đăng xuất</div>
     </li>
 
 @endif

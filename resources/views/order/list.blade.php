@@ -15,10 +15,10 @@
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate pb-0 text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Host <i
-                                        class="fa fa-chevron-right"></i></a></span> <span>Rental <i
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Trang chủ <i
+                                        class="fa fa-chevron-right"></i></a></span> <span>Nhà đã thuê <i
                                     class="fa fa-chevron-right"></i></span></p>
-                    <h1 class="mb-3 bread">Rental</h1>
+                    <h1 class="mb-3 bread">Danh sách nhà đã thuê</h1>
                 </div>
             </div>
         </div>
@@ -29,11 +29,11 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name House</th>
-                    <th scope="col">Arrival Date</th>
-                    <th scope="col">Departure Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Ngày đến</th>
+                    <th scope="col">Ngày đi</th>
+                    <th scope="col">Trạng thái</th>
+                    <th scope="col">Hành động</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -53,7 +53,7 @@
                             </td>
                         @else
                             <td><a href="{{route('order.delete',$order->id)}}" class="btn btn-warning"
-                                   onclick="return confirm('Are you sure?')">Cancel</a></td>
+                                   onclick="return confirm('Bạn có chắc muốn hủy thuê nhà này?')">Cancel</a></td>
                         @endif
                         <td>
                             <?php

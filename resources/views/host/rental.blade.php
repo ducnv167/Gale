@@ -6,10 +6,10 @@
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate pb-0 text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Host <i
-                                class="fa fa-chevron-right"></i></a></span> <span>Rental <i
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Trang chủ <i
+                                class="fa fa-chevron-right"></i></a></span> <span>Thêm mới<i
                             class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">Rental</h1>
+                <h1 class="mb-3 bread">Thêm mới nhà</h1>
             </div>
         </div>
     </div>
@@ -20,23 +20,23 @@
             <div class="col-10">
                 <div class="card">
                     <div class="card-header">
-                        <h4>What kind of place are you listing ?</h4>
-                        <p>Provide personal details and how we can reach you.</p>
+{{--                        <h4>?</h4>--}}
+                        <h3>Cung cấp chi tiết về nhà của bạn</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('house.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="">FIRST, CHOOSE YOUR PROPERTY TYPE</label>
+                                <label for="">Chọn loại nhà của bạn</label>
                                 <select name="house_category" id="" class="form-control">
-                                    <option value="Homestay">Homstay</option>
-                                    <option value="Detached house">Detached house</option>
-                                    <option value="Apartment">Apartment</option>
+                                    <option value="Homestay">Homestay</option>
+                                    <option value="Nhà ở">Nhà ở</option>
+                                    <option value="Chung cư">Chung cư</option>
                                     <option value="Villa">Villa</option>
                                 </select>
                             </div>
                             <div class="form-grouup">
-                                <label for="">GUESTS WILL SEE THE NAME OF YOUR HOUSE</label>
+                                <label for="">Hãy đặt tên cho ngôi nhà của bạn</label>
                                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                                     required>
                             </div>
@@ -45,15 +45,15 @@
                             @enderror
 
                             <div class="form-group">
-                                <label for="">RENTAL TYPE ?</label>
+                                <label for="">Kiểu cho thuê?</label>
                                 <select name="room_category" id="" class="form-control">
-                                    <option value="Entire place">Entire place</option>
-                                    <option value="Private room">Private room</option>
-                                    <option value="Shared room">Shared rom</option>
+                                    <option value="Toàn bộ căn">Toàn bộ căn</option>
+                                    <option value="Phòng đơn lẻ">Phòng đơn lẻ</option>
+                                    <option value="Phòng ở ghép">Phòng ở ghép</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Bathroom?</label>
+                                <label for="">Phòng tắm?</label>
                                 <select name="bathroom_amount" id="" class="form-control">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -61,7 +61,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Bedroom?</label>
+                                <label for="">Phòng ngủ?</label>
                                 <select name="bedroom_amount" id="" class="form-control">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -69,7 +69,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="">Address</label>
+                                <label for="">Địa chỉ</label>
                                 <input class="form-control @error('address') is-invalid @enderror" type="text"
                                     name="address" id="">
                             </div>
@@ -78,7 +78,7 @@
                             @enderror
 
                             <div class="form-group">
-                                <label for="">Price($)</label>
+                                <label for="">Giá</label>
                                 <input class="form-control @error('price') is-invalid @enderror" type="text"
                                     name="price" id="">
                             </div>
@@ -88,14 +88,14 @@
 
                             {{--                            them location map--}}
                             <div class="form-group">
-                                <label for="">Location</label>
+                                <label for="">Địa điểm trên bản đồ</label>
                                 <input class="form-control " type="text" name="location" id="">
                             </div>
 
 
                             {{--                            end them location map--}}
                             <div class="form-group @error('description') is-invalid @enderror">
-                                <label for="">Description</label>
+                                <label for="">Mô tả chi tiết</label>
                                 <textarea class="form-control" name="description" id="" cols="30" rows="10"></textarea>
                                 <script>
                                     CKEDITOR.replace('description');
@@ -105,7 +105,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                             <div class="form-group @error('image') is-invalid @enderror">
-                                <label for="">Image</label>
+                                <label for="">Ảnh</label>
                                 {{-- <div class="file-loading">
                                     <input id="image" name="image[]" type="file" multiple>
                                 </div> --}}
@@ -121,7 +121,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                            <button class="btn-lg btn-success" style="float: right">Confirm</button>
+                            <button class="btn-lg btn-success" style="float: right">Xác nhận</button>
                         </form>
                     </div>
                 </div>

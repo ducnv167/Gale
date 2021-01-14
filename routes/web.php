@@ -39,6 +39,9 @@ Route::prefix('houses')->group(function () {
     Route::get('/', 'HouseController@getAll')->name('house.list');
     Route::get('/search', 'HouseController@search')->name('list.search');
     Route::get('/{id}/booked-day', 'HouseController@getBookedDay');
+    Route::get('/edit/{id}','HouseController@edit')->name('house.edit');
+    Route::post('/save/{id}','HouseController@save')->name('house.save');
+    Route::get('/delete/{id}','HouseController@delete')->name('house.delete');
 });
 
 Route::prefix('users')->group(function () {

@@ -7,10 +7,10 @@
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate pb-0 text-center">
 
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i
-                                    class="fa fa-chevron-right"></i></a></span><span>Properties <i
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Trang chủ <i
+                                    class="fa fa-chevron-right"></i></a></span><span>Danh sách <i
                                 class="fa fa-chevron-right"></i></span></p>
-                    <h1 class="mb-3 bread">Gallery</h1>
+                    <h1 class="mb-3 bread">Danh sách căn hộ</h1>
                 </div>
             </div>
         </div>
@@ -24,10 +24,10 @@
                             <div class="row">
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Date</label>
+                                        <label for="#">Ngày</label>
                                         <div class="form-field">
                                             <input class="btn btn-warning" data-toggle="modal"
-                                                   data-target="#myModalPickDay" value="Choose Day" id="input-chooseDay"
+                                                   data-target="#myModalPickDay" value="Chọn ngày" id="input-chooseDay"
                                                    readonly>
                                             <input type="hidden" id="input-start" name="startDate">
                                             <input type="hidden" id="input-end" name="endDate">
@@ -36,12 +36,12 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Bed room</label>
+                                        <label for="#">Phòng ngủ</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                                 <select name="bed_room" id="" class="form-control">
-                                                    <option style="color: #495057" value="" selected>Choose</option>
+                                                    <option style="color: #495057" value="" selected>Vui lòng chọn</option>
                                                     <option style="color: #495057" value="1">1</option>
                                                     <option style="color: #495057" value="2">2</option>
                                                     <option style="color: #495057" value="3">3</option>
@@ -53,12 +53,12 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Bath room</label>
+                                        <label for="#">Phòng tắm</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 {{--                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>--}}
                                                 <select name="bath_room" id="" class="form-control">
-                                                    <option style="color: #495057" value="" selected>Choose</option>
+                                                    <option style="color: #495057" value="" selected>Vui lòng chọn</option>
                                                     <option style="color: #495057" value="1">1</option>
                                                     <option style="color: #495057" value="2">2</option>
                                                     <option style="color: #495057" value="3">3</option>
@@ -70,11 +70,11 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Price Limit</label>
+                                        <label for="#">Giá</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <select name="price_limit" id="" class="form-control">
-                                                    <option style="color: #495057" value="" selected>Choose</option>
+                                                    <option style="color: #495057" value="" selected>Vui lòng chọn</option>
                                                     <option style="color: #495057" value="500000">500,000</option>
                                                     <option style="color: #495057" value="1000000">1,000,000</option>
                                                     <option style="color: #495057" value="1500000">1,500,000</option>
@@ -87,18 +87,18 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Location</label>
+                                        <label for="#">Địa điểm</label>
                                         <div class="form-field">
                                             <div class="icon"><span class="fa fa-search"></span></div>
                                             <input type="text" class="form-control" name="location"
-                                                   placeholder="Location">
+                                                   placeholder="Vui lòng nhập">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg align-self-end">
                                     <div class="form-group">
                                         <div class="form-field">
-                                            <input type="submit" value="Search" class="form-control btn btn-primary">
+                                            <input type="submit" value="Tìm kiếm" class="form-control btn btn-primary">
                                         </div>
                                     </div>
                                 </div>
@@ -113,11 +113,11 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">What we offer</span>
+                    <span class="subheading">Đề xuất cho bạn</span>
                     <br>
                     <br>
 
-                    <h2 class="mb-2">Gallery</h2>
+{{--                    <h2 class="mb-2">Gallery</h2>--}}
                 </div>
             </div>
             <div class="row">

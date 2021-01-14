@@ -21,9 +21,9 @@
                             <div class="row">
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Date </label>
+                                        <label for="#">Ngày </label>
                                         <div class="form-field">
-                                            <input class="btn btn-warning" data-toggle="modal" data-target="#myModalPickDay" value="Choose Day" id="input-chooseDay" readonly>
+                                            <input class="btn btn-warning" data-toggle="modal" data-target="#myModalPickDay" value="Chọn ngày" id="input-chooseDay" readonly>
                                             <input type="hidden" id="input-start" name="startDate">
                                             <input type="hidden" id="input-end" name="endDate">
                                         </div>
@@ -31,11 +31,11 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Bed room</label>
+                                        <label for="#">Phòng ngủ</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <select name="bed_room" id="" class="form-control">
-                                                    <option style="color: #495057" value="" selected>Choose</option>
+                                                    <option style="color: #495057" value="" selected>Vui lòng chọn</option>
                                                     <option style="color: #495057" value="1">1</option>
                                                     <option style="color: #495057" value="2">2</option>
                                                     <option style="color: #495057" value="3">3</option>
@@ -47,11 +47,11 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Bath room</label>
+                                        <label for="#">Phòng tắm</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <select name="bath_room" id="" class="form-control">
-                                                    <option style="color: #495057" value="" selected>Choose</option>
+                                                    <option style="color: #495057" value="" selected>Vui lòng chọn</option>
                                                     <option style="color: #495057" value="1">1</option>
                                                     <option style="color: #495057" value="2">2</option>
                                                     <option style="color: #495057" value="3">3</option>
@@ -63,11 +63,11 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Price Limit</label>
+                                        <label for="#">Giá</label>
                                         <div class="form-field">
                                             <div class="select-wrap">
                                                 <select name="price_limit" id="" class="form-control">
-                                                    <option style="color: #495057" value="0" selected>Choose</option>
+                                                    <option style="color: #495057" value="0" selected>Vui lòng chọn</option>
                                                     <option style="color: #495057" value="500000">500,000</option>
                                                     <option style="color: #495057" value="1000000">1,000,000</option>
                                                     <option style="color: #495057" value="1500000">1,500,000</option>
@@ -80,18 +80,18 @@
                                 </div>
                                 <div class="col-lg align-items-end">
                                     <div class="form-group">
-                                        <label for="#">Location</label>
+                                        <label for="#">Địa điểm</label>
                                         <div class="form-field">
                                             <div class="icon"><span class="fa fa-search"></span></div>
                                             <input type="text" class="form-control" name="location"
-                                                   placeholder="Location">
+                                                   placeholder="Vui lòng nhập">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg align-self-end">
                                     <div class="form-group">
                                         <div class="form-field">
-                                            <input type="submit" value="Search" class="form-control btn btn-primary">
+                                            <input type="submit" value="Tìm kiếm" class="form-control btn btn-primary">
                                         </div>
                                     </div>
                                 </div>
@@ -104,68 +104,68 @@
 
     </section>
 
-    <section class="ftco-section ftco-no-pb ftco-no-pt bg-primary">
-        <div class="container">
-            <div class="row d-flex no-gutters">
-                <div class="col-md-3 d-flex align-items-stretch ftco-animate">
-                    <div class="media block-6 services services-bg d-block text-center px-4 py-5">
-                        <div class="icon d-flex justify-content-center align-items-center"><span
-                                class="flaticon-business"></span></div>
-                        <div class="media-body py-md-4">
-                            <h3>Trusted by Thousands</h3>
-                            <p style="color:black;">A small river named Duden flows by their place and supplies it with
-                                the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch ftco-animate">
-                    <div class="media block-6 services services-bg services-darken d-block text-center px-4 py-5">
-                        <div class="icon d-flex justify-content-center align-items-center"><span
-                                class="flaticon-home"></span></div>
-                        <div class="media-body py-md-4">
-                            <h3>Wide Range of Properties</h3>
-                            <p style="color:black;">A small river named Duden flows by their place and supplies it with
-                                the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch ftco-animate">
-                    <div class="media block-6 services services-bg services-lighten d-block text-center px-4 py-5">
-                        <div class="icon d-flex justify-content-center align-items-center"><span
-                                class="flaticon-stats"></span></div>
-                        <div class="media-body py-md-4">
-                            <h3>Financing Made Easy</h3>
-                            <p style="color:black;">A small river named Duden flows by their place and supplies it with
-                                the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex align-items-stretch ftco-animate">
-                    <div class="media block-6 services services-bg d-block text-center px-4 py-5">
-                        <div class="icon d-flex justify-content-center align-items-center"><span
-                                class="flaticon-quarantine"></span></div>
-                        <div class="media-body py-md-4">
-                            <h3>Locked in Pricing</h3>
-                            <p style="color:black;">A small river named Duden flows by their place and supplies it with
-                                the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--    <section class="ftco-section ftco-no-pb ftco-no-pt bg-primary">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row d-flex no-gutters">--}}
+{{--                <div class="col-md-3 d-flex align-items-stretch ftco-animate">--}}
+{{--                    <div class="media block-6 services services-bg d-block text-center px-4 py-5">--}}
+{{--                        <div class="icon d-flex justify-content-center align-items-center"><span--}}
+{{--                                class="flaticon-business"></span></div>--}}
+{{--                        <div class="media-body py-md-4">--}}
+{{--                            <h3>Trusted by Thousands</h3>--}}
+{{--                            <p style="color:black;">A small river named Duden flows by their place and supplies it with--}}
+{{--                                the necessary--}}
+{{--                                regelialia.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 d-flex align-items-stretch ftco-animate">--}}
+{{--                    <div class="media block-6 services services-bg services-darken d-block text-center px-4 py-5">--}}
+{{--                        <div class="icon d-flex justify-content-center align-items-center"><span--}}
+{{--                                class="flaticon-home"></span></div>--}}
+{{--                        <div class="media-body py-md-4">--}}
+{{--                            <h3>Wide Range of Properties</h3>--}}
+{{--                            <p style="color:black;">A small river named Duden flows by their place and supplies it with--}}
+{{--                                the necessary--}}
+{{--                                regelialia.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 d-flex align-items-stretch ftco-animate">--}}
+{{--                    <div class="media block-6 services services-bg services-lighten d-block text-center px-4 py-5">--}}
+{{--                        <div class="icon d-flex justify-content-center align-items-center"><span--}}
+{{--                                class="flaticon-stats"></span></div>--}}
+{{--                        <div class="media-body py-md-4">--}}
+{{--                            <h3>Financing Made Easy</h3>--}}
+{{--                            <p style="color:black;">A small river named Duden flows by their place and supplies it with--}}
+{{--                                the necessary--}}
+{{--                                regelialia.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 d-flex align-items-stretch ftco-animate">--}}
+{{--                    <div class="media block-6 services services-bg d-block text-center px-4 py-5">--}}
+{{--                        <div class="icon d-flex justify-content-center align-items-center"><span--}}
+{{--                                class="flaticon-quarantine"></span></div>--}}
+{{--                        <div class="media-body py-md-4">--}}
+{{--                            <h3>Locked in Pricing</h3>--}}
+{{--                            <p style="color:black;">A small river named Duden flows by their place and supplies it with--}}
+{{--                                the necessary--}}
+{{--                                regelialia.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     {{--Featured Properties start--}}
     <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">What we offer</span>
-                    <h2 class="mb-2">Best Seller</h2>
+                    <span class="subheading">Đề xuất cho bạn</span>
+{{--                    <h2 class="mb-2">Được thuê nhiều</h2>--}}
                 </div>
             </div>
 {{--            <div class="row ftco-animate">--}}

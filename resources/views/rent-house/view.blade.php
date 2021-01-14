@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Luxury Gale</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -47,7 +47,7 @@
                     @include('users.login')
                 @endif
                 <br>
-                <h2>Booking information</h2>
+                <h2>Thông tin thuê nhà</h2>
                 <br>
                 <div>
                     <div class="w3-card-4">
@@ -65,30 +65,30 @@
                                 </td>
                                 <th>{{$request->checkout}}</th>
                             </tr>
-                            <tr>
-                                <th style="width: 200px">
-                                    <i class="fa fa-exclamation-triangle" style="font-size:20px;color:#D2691E"></i>
-                                    &nbsp; Damage Policy
-                                </th>
-                                <td>
-                                    You will be responsible for any damage to the rental property caused by you or your
-                                    party during your stay.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th style="width: 150px">
-                                    <i class="fa fa-tasks" style="font-size:20px;color:#228B22"></i> &nbsp;House's rules
-                                </th>
-                                <td>
-                                    ID/Passport or Deposit Required\nNo smoking in shared spaces and common areas\nNo
-                                    shoes in house\nAvoid making noises after 10 pm\n
-                                </td>
-                            </tr>
+{{--                            <tr>--}}
+{{--                                <th style="width: 200px">--}}
+{{--                                    <i class="fa fa-exclamation-triangle" style="font-size:20px;color:#D2691E"></i>--}}
+{{--                                    &nbsp; Damage Policy--}}
+{{--                                </th>--}}
+{{--                                <td>--}}
+{{--                                    You will be responsible for any damage to the rental property caused by you or your--}}
+{{--                                    party during your stay.--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
+{{--                            <tr>--}}
+{{--                                <th style="width: 150px">--}}
+{{--                                    <i class="fa fa-tasks" style="font-size:20px;color:#228B22"></i> &nbsp;House's rules--}}
+{{--                                </th>--}}
+{{--                                <td>--}}
+{{--                                    ID/Passport or Deposit Required\nNo smoking in shared spaces and common areas\nNo--}}
+{{--                                    shoes in house\nAvoid making noises after 10 pm\n--}}
+{{--                                </td>--}}
+{{--                            </tr>--}}
                         </table>
                     </div>
                     <div style="margin-top: 50px">
                         @if(\Illuminate\Support\Facades\Auth::user())
-                            <h2>Your information</h2>
+                            <h2>Thông tin của bạn</h2>
                             <br>
                             <form id="registerForm" method="POST" enctype="multipart/form-data">
                                 @csrf
@@ -229,7 +229,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-12">
-                                        Bathroom
+                                        Phòng tắm
                                     </td>
                                     <td>
                                         {{$house->bathroom_amount}}
@@ -237,7 +237,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-12">
-                                        Bedroom
+                                        Phòng ngủ
                                     </td>
                                     <td>
                                         {{$house->bedroom_amount}}
@@ -258,7 +258,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-12">
-                                        <h4>Price</h4>
+                                        <h4>Giá</h4>
                                     </td>
                                     <td>
                                         <h4>{{$house->price}}</h4>
@@ -266,42 +266,42 @@
                                 </tr>
                                 <tr>
                                     <td class="col-12">
-                                        <h4>Total</h4>
+                                        <h4>Tổng tiền</h4>
                                     </td>
                                     <td>
                                         <h4>{{$house->price*$rentingDays}}</h4>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="col-12"></td>
-                                    <th>($)</th>
-                                </tr>
+{{--                                <tr>--}}
+{{--                                    <td class="col-12"></td>--}}
+{{--                                    <th>($)</th>--}}
+{{--                                </tr>--}}
                             </table>
                         </div>
                         <hr>
-                        <div>
-                            <h3 style="font-weight: bold"><i class="fa fa-bell"
-                                                             style="font-size:30px;color:#2196F3"></i>&nbsp;Notite!
-                            </h3>
-                            <h4>For example: Booking with a total amount of 100 USD, check-in at 2:00 pm on August
-                                31st
-                                and check-out on September 1st. The guest will be refunded 100 USD if cancel within
-                                48
-                                hours of booking succeeded; 100 USD minus a service fee (if) if cancel after 48
-                                hours of
-                                booking succeeded and latest before 1:59 pm of August 30th; 50% of the total booking
-                                amount minus the first night and fees if cancel from 2:00 pm on August 30th to 1:59
-                                pm
-                                on August 31st</h4>
-                        </div>
+{{--                        <div>--}}
+{{--                            <h3 style="font-weight: bold"><i class="fa fa-bell"--}}
+{{--                                                             style="font-size:30px;color:#2196F3"></i>&nbsp;Notite!--}}
+{{--                            </h3>--}}
+{{--                            <h4>For example: Booking with a total amount of 100 USD, check-in at 2:00 pm on August--}}
+{{--                                31st--}}
+{{--                                and check-out on September 1st. The guest will be refunded 100 USD if cancel within--}}
+{{--                                48--}}
+{{--                                hours of booking succeeded; 100 USD minus a service fee (if) if cancel after 48--}}
+{{--                                hours of--}}
+{{--                                booking succeeded and latest before 1:59 pm of August 30th; 50% of the total booking--}}
+{{--                                amount minus the first night and fees if cancel from 2:00 pm on August 30th to 1:59--}}
+{{--                                pm--}}
+{{--                                on August 31st</h4>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <footer style="height: 100px;background-color: #7abaff">
-    </footer>
+{{--    <footer style="height: 100px;background-color: #7abaff">--}}
+{{--    </footer>--}}
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

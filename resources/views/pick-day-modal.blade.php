@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <button id="btn-chooseDay" class="form-control" data-dismiss="modal"
                             style="color:white !important; background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important" >
-                        Select
+                        Chọn
                     </button>
                 </div>
             </div>

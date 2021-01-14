@@ -8,10 +8,10 @@
             <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate pb-0 text-center">
 
-                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i
-                                        class="fa fa-chevron-right"></i></a></span><span>Rental<i
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Trang chủ <i
+                                        class="fa fa-chevron-right"></i></a></span><span>Thuê nhà<i
                                     class="fa fa-chevron-right"></i></span></p>
-                    <h1 class="mb-3 bread">History</h1>
+                    <h1 class="mb-3 bread">Lịch sử</h1>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">We have history</span>
+                    <span class="subheading">Lịch sử thuê nhà</span>
                     <br>
                     <br>
                 </div>
@@ -29,12 +29,12 @@
                 <table class="w3-table-all">
                     <tr>
                         <th></th>
-                        <th><i class="fas fa-user-md" style="font-size:15px;color:#2196F3"></i> &nbsp;Tenant name</th>
+                        <th><i class="fas fa-user-md" style="font-size:15px;color:#2196F3"></i> &nbsp;Người thuê</th>
                         <th><i class="fas fa-envelope" style="font-size:20px;color:#2196F3"></i> &nbsp;Email</th>
-                        <th><i class="fas fa-phone" style="font-size:20px;color:#2196F3"></i> &nbsp;Phone</th>
-                        <th><i class="far fa-calendar-alt" style="font-size:20px;color:#2196F3"></i> &nbsp;Arrival date</th>
-                        <th><i class="far fa-calendar-alt" style="font-size:20px;color:#2196F3"></i> &nbsp;Departure date</th>
-                        <th><i class="fab fa-btc" style="font-size:20px;color:#2196F3"></i> &nbsp;Pay total</th>
+                        <th><i class="fas fa-phone" style="font-size:20px;color:#2196F3"></i> &nbsp;Điện thoại</th>
+                        <th><i class="far fa-calendar-alt" style="font-size:20px;color:#2196F3"></i> &nbsp;Ngày đến</th>
+                        <th><i class="far fa-calendar-alt" style="font-size:20px;color:#2196F3"></i> &nbsp;Ngày đi</th>
+                        <th><i class="fa fa-money-bill" style="font-size:20px;color:#2196F3"></i> &nbsp;Số tiền thanh toán</th>
                     </tr>
                     @foreach($order as $key=>$value)
                     <tr>
